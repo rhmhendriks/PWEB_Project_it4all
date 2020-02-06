@@ -1,0 +1,15 @@
+
+    html{
+        height: 100%;
+        width: 100%;
+    }
+
+    .groenetekst{
+        background-color: transparent;
+        color: green;
+    }
+
+    .blauwetekst{
+        background-color: transparent;
+        color: blue;
+    }

@@ -1,0 +1,723 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+header {
+    background-color: #ffaa00;
+    height: 110px;
+    flex-shrink: 0;
+}
+header h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 52px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 14px 0px 0px 0px
+}
+header p {
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+
+
+/*                      ///// Navigatie opmaak /////                    */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 65px;
+    width: 100%;
+    background-color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.links {
+    float: left;
+}
+.login {
+    float: right;
+}
+.login li {
+    list-style: none;
+}
+.links li {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+nav ul li a:hover {
+    color: #ffaa00;
+}
+nav ul li a {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 15px;
+    padding: 23px 20px;
+    text-decoration: none;
+}
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    padding: 8px;
+    border-radius: 0px 0px 5px 5px;
+}
+nav ul li:hover ul {
+    display: block;
+}
+nav ul li ul li {
+    width: 250px;
+    border-radius: 5px;
+}
+nav ul li ul li a {
+    padding: 8px 14px;
+}
+nav ul li ul li a:hover {
+    background-color: rgba(44, 42, 42);
+} 
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.burger {
+    display: none;
+    position: absolute;
+    left: 10px;
+}
+/*                      \\\\\ Navigatie opmaak \\\\\                    */
+
+
+
+
+
+
+#content {
+    flex: 1 0 auto;
+    display: block;
+    background-color: #FFFFFF;
+}
+/*                      ///// Artikel opmaak /////                      */
+.articleTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 14px;
+    text-align: center;
+}
+#leftColumn {
+    display: flex;
+    float: left;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+}
+#leftColumn img {
+    margin: auto;
+    height: 325px;
+    width: 400px;
+}
+#leftColumn p {
+    margin: auto;
+    padding-bottom: 30px;
+    color: gray;
+    font-size: 14px;
+}
+#rightColumn {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    width: 60%;
+    float: right;
+    padding-right: 50px;
+}
+#rightColumn p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 20px;
+}
+.inStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    padding: 10px 0px 0px;
+}
+.lowInStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orange;
+    padding: 10px 0px 0px;
+}
+.outOfStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orangered;
+    padding: 10px 0px 0px;
+}
+.price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 10px 0px 10px;
+}
+.priceA {
+    color: red;
+}
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+#imageDiv {
+    display: flex;
+    float: left;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+}
+#imageDiv a {
+    margin: auto;
+}
+#imageDiv img {
+    margin: auto;
+    height: 325px;
+    width: 400px;
+    margin-top: 10px;
+}
+#imageDiv p {
+    margin: auto;
+    padding-bottom: 30px;
+    color: gray;
+    font-size: 14px;
+}
+#infoDiv {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    width: 60%;
+    float: right;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+.articleTitleList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 10px 0px 0px;
+}
+.articleTitleList a {
+    text-decoration: none;
+    color: black;
+}
+.articleTitleList a:hover {
+    color: darkgray;
+}
+.inStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    padding: 5px 0px 0px;
+}
+.lowInStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orange;
+    padding: 5px 0px 0px;
+}
+.outOfStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orangered;
+    padding: 5px 0px 0px;
+}
+.priceList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 5px 0px 0px;
+    color: red;
+}
+#infoDiv p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-top: 10px;    
+}
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks opmaak /////                */
+#tipsTricksDiv {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+.tipsTricksTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 10px;
+    text-align: center;
+}
+.datumAuteur {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(39, 247, 39);
+    text-align: center; 
+    padding-bottom: 10px;   
+}
+#tipsTricksDiv img {
+    margin: auto;
+    height: 300px;
+    width: 350px;
+}
+.tipsTricksSubTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 10px 0px 10px 0px;
+    width: 75%;
+    margin: auto;
+}
+#tipsTricksDiv p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 15px;
+    width: 75%;
+    margin: auto;    
+}
+/*                      \\\\\ Tips & Tricks opmaak \\\\\                */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+#tipsTricksImage {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 30%;
+    float: left;
+}
+#tipsTricksImage img {
+    margin: auto;
+    height: 250px;
+    width: 325px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+#tipsTricksImage a {
+    margin: auto;
+}
+#tipsTricksInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 70%;
+    float: right;
+}
+.tipsTricksTitleList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+}
+.tipsTricksTitleList a {
+    text-decoration: none;
+    color: black;
+}
+.tipsTricksTitleList a:hover {
+    color: darkgray;
+}
+.datumAuteurList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(39, 247, 39);
+    text-align: center; 
+    padding: 0px;  
+}
+#tipsTricksInfo p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 10px 0px 10px 0px;
+    width: 90%;
+    margin: auto;    
+}
+/*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+
+/* temporary forms */
+form {
+    text-align: left;
+} /* text alignment of the form in the content div */
+
+form h1 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 20px 0px;
+}
+
+form h4 {
+    padding: 0px 20px 0px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #333;
+}
+
+input[type=submit] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin: 20px;
+}
+
+input[type=radio] {
+    width: 15px;
+    height: 15px;
+}
+
+fieldset {
+    background-color: #fff7e6;
+}
+
+legend{
+    padding: 20px 0px 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial;
+    height: 100%;
+} /* The css on the legend */
+
+form pre{
+    font-size: 16px;
+    font-family: Arial;
+    text-decoration: none;
+    padding: 5px 20px 5px;
+} /*pre text in form */
+
+/*a, a:active, a:visited{
+    font-family: Arial;
+    font-size: 16px;
+    color: blue;
+}*/ /*color etc on links in the form */
+
+.redStar {
+    color: red;
+}/* The color of the required red star */
+
+
+/* temporary overzichten */
+.OverviewTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+} /* The table */
+
+.OverviewTable a img {
+    padding: 3px;
+    margin: 9px;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.OverviewTable th {
+    background-color: #ffaa00;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+} /* The table head color css */
+
+.OverviewTable th, .OverviewTable td {
+    padding: 12px 15px;
+} /* The padding */
+
+.OverviewTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+} /* The border-bottom */
+
+.OverviewTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} /* The background color */
+
+.OverviewTable tbody tr:last-of-type {
+    border-bottom: 5px solid #ffaa00;
+} /* The last row color */
+
+
+
+
+
+footer {
+    background-color: #ffaa00;
+    flex-shrink: 0;
+    height: 70px;
+    text-align: center;
+}
+footer h2 {
+    color: white;
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 0px 0px;
+}
+
+
+
+/*                      ////////////////////////////////                
+                        /// Bij een scherm kleiner dan//
+                        /// 1024 pixels wordt deze   ///
+                        /// css toegepast.           ///
+                        ////////////////////////////////                */
+@media screen and (max-width: 1024px) {
+
+        header {
+            height: 80px; 
+        }
+        header h1 {
+            font-size: 42px;
+            padding: 4px 0px 0px 0px;
+        }
+        header p {
+            font-size: 15px;
+        }
+
+/*                      ///// Artikel opmaak /////                      */
+        #leftColumn {
+            width: 100%;
+            margin: auto;
+            padding: 1 0 auto;
+        }
+        #rightColumn {
+            float: left;
+            width: 100%;
+            margin: auto;
+            padding-left: 50px;
+        }
+        .inStock {
+            text-align: center;
+        }
+        .lowInStock {
+            text-align: center;
+        }
+        .outOfStock {
+            text-align: center;
+        }
+        .price {
+            text-align: center;
+        }
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+        #imageDiv {
+            width: 100%;
+            margin: auto;
+            padding: 1 0 auto;            
+        }
+        #infoDiv {
+            float: left;
+            width: 100%;
+            margin: auto;
+            padding-left: 50px;
+        }
+        .articleTitleList {
+            text-align: center;
+        }
+        .inStockList {
+            text-align: center;
+        }
+        .lowInStockList {
+            text-align: center;
+        }
+        .outOfStockList {
+            text-align: center;
+        }
+        .priceList {
+            text-align: center;
+        }
+        .articleTitleList {
+            padding-top: 0px;
+        }
+        #imageDiv p {
+            padding-bottom: 10px;
+        }
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+        #tipsTricksImage {
+            width: 25%;
+        }
+        #tipsTricksImage img {
+            width: 250px;
+            height: 200px;
+            margin-left: 15px;
+            margin-top: 60px;
+        }
+        #tipsTricksInfo {
+            width: 65%;
+        }
+        .tipsTricksTitleList {
+            text-align: left;
+            margin-left: 29px;
+        }
+        .datumAuteurList {
+            text-align: left;
+            margin-left: 29px;
+        }
+/*                      ///// Tips & Tricks list opmaak /////           */
+
+        footer {
+            height: 55px;
+        }
+        footer h2 {
+            font-size: 30px;
+            padding: 11px 0px 0px;
+        }
+
+}
+
+
+
+/*                      ////////////////////////////////                
+                        /// Bij een scherm kleiner dan//
+                        /// 768pixels wordt deze css ///
+                        /// toegepast.               ///
+                        ////////////////////////////////                */
+@media screen and (max-width: 725px) {
+
+/*                      ///// Navigatie opmaak /////                    */
+            .liFade:hover ul {
+                left: 100px;
+                top: 5px;
+            }
+            .links {
+                position: absolute;
+                left: 0px;
+                background-color: #333;
+                top: 145px;
+                display: flex;
+                flex-direction: column;
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in;
+            }
+            .liFade {
+                opacity: 0;
+            }            
+            .login {
+                position: absolute;
+                right: 10px;
+            }
+            .burger {
+                display: block;
+                cursor: pointer;
+            }
+/*                      \\\\\ Navigatie opmaak \\\\\                    */
+
+/*                      ///// Artikel opmaak /////                      */
+            #leftColumn img {
+                width: 300px;
+                height: 250px;
+            }
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Tips & Tricks opmaak /////                */
+            #tipsTricksDiv img {
+                width: 300px;
+                height: 250px;
+            }
+/*                      \\\\\ Tips & Tricks opmaak \\\\\                */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+            #imageDiv img {
+                width: 300px;
+                height: 250px;
+            }
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+            #tipsTricksImage {
+                width: 100%;
+                margin: auto;
+                padding: 1 0 auto; 
+            }
+            #tipsTricksImage img {
+                margin-left: 0px;
+                margin-top: 15px;
+            }
+            #tipsTricksInfo {
+                float: left;
+                width: 100%;
+                margin: auto;
+            }
+            .tipsTricksTitleList {
+                text-align: center;
+                margin-left: 0px;
+            }
+            .datumAuteurList {
+                text-align: center;
+                margin-left: 0px;
+            }
+/*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+}
+
+/*                      ///// Navigatie opmaak /////                    */
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.toggleBurger .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggleBurger .line2 {
+    opacity: 0;
+}
+.toggleBurger .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+/*                      \\\\\ Navigatie opmaak \\\\\                    */

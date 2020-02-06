@@ -1,0 +1,160 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* The html */
+    html {
+        height:     100%;
+        width:      100%;
+    }
+
+    /* The login button */
+    .loginbtn{
+        float: right;
+        background-color: #395381;
+        padding: 20px;
+        margin-right: 30px;
+        margin-top: 10px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        display: block;
+        cursor: pointer;
+    }
+
+    /* The login button on hover */
+    .loginbtn:hover{
+        background-color: lightgray;
+        color: black;
+    }
+
+    /* The header */
+    header {
+        background-color: #395381;
+        height: 110px;
+        padding-top: 35px;
+        color: white;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* The headertitle */
+    .hoofdtitel{
+        text-align: center;
+        margin-left: 120px;
+    }
+
+    /* The nav */
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+    }
+  
+    /* Nav links */
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+  
+    /* The subnav menu */
+    .subnav {
+        float: left;
+        overflow: hidden;
+    }
+  
+    /* Subnav button */
+    .subnav .subnavbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+  
+    /* Background-color on hover */
+    .navbar a:hover, .subnav:hover .subnavbtn {
+        background-color: #395381;
+    }
+  
+    /* Style the subnav content - positioned absolute */
+    .subnav-content {
+        display: none;
+        position: absolute;
+        left: 1;
+        background-color: #395381;
+        width: auto;
+        z-index: 0;
+    }
+  
+    /* Style the subnav links */
+    .subnav-content a {
+        float: left;
+        color: white;
+        text-decoration: none;
+    }
+  
+    /* Add a grey background color on hover */
+    .subnav-content a:hover {
+        background-color: #eeeeee;
+        color: black;
+    }
+  
+    /* When you move the mouse over the subnav container, open the subnav content */
+    .subnav:hover .subnav-content {
+        display: block;
+    }    
+
+    /* The links */
+    a:link, a:visited {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+     a:active{
+          color: green;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+    }
+
+    /* The div frame */
+    #frame{
+          height: 800px;
+          padding: 20px;
+          margin: 0;
+          background-color: #d3d3d3;
+    }
+      
+    /* The Iframe */
+    iframe{
+          height: 96%;
+          width: 97%;
+          background-color: transparent;
+          margin: 0;
+          padding: 20px;
+          box-align: middle;
+          border: none;
+    }
+
+    /* The footer */
+    footer{
+        height: 0.25%;
+        background-color: #395381;
+        text-align: center;
+        color: white;
+        padding: 0.25%;
+    }

@@ -1,0 +1,1834 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+header {
+    background-color: #ffaa00;
+    height: 125px;
+    flex-shrink: 0;
+}
+header h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 14px 0px 0px 0px
+}
+header h1 a {
+    text-decoration: none;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 14px 0px 0px 0px
+}
+header h1 a:hover {
+    cursor: pointer;
+}
+header p {
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+header a {
+    margin: auto;
+    text-align: center;
+    margin-left: 90%;
+}
+header img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+/*                      ///// Navigatie opmaak /////                    */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 65px;
+    width: 100%;
+    background-color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.links {
+    float: left;
+}
+.login {
+    float: right;
+}
+.login .admincolor {
+    color: red;
+}
+.login li {
+    list-style: none;
+    float: right;
+    position: relative;
+}
+.links li {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+nav ul li a:hover {
+    color: #ffaa00;
+}
+nav ul li a {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 15px;
+    padding: 23px 18px;
+    text-decoration: none;
+}
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    padding: 8px;
+    border-radius: 0px 0px 5px 5px;
+}
+nav ul li:hover ul {
+    display: block;
+}
+.links li ul li {
+    width: 220px;
+    border-radius: 5px;
+}
+.login li ul li {
+    width: 100px;
+    border-radius: 5px;
+}
+nav ul li ul li a {
+    padding: 8px 14px;
+}
+nav ul li ul li a:hover {
+    background-color: rgba(44, 42, 42);
+} 
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.burger {
+    display: none;
+    position: absolute;
+    left: 10px;
+}
+/*                      \\\\\ Navigatie opmaak \\\\\                    */
+
+
+
+
+
+
+#content {
+    flex: 1 0 auto;
+    display: block;
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*                      ///// Artikel opmaak /////                      */
+.articleTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 14px;
+    text-align: center;
+}
+#leftColumn {
+    display: flex;
+    float: left;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+}
+#leftColumn img {
+    margin: auto;
+    height: 325px;
+    width: 400px;
+}
+#leftColumn p {
+    margin: auto;
+    padding-bottom: 30px;
+    color: gray;
+    font-size: 14px;
+}
+#rightColumn {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    width: 60%;
+    float: right;
+    padding-right: 50px;
+}
+#rightColumn p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 20px;
+}
+.inStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    padding: 10px 0px 0px;
+}
+.lowInStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orange;
+    padding: 10px 0px 0px;
+}
+.outOfStock {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orangered;
+    padding: 10px 0px 0px;
+}
+.price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 10px 0px 10px;
+}
+.priceA {
+    color: red;
+}
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+#imageDiv {
+    display: flex;
+    float: left;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+}
+#imageDiv a {
+    margin: auto;
+}
+#imageDiv img {
+    margin: auto;
+    height: 325px;
+    width: 400px;
+    margin-top: 10px;
+}
+#imageDiv p {
+    margin: auto;
+    padding-bottom: 30px;
+    color: gray;
+    font-size: 14px;
+}
+#infoDiv {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    width: 60%;
+    float: right;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+.articleTitleList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 10px 0px 0px;
+}
+.articleTitleList a {
+    text-decoration: none;
+    color: black;
+}
+.articleTitleList a:hover {
+    color: darkgray;
+}
+.inStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    padding: 5px 0px 0px;
+}
+.lowInStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orange;
+    padding: 5px 0px 0px;
+}
+.outOfStockList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: orangered;
+    padding: 5px 0px 0px;
+}
+.priceList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 5px 0px 0px;
+    color: red;
+}
+#infoDiv p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-top: 10px;    
+}
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks opmaak /////                */
+#tipsTricksDiv {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+.tipsTricksTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 10px;
+    text-align: center;
+}
+.datumAuteur {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(39, 247, 39);
+    text-align: center; 
+    padding-bottom: 10px;   
+}
+#tipsTricksDiv img {
+    margin: auto;
+    height: 300px;
+    width: 350px;
+}
+.tipsTricksSubTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 10px 0px 10px 0px;
+    width: 75%;
+    margin: auto;
+}
+#tipsTricksDiv p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 15px;
+    width: 75%;
+    margin: auto;    
+}
+/*                      \\\\\ Tips & Tricks opmaak \\\\\                */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+#tipsTricksImage {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 30%;
+    float: left;
+}
+#tipsTricksImage img {
+    margin: auto;
+    height: 250px;
+    width: 325px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+#tipsTricksImage a {
+    margin: auto;
+}
+#tipsTricksInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 70%;
+    float: right;
+}
+.tipsTricksTitleList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+}
+.tipsTricksTitleList a {
+    text-decoration: none;
+    color: black;
+}
+.tipsTricksTitleList a:hover {
+    color: darkgray;
+}
+.datumAuteurList {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(39, 247, 39);
+    text-align: center; 
+    padding: 0px;  
+}
+#tipsTricksInfo p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 10px 0px 10px 0px;
+    width: 90%;
+    margin: auto;    
+}
+/*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+/* temporaryform opmaak */
+#temporaryform form {
+    text-align: left;
+}
+#temporaryform form h1 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 20px 0px;
+}
+#temporaryform form h4 {
+    padding: 0px 20px 0px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#temporaryform input {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#temporaryform input:focus {
+    border: 2px solid #ffaa00;
+}
+#temporaryform input[type=submit] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin: 20px;
+    border: 2px solid #ffaa00;
+}
+#temporaryform legend{
+    padding: 20px 0px 20px;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial;
+    height: 100%;
+} 
+#temporaryform fieldset {
+    background-color: #fff7e6;
+}
+#temporaryform form pre{
+    font-size: 16px;
+    font-family: Arial;
+    text-decoration: none;
+    padding: 5px 20px 5px;
+} 
+/* temporaryform opmaak*/
+/* Admin_form opmaak */
+#admin_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#admin_form input[type="text"], #admin_form input[type="date"], #admin_form input[type="email"], #admin_form input[type="password"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#admin_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#admin_form input[type="text"]:focus, #admin_form input[type="date"]:focus, #admin_form input[type="email"]:focus, #admin_form input[type="password"]:focus {
+    border: 2px solid #ffaa00;
+}
+#admin_form h3 {
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+#admin_form h1 {
+    font-size: 30px;
+    text-align: center;
+}
+#admin_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+.redStar {
+    color: red;
+    margin-left: 2px;
+    font-size: 18px;
+}
+#admin_form input {
+    margin-right: 10px;
+}
+#PersoonsGegevens {
+    display: flex;
+    flex-direction: column;
+}
+#Geslacht {
+    display: flex;
+    flex-direction: row;
+}
+#AdresGegevens {
+    display: flex;
+    flex-direction: column;
+}
+#Postcode {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+#BetaalGegevens {
+    display: flex;
+    flex-direction: column;
+}
+#AccountGegevens {
+    display: flex;
+    flex-direction: column;
+}
+#PersoonsGegevens, #AdresGegevens, #BetaalGegevens, #AccountGegevens {
+    width: 80%;
+    margin: auto;
+}
+#PersoonsGegevens label, #AdresGegevens label, #BetaalGegevens label, #AccountGegevens label, #PersoonsGegevens input, #AdresGegevens input, #BetaalGegevens input, #AccountGegevens input {
+    margin-bottom: 5px;
+}
+#submitadmin_form {
+    outline: none;
+}
+/* Admin_form opmaak */
+/* Artikelgroep_toevoegen form opmaak */
+#artikelgroep_form {
+    max-width: 600px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#artikelgroep_form input[type="text"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#artikelgroep_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#artikelgroep_form input[type="submit"]:focus {
+    border: 2px solid #ffaa00;
+}
+#artikelgroep_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#artikelgroep_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#artikelgroep_form input {
+    margin-right: 10px;
+}
+#artikelgroep_toevoegen {
+    display: flex;
+    flex-direction: column;
+}
+#artikelgroep_toevoegen {
+    width: 80%;
+    margin: auto;
+}
+#submitartikelgroep_toevoegen {
+    outline: none;
+}
+/* Artikelgroep_toevoegen form opmaak */
+/* Auteur_form opmaak */
+#author_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#author_form input[type="text"], #author_form input[type="email"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#author_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#author_form input[type="submit"]:focus {
+    border: 2px solid #ffaa00;
+}
+#author_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#author_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#author_form input {
+    margin-right: 10px;
+}
+#AuteursGegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#AuteursGegevens label, #AuteursGegevens input {
+    margin-bottom: 5px;
+}
+#submitauthor_form {
+    outline: none;
+}
+/* Auteur_form opmaak */
+/*contactformulier opmaak */
+#contact_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#contact_form input[type="text"], #contact_form input[type="email"], #contact_form textarea[name="vraag_opmerking"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#contact_form textarea[name="vraag_opmerking"] {
+    width: 98%;
+}
+#contact_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#contact_form input[type="submit"]:focus {
+    border: 2px solid #ffaa00;
+}
+#contact_form h3 {
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#contact_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#contact_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#contact_form input {
+    margin-right: 10px;
+}
+#contactformgegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#contactformgegevens label, #contactformgegevens input {
+    margin-bottom: 5px;
+}
+#submitcontact_form {
+    outline: none;
+}
+/*contactformulier opmaak */
+/* tiptrickformulier opmaak */
+#tiptrick_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#tiptrick_form input[type="text"], #tiptrick_form input[type="date"], #tiptrick_form textarea, #tiptrick_form input[type="file"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#tiptrick_form textarea {
+    max-width: 450px;
+}
+#tiptrick_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#tiptrick_form input[type="text"]:focus {
+    border: 2px solid #ffaa00;
+}
+#tiptrick_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#tiptrick_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#tiptrick_form input {
+    margin-right: 10px;
+}
+#tiptrickgegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#tiptrickgegevens label, #tiptrickgegevens input, #tiptrickgegevens textarea {
+    margin-bottom: 5px;
+}
+#submittiptrick_form {
+    outline: none;
+}
+/*tiptrickformulier opmaak*/
+/* tipstrickscategoryformulier opmaak */
+#tipstrickscategory_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#tipstrickscategory_form input[type="text"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#tipstrickscategory_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#tipstrickscategory_form input[type="submit"]:focus {
+    border: 2px solid #ffaa00;
+}
+#tipstrickscategory_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#tipstrickscategory_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#tipstrickscategory_form input {
+    margin-right: 10px;
+}
+#tipstrickscategorygegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#tipstrickscategorygegevens label, #tipstrickscategorygegevens input {
+    margin-bottom: 5px;
+}
+#submittipstrickscategory_form {
+    outline: none;
+}
+/* tipstrickscategoryformulier opmaak */
+/* toevoegen artikel opmaak */
+#toevoegen_artikel_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_artikel_form input[type="text"], #toevoegen_artikel_form input[type="number"], #toevoegen_artikel_form input[type="file"], #toevoegen_artikel_form textarea {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#toevoegen_artikel_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_artikel_form input[type="submit"]:focus {
+    border: 2px solid #ffaa00;
+}
+#toevoegen_artikel_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#toevoegen_artikel_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#toevoegen_artikel_form input {
+    margin-right: 10px;
+}
+#toevoegen_artikel_form textarea {
+    width: 98%;
+}
+#artikelgegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#artikelgegevens label, #artikelgegevens input {
+    margin-bottom: 5px;
+}
+#submittoevoegen_artikel_form {
+    outline: none;
+}
+/* toevoegen artikel opmaak */
+/* toevoegen klant opmaak */
+#toevoegen_klant_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_klant_form input[type="text"], #toevoegen_klant_form input[type="date"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#toevoegen_klant_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_klant_form input[type="submit"] {
+    border: 2px solid #ffaa00;
+}
+#toevoegen_klant_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#toevoegen_klant_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#toevoegen_klant_form input {
+    margin-right: 10px;
+}
+#klantgegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#postcodeklantgegevens {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+#klantgegevens {
+    width: 80%;
+    margin: auto;
+}
+#klantgegevens label, #klantgegevens input {
+    margin-bottom: 5px;
+}
+#submittoevoegen_klant_form {
+    outline: none;
+}
+/* toevoegen klant opmaak */
+/* toevoegen media opmaak */
+#toevoegen_media_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_media_form input[type="text"], #toevoegen_media_form input[type="file"]{
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#toevoegen_media_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#toevoegen_media_form input[type="submit"] {
+    border: 2px solid #ffaa00;
+}
+#toevoegen_media_form h3 {
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#toevoegen_media_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#toevoegen_media_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#toevoegen_media_form input {
+    margin-right: 10px;
+}
+#afbeeldinggegevens, #mediagegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#afbeeldinggegevens label, #mediagegevens label, #afbeeldinggegevens input, #mediagegevens input {
+    margin-bottom: 5px;
+}
+#toevoegen_media_form {
+    outline: none;
+}
+/* toevoegen media opmaak */
+/* loginform opmaak */
+#loginform {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#loginform input[type="email"], #loginform input[type="password"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#loginform input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#loginform input[type="submit"] {
+    border: 2px solid #ffaa00;
+}
+#loginform h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#loginform label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#loginform input {
+    margin-right: 10px;
+}
+#inloggengegevens {    
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#linksloginform a {
+    text-decoration: none;
+    font-size: 14px;
+}
+#linksloginform p {
+    text-align: left;
+    margin-left: 10%;
+    font-size: 14px;
+}
+#inloggengegevens label, #inloggengegevens input {
+    margin-bottom: 5px;
+}
+#submitadmin_form {
+    outline: none;
+}
+/*loginform opmaak */
+/* signup form opmaak */
+#SignUp_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#SignUp_form input[type="text"], #SignUp_form input[type="date"], #SignUp_form input[type="email"], #SignUp_form input[type="password"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#SignUp_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#SignUp_form input[type="submit"] {
+    border: 2px solid #ffaa00;
+}
+#SignUp_form h3 {
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#SignUp_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#SignUp_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#SignUp_form input {
+    margin-right: 10px;
+}
+#persoonsgegevenssignup, #adresgegevenssignup, #betaalgegevenssignup {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#geslachtsignup {
+    display: flex;
+    flex-direction: row;
+}
+#postcodesignup {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+#betaalgegevenssignup a {
+    text-decoration: none;
+    font-size: 14px;
+}
+#betaalgegevenssignup p {
+    text-align: left;
+    margin-left: 10%;
+    font-size: 14px;
+}
+#persoonsgegevenssignup label, #adresgegevenssignup label, #betaalgegevenssignup label, #persoonsgegevenssignup input, #adresgegevenssignup input, #betaalgegevenssignup input {
+    margin-bottom: 5px;
+}
+#submitSignUp_form {
+    outline: none;
+}
+/*signup form opmaak */
+/* activatie form opmaak */
+#Activate_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#Activate_form input[type="text"], #Activate_form input[type="email"], #Activate_form input[type="password"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#Activate_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#Activate_form input[type="submit"] {
+    border: 2px solid #ffaa00;
+}
+#Activate_form h1 {
+    font-size: 34px;
+    text-align: center;
+}
+#Activate_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#Activate_form input {
+    margin-right: 10px;
+}
+#activatiegegevens {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#activatiegegevens label, #activatiegegevens input {
+    margin-bottom: 5px;
+}
+#submitActivate_form {
+    outline: none;
+}
+#Activate_form p {
+    display: flex;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*activatie form opmaak */
+
+
+
+#tableOverflow {
+    overflow-x: scroll;
+}
+/* temporary overzichten */
+#tableOverflow table {
+    border-collapse: collapse;
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+} /* The table */
+
+.OverviewTable a img {
+    padding: 3px;
+    margin: 9px;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.OverviewTable th {
+    background-color: #ffaa00;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+} /* The table head color css */
+
+.OverviewTable th, table td {
+    padding: 12px 15px;
+    text-align: left;
+} /* The padding */
+
+.OverviewTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+} /* The border-bottom */
+
+.OverviewTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} /* The background color */
+
+.OverviewTable tbody tr:last-of-type {
+    border-bottom: 5px solid #ffaa00;
+} /* The last row color */
+
+/* Winkelwagen opmaak */
+#winkelwagenWrapper {
+    width: 500px;
+    min-height: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #ffaa00;
+}
+#winkelwagenWrapper a {
+    color: white;
+    text-decoration: none;
+}
+#winkelwagenWrapper a:hover {
+    color: #333;
+}
+#errorWrapper {
+    width: 500px;
+    min-height: 10px;
+    overflow: hidden;
+    background-color: #ffaa00;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.error {    
+    text-align: center;
+    line-height: 15px;
+    float: left;
+    color: white;
+}
+/* Formulier elementen */
+/* Winkelwagen */
+#winkelwagenRow {
+    width: 100%;
+    height: 20px;    
+    float: left;
+    line-height: 20px;    
+    border-bottom: 1px solid #8d6617;
+}
+.small {
+    width: 75px;
+    height: 20px;    
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+.big {
+    width: 200px;
+    height: 20px;    
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+.aantal_w {
+    width: 40px;
+    height: 20px;    
+    border: none;
+    background-color: transparent;
+}
+
+#ShoppingOverflow table {
+    margin: auto;
+}
+/* temporary overzichten */
+#ShoppingOverflow table {
+    border-collapse: collapse;
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+} /* The table */
+
+.shoppingcart th {
+    background-color: #ffaa00;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+} /* The table head color css */
+
+.shoppingcart th, table td {
+    padding: 12px 15px;
+    text-align: left;
+} /* The padding */
+
+.shoppingcart tbody tr {
+    border-bottom: 1px solid #dddddd;
+} /* The border-bottom */
+
+.shoppingcart tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} /* The background color */
+
+.shoppingcart tbody tr:last-of-type {
+    border-bottom: 5px solid #ffaa00;
+} /* The last row color */
+
+
+#content .formovertitle {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#content #adminlist {
+    width: 800px;
+    background-color: #fff7e6;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ffaa00;
+    border-radius: 5px;
+}
+#content #adminlist h2 {
+    text-align: center;
+    font-size: 24px;
+}
+#content #formulierenlist {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+#content #formulierenlist a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+#content #formulierenlist a:hover {
+    background-color: #ffaa00;
+}
+#content #overzichtenlist {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+#content #overzichtenlist a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+#content #overzichtenlist a:hover {
+    background-color: #ffaa00;
+}
+
+
+
+
+footer {
+    background-color: #ffaa00;
+    flex-shrink: 0;
+    height: 105px;
+    text-align: center;
+}
+footer h2 {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 17px 0px 0px;
+}
+footer div {
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer div a {
+    color: white;
+    text-decoration: none;
+}
+footer div a:hover {
+    color: #333333;
+}
+
+
+
+/*                      ////////////////////////////////                
+                        /// Bij een scherm kleiner dan//
+                        /// 1024 pixels wordt deze   ///
+                        /// css toegepast.           ///
+                        ////////////////////////////////                */
+@media screen and (max-width: 1024px) {
+
+        header {
+            height: 100px; 
+        }
+        header h1 {
+            font-size: 38px;
+            padding: 5px 0px 0px 0px;
+        }
+        header h1 a {
+            font-size: 38px;
+            padding: 5px 0px 0px 0px;
+        }
+        header p {
+            font-size: 15px;
+        }
+
+/*                      ///// Artikel opmaak /////                      */
+        #leftColumn {
+            width: 100%;
+            margin: auto;
+            padding: 1 0 auto;
+        }
+        #rightColumn {
+            float: left;
+            width: 100%;
+            margin: auto;
+            padding-left: 50px;
+        }
+        .inStock {
+            text-align: center;
+        }
+        .lowInStock {
+            text-align: center;
+        }
+        .outOfStock {
+            text-align: center;
+        }
+        .price {
+            text-align: center;
+        }
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+        #imageDiv {
+            width: 100%;
+            margin: auto;
+            padding: 1 0 auto;            
+        }
+        #infoDiv {
+            float: left;
+            width: 100%;
+            margin: auto;
+            padding-left: 50px;
+        }
+        .articleTitleList {
+            text-align: center;
+        }
+        .inStockList {
+            text-align: center;
+        }
+        .lowInStockList {
+            text-align: center;
+        }
+        .outOfStockList {
+            text-align: center;
+        }
+        .priceList {
+            text-align: center;
+        }
+        .articleTitleList {
+            padding-top: 0px;
+        }
+        #imageDiv p {
+            padding-bottom: 10px;
+        }
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+        #tipsTricksImage {
+            width: 25%;
+        }
+        #tipsTricksImage img {
+            width: 250px;
+            height: 200px;
+            margin-left: 15px;
+            margin-top: 60px;
+        }
+        #tipsTricksInfo {
+            width: 65%;
+        }
+        .tipsTricksTitleList {
+            text-align: left;
+            margin-left: 29px;
+        }
+        .datumAuteurList {
+            text-align: left;
+            margin-left: 29px;
+        }
+/*                      ///// Tips & Tricks list opmaak /////           */
+
+        footer{
+            height: 90px;
+        }
+        footer h2 {
+            font-size: 17px;
+            padding: 10px 0px 0px 0px;
+        }
+        footer div {
+            font-size: 12px;
+        }
+
+}
+
+
+
+/*                      ////////////////////////////////                
+                        /// Bij een scherm kleiner dan//
+                        /// 768pixels wordt deze css ///
+                        /// toegepast.               ///
+                        ////////////////////////////////                */
+@media screen and (max-width: 850px) {
+/*                      ///// Navigatie opmaak /////                    */
+            .liFade:hover ul {
+                left: 175px;
+                top: 5px;
+            }
+            .links {
+                position: absolute;
+                left: 0px;
+                background-color: #333;
+                top: 145px;
+                display: flex;
+                flex-direction: column;
+                transform: translateX(-100%);
+                transition: transform 0.5s ease-in;
+            }
+            .liFade {
+                opacity: 0;
+            }            
+            .login {
+                position: absolute;
+                right: 10px;
+            }
+            .burger {
+                display: block;
+                cursor: pointer;
+            }
+/*                      \\\\\ Navigatie opmaak \\\\\                    */
+            #content #adminlist {
+                flex-direction: column;
+                width: 70%
+            }
+            #content #formulierenlist {
+                width: 100%;
+            }
+            #content #overzichtenlist {
+                width: 100%;
+            }
+}
+
+
+/*                      ////////////////////////////////                
+                        /// Bij een scherm kleiner dan//
+                        /// 768pixels wordt deze css ///
+                        /// toegepast.               ///
+                        ////////////////////////////////                */
+@media screen and (max-width: 725px) {
+
+/*                      ///// Artikel opmaak /////                      */
+                #leftColumn img {
+                    width: 300px;
+                    height: 250px;
+                }
+/*                      \\\\\ Artikel opmaak \\\\\                      */
+
+/*                      ///// Tips & Tricks opmaak /////                */
+                #tipsTricksDiv img {
+                    width: 300px;
+                    height: 250px;
+                }
+/*                      \\\\\ Tips & Tricks opmaak \\\\\                */
+
+/*                      ///// Artikelen lijst opmaak /////              */
+                #imageDiv img {
+                    width: 300px;
+                    height: 250px;
+                }
+/*                      \\\\\ Artikelen lijst opmaak \\\\\              */
+
+/*                      ///// Tips & Tricks list opmaak /////           */
+                #tipsTricksImage {
+                    width: 100%;
+                    margin: auto;
+                    padding: 1 0 auto; 
+                }
+                #tipsTricksImage img {
+                    margin-left: 0px;
+                    margin-top: 15px;
+                }
+                #tipsTricksInfo {
+                    float: left;
+                    width: 100%;
+                    margin: auto;
+                }
+                .tipsTricksTitleList {
+                    text-align: center;
+                    margin-left: 0px;
+                }
+                .datumAuteurList {
+                    text-align: center;
+                    margin-left: 0px;
+                }
+/*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+
+/* Admin_form opmaak */
+                #admin_form h1 {
+                    font-size: 25px;
+                }
+                #PersoonsGegevens, #AdresGegevens, #BetaalGegevens, #AccountGegevens {
+                    width: 90%;
+                }
+                #admin_form h3 {
+                    margin-left: 5%;
+                    font-size: 14px;
+                }
+                #admin_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* Admin_form opmaak */
+/* artikelgroep_toevoegen form opmaak */
+                #artikelgroep_form h1 {
+                    font-size: 28px;
+                }
+                #artikelgroep_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+                #artikelgroep_toevoegen {
+                    width: 90%;
+                }
+/* artikelgroep_toevoegen form opmaak */
+/* Auteur_form opmaak */
+                #author_form h1 {
+                    font-size: 28px;
+                }
+                #AuteursGegevens {
+                    width: 90%;
+                }
+                #admin_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* Auteur_form opmaak */
+/* contactformulier opmaak */
+                #contact_form h1 {
+                    font-size: 28px;
+                }
+                #contactformgegevens {
+                    width: 90%;
+                }
+                #contact_form h3 {
+                    margin-left: 5%;
+                }
+                #contact_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/*contactformulier opmaak */
+/* tiptrickformulier opmaak */
+                #tiptrick_form h1 {
+                    font-size: 28px;
+                }
+                #tiptrickgegevens {
+                    width: 90%;
+                }
+                #tiptrick_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* tiptrickformulier opmaak */
+/* tipstrickscategoryformulier opmaak */
+                #tipstrickscategory_form h1 {
+                    font-size: 28px;
+                }
+                #tipstrickscategorygegevens {
+                    width: 90%;
+                }
+                #tipstrickscategory_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* tipstrickscategoryformulier opmaak */
+/* toevoegen artikel opmaak */
+                #toevoegen_artikel_form h1 {
+                    font-size: 28px;
+                }
+                #artikelgegevens {
+                    width: 90%;
+                }
+                #toevoegen_artikel_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* toevoegen artikel opmaak */
+/* toevoegen klant opmaak */
+                #toevoegen_klant_form h1 {
+                    font-size: 28px;
+                }
+                #klantgegevens {
+                    width: 90%;
+                }
+                #toevoegen_klant_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* toevoegen klant opmaak */
+/* toevoegen media opmaak */
+                #toevoegen_media_form h1 {
+                    font-size: 28px;
+                }
+                #afbeeldinggegevens, #mediagegevens {
+                    width: 90%;
+                }
+                #toevoegen_media_form h3 {
+                    margin-left: 5%;
+                }
+                #toevoegen_media_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* toevoegen media opmaak */
+/* loginform opmaak */
+                #loginform h1 {
+                    font-size: 28px;
+                }
+                #inloggengegevens {
+                    width: 90%;
+                }
+                #loginform input[type="submit"] {
+                    margin-left: 5%;
+                }
+                #linksloginform p {
+                    margin-left: 5%;
+                    text-align: center;
+                }
+/* loginform opmaak */
+/*signup form opmaak */
+                #SignUp_form h1 {
+                    font-size: 28px;
+                }
+                #persoonsgegevenssignup, #adresgegevenssignup, #betaalgegevenssignup {
+                    width: 90%;
+                }
+                #SignUp_form h3 {
+                    margin-left: 5%;
+                }
+                #SignUp_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+                #betaalgegevenssignup {
+                    margin-left: 5%;
+                    text-align: center;
+                }
+/* signup form opmaak */
+/* activatie form opmaak */
+                #Activate_form h1 {
+                    font-size: 28px;
+                }
+                #activatiegegevens {
+                    width: 90%;
+                }
+                #Activate_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/* activatie form opmaak */
+
+
+                #ShoppingOverflow {
+                    overflow-x: scroll;
+                }
+
+                footer h2 {
+                    font-size: 15px;
+                }
+                footer div {
+                    font-size: 10px;
+                }
+
+}
+
+
+
+
+
+
+/*                      ///// Navigatie opmaak /////                    */
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.toggleBurger .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggleBurger .line2 {
+    opacity: 0;
+}
+.toggleBurger .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+/*                      \\\\\ Navigatie opmaak \\\\\                    */
