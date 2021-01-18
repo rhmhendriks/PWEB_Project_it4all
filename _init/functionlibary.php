@@ -58,95 +58,6 @@
 
                     return $return;
                 }
-
-/*
-         ### Check Login, admin and session safety ### by Ronald HM HEndriks
-         function CheckSessionConsistancy(){
-            // We gaan de sessie ophalen
-                if (isset($_SESSION)){
-                    $CustomerID = $_SESSION['CustomerID'];
-                    $FirstName = $_SESSION['FirstName'];
-                    $LastName = $_SESSION['LastName'];
-                    $DateofBirth = $_SESSION['DateofBirth']; 
-                    $Gender = $_SESSION['Gender'];
-                    $Address = $_SESSION['Address']; 
-                    $PostalCode = $_SESSION['Postalcode'];
-                    $City = $_SESSION['City'];
-                    $BIC = $_SESSION['BIC'];
-                    $IBAN = $_SESSION['IBAN'];
-                    $EmailGet = $_SESSION['Email'];
-                    $IsAdmin = $_SESSION['IsAdmin'];
-                    $LoggedIn = $_SESSION['loggedin'];
-
-            // We halen de gegevens uit de databse en controleren of de waarden hetzelfde zijn
-                $statementGet = "SELECT Customers.*, Users.EMail, Users.Password, Users.Number_Login_Attempts, Users.Verified, Users.Token, Users.PrivacyAcknoledge, Users.AccentColor FROM Users JOIN Customers ON Users.CustomerID=Customers.ClientNumber WHERE Customers.ClientNumber='$CustomerID' AND Users.EMail='$EmailGet'";
-                $statementRunnedGet = $DBconnect->query($statementGet);
-                    while ($rij = $statementRunnedGet->fetch_assoc()) {
-                        $CustomerIDdb = $rij['ClientNumber'];
-                        $FirstNamedb = $rij['FirstName'];
-                        $LastNamedb = $rij['LastName'];
-                        $DateofBirthdb = $rij['DateofBirth'];
-                        $Genderdb = $rij['Gender'];
-                        $Addressdb = $rij['Adress'];
-                        $PostalCodedb = $rij['PostalCode'];
-                        $Citydb = $rij['City'];
-                        $BICdb = $rij['BIC'];
-                        $IBANdb = $rij['IBAN'];
-                        $EmailGetdb = $rij['EMail'];
-                        $IsAdmindb = $rij['IsAdmin'];
-                    
-                        // We gaan checken
-                            if (!$CustomerID == $CustomerIDdb){
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$FirstName == $FirstNamedb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$LastName == $LastNamedb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$DateofBirth == $DateofBirthdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$Gender == $Genderdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$Address == $Addressdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$PostalCode == $PostalCodedb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$City == $Citydb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$BIC == $BICdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$IBAN == $IBANdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$EmailGet == $EmailGetdb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            } elseif (!$IsAdmin == $IsAdmindb) {
-                                session_destroy();
-                                header("Location: https://it4all.rhmhendriks.nl/index.php?page=auth&auth=LogOut&breach=1");
-                            }
-                       
-                        if ($LoggedIn == 1){$loginbool = true;} else {$loginbool = false; }; $return['isloginactive'] = $loginbool;
-                        if ($IsAdmindb == 1){$adminbool = true;} else {$adminbool = false; }; $return['isadmin'] = $adminbool;
-                        
-                } 
-                
-         } else {
-            $return['isloginactive'] = false;
-            $return['isadmin'] = false;
-        }
-        return $return;
-        }
-            
-*/
         
         ### Imidiate Redirect ###
             function immediate_redirect_to($redirectlocation){
@@ -171,9 +82,11 @@
                     $DBconnect = $Connection['connection'];
                     $SecureValue = mysqli_real_escape_string($DBconnect, $Value);
                     $SecureValue = htmlspecialchars($Value);
+
                     if ($dbmysql){
-                    $SecureValue = addslashes($Value);
+                        $SecureValue = addslashes($Value);
                     }
+
                     return $SecureValue;
                 }
 
@@ -210,8 +123,6 @@
                             $message .=             "<img src=&quot;_images/404.png&quot; alt=&quot;404 NOT FOUND&quot; height=&quot;400&quot; width=&quot;400&quot;>";
                             $message .=      nl2br("</p> /n </div>");
                             return($message);
-
-
                     }
                 }
 
@@ -258,7 +169,8 @@
                         }
                         
                     return array('optionfield'=>"$return", 'result'=>"$resultfunction", 'debug'=>"$returndebug");
-                    } 
+
+                    }
 
         ### MySqlDo_Overview ###
             //////////////////////////////////////////////////////////////////
@@ -731,12 +643,59 @@
                                             $resultfunction = $ResultOverview['result'];
                                             break;                    
                                     }
-
                                 }
-
-
                         return array('debug'=>$ActionLog, 'result'=>$resultfunction, 'ID'=>$AddedID);
                     }
+
+        ### mail sender ###
+
+        
+
+        function sendMail($subject, $reciever, $message, $debug){
+
+            require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
+            require '/usr/share/php/libphp-phpmailer/class.smtp.php';
+            
+            $mail = new PHPMailer;
+            $mail->setFrom('rhmhendriks@rhmhendriks.nl');
+            $mail->addAddress($reciever);
+            $mail->Subject = $subject;
+            $mail->Body = file_get_contents("../$subject");
+            $mail->IsSMTP();
+            $mail->Host = '192.168.156.215';
+            $mail->SMTPAuth = true;
+            $mail->Port = 25;
+
+            //Set your existing gmail address as user name
+            $mail->Username = "rhmhendriks@rhmhendriks.nl";
+
+            //Set the password of your gmail address here
+            $mail->Password = 'R0n@ld1999-1705';
+            if(!$mail->send()) {
+                echo 'Email is not sent.';
+                echo 'Email error: ' . $mail->ErrorInfo;
+            } else {
+                
+            }
+            
+            /*
+            //Let's prepare the mail.
+            $to         =       $reciever;
+            $subject    =       $subject;
+            $headers    =       "From: webmaster.it4all@rhmhendriks.nl\r\n";
+            $headers    .=      "Reply-To: noreply@rhmhendriks.nl\r\n";
+            $headers    .=      "MIME-Version: 1.0\r\n";
+            $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            
+            $messageToSend    =       "../_php/";
+            $messageToSend    .=      $message; 
+
+            require $messageToSend;
+
+        // Let's send thme mail
+            mail($to, $subject, $VerMail, $headers);
+            $debug .= "An email was send to $to with $subject as subject.";*/
+        }
 
 
         
