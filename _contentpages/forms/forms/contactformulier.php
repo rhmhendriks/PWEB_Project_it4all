@@ -10,7 +10,7 @@ Last updated on 12/11/2019 at 15:56 PM
 
  -->
 <div id="contact_form">
-	<form method="post" action="../_php/formulieren/process_contactform.php">
+	<form method="post" action="../process/process_contactform.php">
 		<?php if (isset($_GET['result'])){
 			echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 		} ?>

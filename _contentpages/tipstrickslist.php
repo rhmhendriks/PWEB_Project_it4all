@@ -74,11 +74,11 @@
 					
 					echo '<div id="content">';
 					echo '<div id="tipsTricksImage">';
-					echo	'<a href="index.php?page=tiptrick&ID=' . $PageID . '"><img src="_images/NoPic.png"></a>';
+					echo	'<a href="../index.php?page=tiptrick&ID=' . $PageID . '"><img src="../_images/NoPic.png"></a>';
 					echo '</div>';
 					
         			echo '<div id="tipsTricksInfo">';
-					echo 	'<h2 class="tipsTricksTitleList"><a href="index.php?page=tiptrick&ID=' . $PageID . '">' . $PageTitle . '</a></h2>';
+					echo 	'<h2 class="tipsTricksTitleList"><a href="../index.php?page=tiptrick&ID=' . $PageID . '">' . $PageTitle . '</a></h2>';
 					echo 	'<h5 class="datumAuteurList">' . $Date . " " . $Author . '</h5>';
 					echo 	'<p class="tipsTricksContentList">';
 					echo 		$Content;
@@ -91,7 +91,7 @@
 			/*
 					// De pagina opmaken
 					echo '<div id="tipsTricksDiv">';
-					echo	'<a href="index.php?page=tiptrick&ID=' . $PageID . '"><img src="_images/NoPic.png"></a>';
+					echo	'<a href="../index.php?page=tiptrick&ID=' . $PageID . '"><img src="_images/NoPic.png"></a>';
 					echo 		'<h2 class="tipsTricksTitle">'; 
 					echo 	$PageTitle;
 					echo 		'</h2>';

@@ -4,7 +4,7 @@
 } else {
 	echo '
 <div id="artikelgroep_form">
-		<form method="post" action="../_php/formulieren/process_ArtikelGroep.php">
+		<form method="post" action="../process/process_ArtikelGroep.php">
 			'; if (isset($_GET['result'])){
 				echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 			} echo '

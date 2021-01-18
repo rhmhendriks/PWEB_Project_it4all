@@ -67,7 +67,7 @@
 			echo		'<h5 class="datumAuteur">';
 			echo 		$Date . " " . $Author;
 			echo		'</h5>';
-			echo		'<img src="_images/NoPic.png">';
+			echo		'<img src="../_images/NoPic.png">';
 			echo		'<br>';
 			echo		'<br>';
 			echo		'<p class="tipsTricksContent">';

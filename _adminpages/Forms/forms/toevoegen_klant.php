@@ -3,7 +3,7 @@
 		Laatste update: 18:11, 27-10-2019 door Ronald HM Hendriks
 -->
 <div id="toevoegen_klant_form">
-	<form method="post" action="../_php/formulieren/process_NewCustomer.php">
+	<form method="post" action="../process/process_NewCustomer.php">
 		<?php if (isset($_GET['result'])){
 			echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 		} ?>

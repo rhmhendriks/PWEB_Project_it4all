@@ -15,7 +15,7 @@ Last updated on 12/11/2019 at 20:54 PM
 } else {
 	echo '
 <div id="toevoegen_media_form">
-	<form method="post" action="../_php/formulieren/process_MediaUpload" enctype="multipart/form-data">
+	<form method="post" action="../process/process_MediaUpload" enctype="multipart/form-data">
 		<h1> Media toevoegen </h1>
 		<div id="afbeeldinggegevens">
 			<label>Afbeelding</label>						<input type="file" name="bestand_uploaden" id="bestand_uploaden">
@@ -36,7 +36,7 @@ Last updated on 12/11/2019 at 20:54 PM
 <?php
 
 // Verbinding met Initialize vaststellen
-require('../_init/initialize.php');
+require('../../_init/initialize.php');
 
 // wegschrijven naar variabele
 $Article = ($_POST['artikel']);

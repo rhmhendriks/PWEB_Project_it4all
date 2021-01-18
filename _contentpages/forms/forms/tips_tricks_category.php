@@ -4,7 +4,7 @@
 } else {
 	echo '
 <div id="tipstrickscategory_form">
-	<form method="post" action="../_php/formulieren/process_TipTrickCategory.php">
+	<form method="post" action="../process/process_TipTrickCategory.php">
 		'; if (isset($_GET['result'])){
 			echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 		} echo '

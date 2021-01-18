@@ -14,7 +14,7 @@ Last updated on 27/10/2019 at 3:01 PM
 } else {
 	echo '
 <div id="tiptrick_form">
-	<form method="post" action="../_php/formulieren/process_NewTipTrick.php" enctype="multipart/form-data">
+	<form method="post" action="../process/process_NewTipTrick.php" enctype="multipart/form-data">
 			'; if (isset($_GET['result'])){
 				echo '<pre><p style="color:red">' . $_GET['result'] . '</p></pre>'; 
 			} echo '

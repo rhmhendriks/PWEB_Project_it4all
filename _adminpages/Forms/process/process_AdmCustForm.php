@@ -98,7 +98,7 @@
                                             $headers    .=      "MIME-Version: 1.0\r\n";
                                             $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
                                                                         
-                                            require "../Auth/MAIL_Verification.php";
+                                            require "../../_AuthSys/Authentication_mails/MAIL_Verification.php";
                                                                         
                                             // Nu gaan we de mail verzenden
                                             mail($to, $subject, $VerMail, $headers);
@@ -114,7 +114,7 @@
                                                 $headers    .=      "MIME-Version: 1.0\r\n";
                                                 $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
                                                                             
-                                                require "../Auth/MAIL_Welcome.php";
+                                                require "../../_AuthSys/Authentication_mails/MAIL_Welcome.php";
                                                                     
                                             // Nu gaan we de mail verzenden
                                             mail($to, $subject, $WelMail, $headers);

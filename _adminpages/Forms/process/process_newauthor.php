@@ -21,7 +21,7 @@
         }
         // terugsturen naar het formulier met feedback informatie
         $output = $message;
-        $redirectlocation = "../..//index.php?page=forms&form=author_toevoegen". "&result=" .urlencode($output);
+        $redirectlocation = "../../index.php?page=forms&form=author_toevoegen". "&result=" .urlencode($output);
         immediate_redirect_to($redirectlocation);
     }
 ?>

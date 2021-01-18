@@ -19,7 +19,7 @@
 	  $message = "";
 	  $Debug = "";
 	
-	include "_init/initialize.php";
+	include "../_init/initialize.php";
 	
 	// Maken van het statement 
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection

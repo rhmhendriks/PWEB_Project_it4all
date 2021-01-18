@@ -9,7 +9,7 @@
 } else {
 	echo '
 <div id ="toevoegen_artikel_form">
-	<form method="post" action="../_php/formulieren/process_newarticle.php" enctype="multipart/form-data">
+	<form method="post" action="../process/process_newarticle.php" enctype="multipart/form-data">
 		'; if (isset($_GET['result'])){
 			echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 		} echo '

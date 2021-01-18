@@ -13,7 +13,7 @@ Last updated on 12/11/2019 at 13:39 PM
 } else {
 	echo '
 		<div id="admin_form">
-			<form method="post" action="/_php/formulieren/process_AdmCustForm.php"> ';
+			<form method="post" action="../process/process_AdmCustForm.php"> ';
 					 if (isset($_GET['result'])){
 						echo '<pre><p style="color:red">' . $_GET['result'] . '</p></pre>'; 
 					} 

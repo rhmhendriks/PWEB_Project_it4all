@@ -13,7 +13,7 @@ Last updated on 12/11/2019 at 15:39 PM
 } else {
 	echo '
 <div id="author_form">
-	<form method="post" action="../_php/formulieren/process_newauthor.php">
+	<form method="post" action="../process/process_newauthor.php">
 			'; if (isset($_GET['result'])){
 				echo '<p style="color:red">' . $_GET['result'] . '</p>'; 
 			} echo '

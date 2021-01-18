@@ -79,7 +79,7 @@
 					echo 		"&euro;$SellingPrice";
 					echo	  '</h3>';
 					echo	'<div id="temporaryform">';
-					echo	  '<form class="AtricleForm" action="_Ordering/add.php" method="post">';
+					echo	  '<form class="AtricleForm" action="../_Ordering/cart/add.php" method="post">';
 					echo			'<b>Aantal:</b>';
 					echo 			'<input type="text" name="NumberBought" size="2" maxlength="2" value="1"> ';
 					echo			'<input type="submit" value="Toevoegen aan winkelwagen" />';

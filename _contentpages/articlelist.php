@@ -65,16 +65,16 @@
 					echo '<br>';
 					echo '<div id="content">';
 					echo	'<div id="imageDiv">';
-					echo		'<a href="index.php?page=article&ID=' . $ArticleID . '"><img src="_images/NoPic.png"></a>';
+					echo		'<a href="../index.php?page=article&ID=' . $ArticleID . '"><img src="../_images/NoPic.png"></a>';
 					echo		'<p class="artikelInfoList">Artnr.' .  $ArticleID . '</p>';
 					echo	'</div>';
 						
 					echo	'<div id="infoDiv">';
-					echo		'<h1 class="articleTitleList"><a class="articleTitleListA" href="index.php?page=article&ID=' . $ArticleID . '">' . $ArticleTitle . '</a></h1>';
+					echo		'<h1 class="articleTitleList"><a class="articleTitleListA" href="../index.php?page=article&ID=' . $ArticleID . '">' . $ArticleTitle . '</a></h1>';
 					echo		$StockSentance;
 					echo		'<h3 class="priceList">&euro;' . $SellingPrice . '</a></h3>';
 					echo	'<div id="temporaryform">';
-					echo		'      <form class="AtricleForm" action="_Ordering/add.php" class="AtricleForm" method="post">
+					echo		'      <form class="AtricleForm" action="../_Ordering/add.php" class="AtricleForm" method="post">
 														  <input type="hidden" name="ArticleID" id="ArticleID" value="' . $ArticleID . '">
 										<b>Aantal:</b>    <input type="text" name="NumberBought" size="2" maxlength="2" value="1">' . " " . '
 										<input type="submit" value="Toevoegen aan winkelwagen" />

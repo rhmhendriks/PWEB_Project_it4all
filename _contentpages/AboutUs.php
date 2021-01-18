@@ -11,7 +11,7 @@
 		Onze website is opgebouwd door Luc Willemse, Ronald Hendricks, Jurre de Vries en Rienan Poortvliet. Wij zijn vier jongens van de opleiding HBO-ICT, die de opdracht hebben gekregen om een website in elkaar te zetten. Wij zijn halverwege September 2019 begonnen met het maken van deze website en hij is opgeleverd op 13 november 2019.
   </p>
   <br>
-  <img src="_images/about.jpeg" alt="eigenarenfoto" height="500">
+  <img src="../_images/about.jpeg" alt="eigenarenfoto" height="500">
   <br>
   <div class="mapouter">
   	<div class="gmap_canvas">
