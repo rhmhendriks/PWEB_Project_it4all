@@ -139,7 +139,7 @@ else
         echo '</table>';
         echo ' <div id="temporaryform">;
          <form method="post" action="" > <input type="submit" name="legen" value="Winkelwagen leeghalen"></form><br />
-         <form method="post" action="index.php?page=Order&Order=afreken" > <input type="submit" name="legen" value="afrekenen"></form>
+         <form method="post" action="../../index.php?page=Order&Order=afreken" > <input type="submit" name="legen" value="afrekenen"></form>
          </div>';
 
     if (isset($_POST['legen'])) {
