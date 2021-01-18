@@ -7,8 +7,9 @@
 
 	<h1> Welkom op onze website IT4ALL </h1>
 	<br>
+	<p>Klanten van ons dienen eerst in te loggen, zodat zij bij hun gegevens kunnen.</p>
 	<br>
-	<p style="color:red;">Deze website is een schoolproject! Bestelde producten zullen dan ook NOOIT aankomen, u zult alleen een mail kregen met deze boodschap. Accounts kunnen wel aangemaakt worden op deze site, en deze worden uiteraard met de hoogst mogelijke beveiliging toegevoegd aan de database. Dit wil zeggen dat uw persoonsgegevens en wachtwoord versleuteld worden opgeslagen (let op! Vul desondanks NOOIT uw eigen bangegevens in maar gebruik een dummy zoals GB33BUKB20201555555555 (dit is een genegeerd IBAN voor testdoeleinden). </p>
+	<p style="color:red;">Deze website is een schoolproject! Bestelde producten zullen dan ook NOOIT aankomen, u zult alleen een mail krijgen met deze boodschap. Accounts kunnen wel aangemaakt worden op deze site, en deze worden uiteraard met de hoogst mogelijke beveiliging toegevoegd aan de database. Dit wil zeggen dat uw persoonsgegevens en wachtwoord versleuteld worden opgeslagen (let op! Vul desondanks NOOIT uw eigen bangegevens in maar gebruik een dummy zoals GB33BUKB20201555555555 (dit is een genegeerd IBAN voor testdoeleinden). </p>
 	<br>
 	<br>
 
