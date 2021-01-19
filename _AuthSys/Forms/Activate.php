@@ -6,10 +6,10 @@
                      hier is voor gekozen in verband met gebruikersgemak voor de eindgebruiker.  
 -->
 <div id="Activate_form">
-	<?php session_start(); include "../../_AuthSys/Controllers/Activation_Initializer.php"; ?>
+	<?php session_start(); require "Activation_Initializer.php"; ?>
 	<form method="post" action="../../_AuthSys/Controllers/Activation_Controller.php">
 		<h1> Activatieformulier </h1>
-        <?php echo '<p style="color:Red">' . $message . '</p>'; if (DebugisOn) {echo '<p style="color:Red">' . $debug . '</p>';} ?>
+        <?php echo '<p style="color:Red">' . $CustomerID . '</p>'; if (DebugisOn) {echo '<p style="color:Red">' . $debug . '</p>';} ?>
         <?php if (isset($_SESSION['Message_Act'])){ echo '<p style="color:Red">' . $_SESSION['Message_Act'] . '</p>'; } if (DebugisOn && isset($_SESSION['Debug_Act'])){ echo '<p style="color:Red">' . $_SESSION['Debug_Act'] . '</p>';}?>
         <div id="activatiegegevens">
             																		<input type=text name="token" id="token" value="<?php echo $_GET['token'];?>">
