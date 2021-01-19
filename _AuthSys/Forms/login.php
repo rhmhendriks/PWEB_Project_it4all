@@ -1,6 +1,6 @@
 <?php session_start() ?>
     <div id="loginform">
-        <form method="post" action="../_php/Auth/SignIn_Controller.php" class="authenticationforms-container">
+        <form method="post" action="../_AuthSys/Controllers/SignIn_Controller.php" class="authenticationforms-container">
         <h1> Inloggen </h1>
                 <?php if (isset($_SESSION['Message_Act']) || isset($_SESSION['Message_si'])){ echo '<p style="color:Red">' . $_SESSION['Message_Act'] . "<br>" . $_SESSION['Message_si'] . '<br></p>'; } if (DebugisOn && isset($_SESSION['Debug_Act']) || DebugisOn && isset($_SESSION['Debug_si']) ){ echo '<p style="color:Red">' . $_SESSION['Debug_Act'] . "<br" . $_SESSION['Debug_si'] . '</p>';}?>
                 <div id="inloggengegevens">

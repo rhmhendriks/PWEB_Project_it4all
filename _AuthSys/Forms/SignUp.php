@@ -1,12 +1,12 @@
 <!-- 	Geschreven door: Luc Willemse
 		Gaat over: formulier, toevoegen klant.
-		Laatste update: 07:36, 13-11-2019 door Rienan Poortvliet
+		Laatste update: 21:02 18-01-2020 door Ronald Hendriks
 
-		Wijzigingen: Formulierstijl samengetrokken met adminform. Formulier is nu tevens het registratieformulier, 
-					 hier is voor gekozen in verband met het gebruikersgemak van de eindgebruiker. 
+		Wijzigingen: Verwijzing in POSt actie aangepast aan de nieuwe structuur.
+
 -->
 <div id="SignUp_form">
-	<form method="post" action="../_php/Auth/SignUp_Controller.php">
+	<form method="post" action="../_AuthSys/Controllers/SignUp_Controller.php">
 		<h1> Registreren als klant </h1>
 		<?php 
 		session_start();

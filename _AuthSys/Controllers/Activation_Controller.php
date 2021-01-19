@@ -4,6 +4,7 @@
         $message = "";
         $debug = "";
         session_start(); // De sessie wordt gestart
+        $options = ['cost' => 12]; // increate costts for better password encryption
 
     // We checken of het formulier is ingestuurd
         if (isset($_POST['Activeren'])){
@@ -98,7 +99,7 @@
                                                 } // afsluiten statement gefaald.
                                                 
                                                 // Mail verzenden aan de gebruiker
-                                                    sendMail('IT4ALL - Activeer uw account!', $Email, "Auth/MAIL_VerificationSecond.php", $debug);
+                                                    //sendMail('IT4ALL - Activeer uw account!', $Email, "Auth/MAIL_VerificationSecond.php", $debug);
                                                     $debug .= "<br> The activationcode failed, there are too many incorrect attemps. <br> there was a new activationcode generated and mailed to the user.";
 
                                     } // Afsluiting Geen pogingen meer
@@ -123,7 +124,7 @@
                                                     $debug .= "<br> The account has been verified. It is now possible for the user $Email to logon on our site";
 
                                                     // we sturen een welkomstmail!                                                        
-                                                        sendMail('IT4ALL - Welkom op onze site!', $Email, "/Auth/MAIL_Welcome.php", $debug);
+                                                        //sendMail('IT4ALL - Welkom op onze site!', $Email, "/Auth/MAIL_Welcome.php", $debug);
                                                         $redirectlocation = "../../index.php?page=auth&auth=login";
                                                 } else { // Afsluiting statement ran successfull!
                                                     $message .= "Er is iets fouts gegaan probeer het later opnieuw, blijf je deze melding zien? Neem dan contact met onts op via de contactknop rechts in het menu.";
@@ -137,5 +138,5 @@
         $_SESSION['Debug_Act'] = $debug;
         immediate_redirect_to($redirectlocation);
         } // Afluiting formulier is ingevuld
-
+        
 ?>

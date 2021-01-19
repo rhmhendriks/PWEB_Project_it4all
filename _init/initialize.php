@@ -19,4 +19,8 @@
         // include basic libary's
         require "config.php";
         require "functionlibary.php";
+        #require "sendMail.php";
+        // load composer packages
+        #require __DIR__ . '/vendor/autoload.php';
+        #require __DIR__ . '/vendor/swiftmailer/swiftmailer/lib/swift_required.php';
 ?>

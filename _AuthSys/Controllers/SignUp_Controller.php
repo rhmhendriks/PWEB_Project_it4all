@@ -29,6 +29,11 @@ require "../../_init/initialize.php";
                         if (isset($_POST['BIC'])){ $BIC = CheckValue($_POST['BIC']);} else { $BIC = "NULL";};
                         $IBAN = CheckValue($_POST['IBAN']);
                         $PrivacyStatement = CheckValue($_POST['PrivacyStatement']);
+                        if($PrivacyStatement == "Accepted"){
+                            $PrivacyStatement = true;
+                        } else {
+                            $PrivacyStatement = false;
+                        }
                         $token = bin2hex(random_bytes(50)); // Een uniek token genereren ten behoeve van mail verificatie
                         $IsAdmin = false;
 
@@ -59,7 +64,21 @@ require "../../_init/initialize.php";
                                                             $Debug .= $AddUser['debug'];
                                                             // Nu gaan we de verificatiemail versturen
                                                                 // We gaan de mail voorbereiden
-                                                                    sendMail('IT4ALL - Activeer uw account!', $Email, "MAIL_Verification.php", $debug);
+                                                                $to         =       $Email;
+                                                                $subject    =       'IT4ALL - Activeer uw account!';
+                                                                $headers    =       "From: rhmhendriks@rhmhendriks.nl\r\n";
+                                                                $headers    .=      "Reply-To: rhmhendriks@rhmhendriks.nl\r\n";
+                                                                $headers    .=      "MIME-Version: 1.0\r\n";
+                                                                $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                                                                
+                                                                require "../Authentication_mails/MAIL_Verification.php";
+                                                                
+                                                                // Nu gaan we de mail verzenden
+                                                                    mail($to, $subject, $VerMail, $headers);
+                                                                
+                                                                // Nu nog een instructie voor de gebruiker
+                                                                    $Message .= "Je bent succesvol geristreerd bij IT4ALL!" . "<br>". "Binnen enkele ogenblikken ontvang je een activatiemail op adres:" . $Email;
+                                                                    $Debug .= 'The user has been succesfuly registered';
 
                                                                     // Nu nog een instructie voor de gebruiker
                                                                         $Message .= "Je bent succesvol geristreerd bij IT4ALL!" . "<br>". "Binnen enkele ogenblikken ontvang je een activatiemail op adres:" . $Email;

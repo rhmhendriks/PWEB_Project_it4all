@@ -14,12 +14,8 @@
 
     // We checken of er een token is meegegeven in de URL, zo niet dan komt er een foutmelding. 
         if (!isset($_GET['token'])){
-            if (isset($_GET['note'])){
-
-            } else {
             $message .= '<h1> Pagina niet rechtreeeks toegangkelijk! </h1><pre><pre>';
             $message .= 'Deze pagina is beveiligd en kan enkel aangeroepen worden via een mail verificatiesysteem. Gebruik AUB de in link de mail.';
-            }
         } else {
             $Token = $_GET['token'];
             // We maken een connectie met de database om de Form Values op te halen

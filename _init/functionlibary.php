@@ -662,7 +662,7 @@
             $mail->Subject = $subject;
             $mail->Body = file_get_contents("../$subject");
             $mail->IsSMTP();
-            $mail->Host = '192.168.156.215';
+            $mail->Host = 'mail.rhmhendriks.nl';
             $mail->SMTPAuth = true;
             $mail->Port = 25;
 
@@ -672,8 +672,9 @@
             //Set the password of your gmail address here
             $mail->Password = 'R0n@ld1999-1705';
             if(!$mail->send()) {
-                echo 'Email is not sent.';
-                echo 'Email error: ' . $mail->ErrorInfo;
+                $debug .= "Email is not sent.\n";
+                $debug .= $subject . " " . $reciever;
+                $debug .= 'Email error: ' . $mail->ErrorInfo . "\n";
             } else {
                 
             }
