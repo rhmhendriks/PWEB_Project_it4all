@@ -98,7 +98,7 @@
                                                             // De gebruiker heeft geen pogingen meer over!
                                                                 // We maken een nieuwe ontgrendelcode aan
                                                                     $UnlockCode = mt_rand(10000000, 99999999); // Er wordt een nieuwe otgrendelcode gegenereerd
-                                                                    $NewUnlockCodeHash = password_hash($UnlockCode, PASSWORD_DEFAULT); // We maken een encrypte versie van de opntgrendelcode
+                                                                    $NewUnlockCodeHash = password_hash($UnlockCode, PASSWORD_DEFAULT, $options); // We maken een encrypte versie van de opntgrendelcode
                                                                     $token = bin2hex(random_bytes(50));
                                                                     $statementNewUnlockCode = "UPDATE Users SET `Password`='$NewUnlockCodeHash', `Number_Login_Attempts`=0, `Verified`=0, `Token`='$token'   WHERE EMail = '$Email'";
 

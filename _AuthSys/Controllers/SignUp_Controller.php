@@ -7,6 +7,7 @@ require "../../_init/initialize.php";
         $errors = [];
 
 
+
     // Nu maken we de database connectie op
         $Connectionarray = MySqlDo_Connector('Connect');
         // Nu gaan we de database verbinding controleren
@@ -56,7 +57,7 @@ require "../../_init/initialize.php";
                                                     $Debug .= $AddCustomer['debug'];
                                                     $ClientNumber = $AddCustomer['ID']; //
                                                     $ActivationCode = mt_rand(10000000, 99999999);
-                                                    $HashedActivationCode = password_hash($ActivationCode, PASSWORD_DEFAULT);
+                                                    $HashedActivationCode = password_hash($ActivationCode, PASSWORD_DEFAULT, $options);
                                                     $AddUser = MySqlDo('Add', 'User', "$Email", "$ClientNumber", "$HashedActivationCode", 0, 0, 0, "$token", "$PrivacyStatement", '#FFFFFF');
                                                     // We gaan controleren of het statement successvol is uitgevoerd
                                                     if ($AddUser['result']){

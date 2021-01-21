@@ -50,7 +50,7 @@
                             // We gaan de nieuwe activatiecode's genereren en versturen
                                 $tokennew = bin2hex(random_bytes(50)); // Er wordt een (nieuw) token gegenereerd
                                 $ActivationCode = mt_rand(10000000, 99999999); // Een nieuwe activatiecoden word gemaakt
-                                $ActiovationCodeHash = password_hash($ActivationCode, PASSWORD_DEFAULT); // De veilige hash voor de database wordt gemaakt. 
+                                $ActiovationCodeHash = password_hash($ActivationCode, PASSWORD_DEFAULT, $options); // De veilige hash voor de database wordt gemaakt. 
 
                             // We gaan de nieuwe gegevens (met eventueel aangepast mail adres) naar de databse schrijven\
                                 // eerst gaan we kijken of het email adres is verqandere. 

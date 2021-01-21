@@ -4,7 +4,7 @@
         $message = "";
         $debug = "";
         session_start(); // De sessie wordt gestart
-        $options = ['cost' => 12]; // increate costts for better password encryption
+        
 
     // We checken of het formulier is ingestuurd
         if (isset($_POST['Activeren'])){
@@ -86,7 +86,7 @@
                                         // De gebruiker heeft geen pogingen meer over!
                                             // We maken een nieuwe activatiecode aan
                                                 $ActivationCode = mt_rand(10000000, 99999999); // Er wordt een nieuwe activatiecode gegenereerd
-                                                $NewActivationCodeHash = password_hash($ActivationCode, PASSWORD_DEFAULT);
+                                                $NewActivationCodeHash = password_hash($ActivationCode, PASSWORD_DEFAULT, $options);
                                                 $statementNewActivationCode = "UPDATE Users SET `Password`='$NewActivationCodeHash', `Number_Login_Attempts`=0  WHERE Token = '$Token'";
                                                 
                                                 if ($statementrunnedNewActivationCode = $DBconnect->query($statementNewActivationCode)){
@@ -115,7 +115,7 @@
 
                                 } else { // afsluiting wachtwoorden komen niet overeen
                                     // We gaan de activatie van het account voltooien in de database
-                                        $PasswordHash =  password_hash($Password, PASSWORD_DEFAULT); // Het wachtwoord wordt versleute;d
+                                        $PasswordHash =  password_hash($Password, PASSWORD_DEFAULT, $options); // Het wachtwoord wordt versleute;d
                                         // We gaan het statement maken
                                             $statementActivateUser = "UPDATE Users SET `Number_Login_Attempts`=0, `Password`='$PasswordHash', `Verified`=1, `Token`=NULL  WHERE Token = '$Token'";
                                             // We gaan het statement uitvoeren en het resultaat controleren

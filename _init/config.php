@@ -36,6 +36,10 @@
             // Below we have some site settings
             define("imagesfolder", "_images");
             define(MaxLoginAttempts, 5);
+
+            // Security Settings
+            $options = ['cost' => 15]; // increate costts for better password encryption
+            define(MaxLoginAttempts, 5);
         
             // Now we do some development settings
             define("DebugisOn", true)
