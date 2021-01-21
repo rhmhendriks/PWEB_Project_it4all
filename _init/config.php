@@ -20,10 +20,6 @@
     //////////////////////////////////////////////////////////////////////////
     // Added the mail configuration for global use. Also the mail server    //
     // is self-hosted from now on!                                          //
-    //                                                                      //
-    //                                                                      //
-    //                                                                      //
-    //                                                                      //
     //////////////////////////////////////////////////////////////////////////
 
         ### The files start below ###
