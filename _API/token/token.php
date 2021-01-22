@@ -1,37 +1,37 @@
 <?php
-$token = bin2hex(random_bytes(50));
-$valid_til = date("Y/m/d")
-$company = "";
+    require require $_SERVER['DOCUMENT_ROOT']."/_API/API_init.php";
 
-$conn = dbconnection();
-$table_name = "API_token";
+    $token = bin2hex(random_bytes(50));
+    $valid_til = date("Y/m/d");
+    $company = "";
 
-function insertToken() {
 
-    // Insert the query
-    $query = "INSERT INTO " . $table_name . "
-        SET
-            Token = $token,
-            Valid til = $valid_til,
-            Company = $company";
+    // Setup connection to databse
+        $connectionArray = MySqlDo_Connector('Connect');
+        $conn = $ConnectionArray['connection'];
 
-    // Prepare the query
-    $stmt = $conn->prepare($query);
+    function insertToken() {
 
-    // Executing the query
-    if($stmt->execute()){
-        return true;
+        // Insert the query
+        $query = "INSERT INTO" . APItableName . "SET Token = " . $token . ", Valid = " . $valid_til . ", Company = " . $company;
+
+        // Prepare the query
+        $stmt = $conn->prepare($query);
+
+        // Executing the query
+        if($stmt->execute()){
+            return true;
+        }
+
+        return false;
     }
 
-    return false;
-}
+    function dbconnection() {
 
-function dbconnection() {
+    }
 
-}
-
-// Command to get data from database between two dates
-// SELECT * FROM Meting
-// WHERE Datum BETWEEN '2020-12-17' AND '2020-12-18'
-// AND '2020-12-18'
+    // Command to get data from database between two dates
+    // SELECT * FROM Meting
+    // WHERE Datum BETWEEN '2020-12-17' AND '2020-12-18'
+    // AND '2020-12-18'
 ?>
