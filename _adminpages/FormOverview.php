@@ -7,6 +7,8 @@
 <div id="adminlist">
 	<div id="formulierenlist">
 		<h2>Formulieren</h2>
+		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=add_company">Add a company</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=add_user_role">Add a user role</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=toevoegen_artikel">Artikel toevoegen</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=admin_form">Admin toevoegen</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=toevoegen_klant">Klant toevoegen</a>
