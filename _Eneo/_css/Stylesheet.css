@@ -158,6 +158,15 @@ nav ul li ul li a:hover {
 /*                      \\\\\ Burger animation styling /////        */
 /*                      \\\\\ Navigation styling /////              */
 
+/*                      \\\\\ Content styling /////                 */
+#content {
+    flex: 1 0 auto;
+    display: block;
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*                      \\\\\ Content styling /////                 */
+
 /*                      \\\\\ Form required styling /////           */
 .redStar {
     color: red;
