@@ -14,6 +14,7 @@
 
         // Insert the query
         $query = "INSERT INTO" . APItableName . "SET Token = " . $token . ", Valid = " . $valid_til . ", Company = " . $company;
+        // $query = "INSERT INTO APItableName SET Token = $token, Valid = $valid_til, Company = $company";
 
         // Prepare the query
         $stmt = $conn->prepare($query);
@@ -26,8 +27,24 @@
         return false;
     }
 
-    function dbconnection() {
+    function selectToken() {
 
+        // Select the query
+        $query = "SELECT" . * . "FROM" . APItableName . "WHERE Token = " . $token; //. ", Valid = " . $valid_til . ", Company = " . $company
+
+        // Prepare the query
+        $stmt = $conn->prepare($query);
+
+        while($row = mysql_fetch_array($result)) {
+            echo $row['column_name']; // Print a single column data
+            echo print_r($row);       // Print the entire row data
+        }
+        // Executing the query
+        if($stmt->execute()){
+            return true;
+        }
+
+        return false;
     }
 
     // Command to get data from database between two dates
