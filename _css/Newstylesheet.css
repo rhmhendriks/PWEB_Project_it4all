@@ -526,6 +526,12 @@ nav ul li ul li a:hover {
     display: flex;
     flex-direction: column;
 }
+/*                          \\\\\ Two factor auth styling /////                         */
+#TwoFactor {
+    display: flex;
+    flex-direction: column;
+}
+/*                          \\\\\ Two factor auth styling /////                         */
 #PersoonsGegevens, #AdresGegevens, #BetaalGegevens, #AccountGegevens {
     width: 80%;
     margin: auto;
@@ -1184,6 +1190,15 @@ nav ul li ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 /*activatie form opmaak */
+
+/*                      \\\\\ Adduserrole styling /////                     */
+
+/*                      \\\\\ Adduserrole styling /////                     */
+
+/*                      \\\\\ Addcompany styling /////                     */
+
+/*                      \\\\\ Addcompany styling /////                     */
+
 
 
 
