@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<div id="homeHeader">
+	<div class="homeTekst">
 	<h1> Welkom op onze website IT4ALL </h1>
 	<br>
 	<br>
@@ -14,7 +14,7 @@
 	<br>
 	</div>
 
-	<div id="homePictures">
+	<div class="homePictures">
 	<p><a href="../index.php?page=articlelist&ID=100"><img src="../_images/Home/laptop.jpg" alt="laptop" height="200"></a>
 		<a href="../index.php?page=articlelist&ID=104"><img src="../_images/Home/smartphone.jpg" alt="telefoon" height="200"></a>
 		<a href="../index.php?page=articlelist&ID=109"><img src="../_images/Home/tv.jpg" alt="tv" height="200"></a>
@@ -22,7 +22,7 @@
 	</p>
 	</div>
 	<br><br>
-	<div id="homeFooter">
+	<div class="homeTekst">
 	<h3>Koop nu uw nieuwe snufjes</h3>
 	</div>
 

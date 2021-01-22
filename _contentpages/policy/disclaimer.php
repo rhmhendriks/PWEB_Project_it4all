@@ -5,7 +5,7 @@
 	<title>Disclaimer</title>
   </head>
   <body>
-	<div id="disclaimer">
+	<div class="disclaimer">
 	<h1>Disclaimer</h1>
 
 		<p>IT4ALL besteedt de uiterste zorg aan de betrouwbaarheid en actualiteit van de gegevens op haar website. Desondanks kunnen onjuistheden en onvolledigheden voorkomen. IT4ALL behoudt zich het recht voor de inhoud van de informatie op de website te wijzigen.</p>

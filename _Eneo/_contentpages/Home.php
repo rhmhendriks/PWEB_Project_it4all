@@ -10,11 +10,11 @@
     </div>
 
     <?php
-        echo '<div id="filter">';
+        echo '<div class="filter">';
         echo 'hier moeten de filters';
         echo '</div>';
 
-        echo '<div id="graph">';
+        echo '<div class="graph">';
         echo 'hier moet de graph of tabel';
         echo '</div>'
     ?>
