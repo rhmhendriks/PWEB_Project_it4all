@@ -11,7 +11,7 @@ class API {
     }
 
     function outputData() {
-        $select = $connect->prepare("SELECT * FROM to_do ORDER BY id");
+        $select = $connect->prepare("SELECT * FROM Meting ORDER BY id"); // Moet aangepast worden
         if($select->execute()) {
             while($row = $select->fetch(PDO::FETCH_ASSOC)) {
                 $data[] = $row;
