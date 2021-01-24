@@ -7,7 +7,7 @@ class API {
     }
 
     function dbConnection() {
-        $connect = new PDO("mysql:host=localhost:3306;dbname=IT4all NEW", "it4alldbuser", "It4llit4all2019!"); # Databasename, username and password haven't been specified yet.
+        $connect = new PDO("mysql:host=localhost:3306;dbname=unwdmi_ron", "java", "J@va2020!"); # Databasename needs to be specified with the table "Meting".
     }
 
     function outputData() {
