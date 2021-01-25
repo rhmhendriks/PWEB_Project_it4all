@@ -5,14 +5,16 @@ if (isset($_GET['form'])){
     $form = $_GET['form'];
 
     switch ($type):
-        case "content":
-            $dir = _"contentpages/forms/";
-
-
-
-
-
-
+        case "content" :
+            $dir = "_contentpages/forms/forms/";
+            break;
+        case "admin" :
+            $dir = "_adminpages/Forms/forms/";
+            break;
+        case "ordering" :
+            $dir = "_Ordering/Forms/";
+            break;
+        
 
     include "$dir/$form.php";
 }
