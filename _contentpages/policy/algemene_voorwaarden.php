@@ -12,6 +12,8 @@
 		<p>De algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes en overeenkomsten voor bestelling, betaling en overdracht tussen de webwinkel en klanten.</p>
 		
 		<p>Alle gepubliceerde en decommuniceerde tarieven zijn tarieven exclusief 21% BTW.</p>
+
+		<p>Een account op onze site is verbonden aan één persoon.</p>
 		
 	<h2>2.Aansprakelijkheid</h2>
 	
@@ -19,7 +21,9 @@
 		
 	<h2>3.Annulering door de webwinkel</h2>
 	
-		<p>De webwinkel streeft ernaar de bestelde artikelen af te kunnen leveren. Als door onvoorziene omstandigheden een bestelling moet worden geannuleerd of verplaatst, geldt met betrekking tot de aansprakelijkheid voor schade die kan ontstaan als gevolg van annulering door de webwinkel, dat het betaalde bedrag door de webwinkel wordt uitgekeerd.</p>
+		<p>	De webwinkel streeft ernaar de bestelde artikelen af te kunnen leveren. Als door onvoorzien omstandigheden een bestelling moet worden geannuleerd of verplaatst, geld met betrekking tot de aansprakelijkheid voor schade die kan ontstaan als gevolg van de annulering. Door de webwinkel, dat het betaald bedrag door de webwinkel wordt uitgekeerd.
+
+			Wanneer de klant een dienst wil annuleren zijn zij verplicht alle gemaakte kosten die op dat moment zijn gemaakt wel te vergoeden.</p>
 	
 	<h2>4.Vertrouwelijkheid</h2>
 	

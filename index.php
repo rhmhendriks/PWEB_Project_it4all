@@ -25,7 +25,7 @@
         <?php
             if (isset($_GET['page'])){
                 $page = CheckValue($_GET['page']);
-                include "$page.php";
+                include $_SERVER['DOCUMENT_ROOT'] ."/_contentpages/$page.php";
             } else {
                 include "_contentpages/Home.php";
             }

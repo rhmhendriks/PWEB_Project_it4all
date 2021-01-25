@@ -99,7 +99,7 @@
                                                 } // afsluiten statement gefaald.
                                                 
                                                 // Mail verzenden aan de gebruiker
-                                                    //sendMail('IT4ALL - Activeer uw account!', $Email, "Auth/MAIL_VerificationSecond.php", $debug);
+                                                    sendMail('IT4ALL - Activeer uw account!', $Email, "Auth/MAIL_VerificationSecond.php", $debug);
                                                     $debug .= "<br> The activationcode failed, there are too many incorrect attemps. <br> there was a new activationcode generated and mailed to the user.";
 
                                     } // Afsluiting Geen pogingen meer
