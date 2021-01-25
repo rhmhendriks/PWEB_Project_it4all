@@ -1,7 +1,7 @@
 <?php /* IsAdmin should be IsEneo or IsEneoAdmin */
-if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){ 
-    header("location:index.php?page=auth&auth=AdminNoAccess");
-} else {
+//if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){ 
+    //header("location:index.php?page=auth&auth=AdminNoAccess");
+//} else {
     echo '
     <div id="ipwhitelist_form">
 		<form method="post" action="../process/process_IPWhitelist.php">
@@ -20,5 +20,5 @@ if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
 		</form>
     </div>
 ';
-}
+//}
 ?>
