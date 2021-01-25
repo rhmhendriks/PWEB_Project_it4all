@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eneo index</title>
-    <link href="_css/Stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="_css/Stylesheet.css" type="text/css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <p><?php echo WelcomeUser(); ?></p>
     </header>
     <?php
-        require "../_Scripting/menu/menu.php";
+        require "_Scripting/menu/menu.php";
     ?>
 
     <div id="content">
@@ -27,7 +27,7 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                include "_contentpages/Home.php";
+                include "_contentpages/Forms/forms/ipwhitelist.php";
             }
         ?>
     </div>
@@ -40,8 +40,8 @@
 
     </footer>
 
-<script src="../_Scripting/menu/menu.js"></script>
-<script src="../_Scripting/Coockie-popup/Coockie.js"></script>
+<script src="_Scripting/menu/menu.js"></script>
+<script src="_Scripting/Coockie-popup/Coockie.js"></script>
 
 </body>
 
