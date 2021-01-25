@@ -13,8 +13,9 @@
     function insertToken() {
 
         // Insert the query
-        $query = "INSERT INTO" . APItableName . "SET Token = " . $token . ", Valid = " . $valid_til . ", Company = " . $company;
+        $query = "INSERT INTO" . APItableName . "SET Token = " . "$token" . ", Valid = " . $valid_til . ", Company = " . $company; // Double quotes added
         // $query = "INSERT INTO APItableName SET Token = $token, Valid = $valid_til, Company = $company";
+        // $query = "INSERT INTO APItableName (Token, Valid, Company) VALUES ($token, $valid_til, $company)";
 
         // Prepare the query
         $stmt = $conn->prepare($query);
@@ -31,14 +32,20 @@
 
         // Select the query
         $query = "SELECT" . * . "FROM" . APItableName . "WHERE Token = " . $token; //. ", Valid = " . $valid_til . ", Company = " . $company
+        $result = mysqli_query($conn, $sql); // Erase line after testing
 
         // Prepare the query
         $stmt = $conn->prepare($query);
 
-        while($row = mysql_fetch_array($result)) {
-            echo $row['column_name']; // Print a single column data
-            echo print_r($row);       // Print the entire row data
+        // Erase after testing. Select test
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysql_fetch_array($result)) {
+                echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+            }
+        } else {
+            echo "No results!";
         }
+
         // Executing the query
         if($stmt->execute()){
             return true;
