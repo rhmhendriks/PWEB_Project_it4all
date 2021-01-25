@@ -25,9 +25,24 @@
             $resultarray = runSelectStatement($stat);
 
             if ($resultarray['result']){
-                // we gaan parsen
+                // we will parse
+                // parsing to .json
+                echo $resultarray['result']
+                json_encode($resultarray);
+                // parsing to .xml
+                $xml = new XMLWriter();
+                $xml->openUri("php://output");
+                $xml->setIndent(true);
+
+                $xml->startElement('token'); // Creating the start element tag
+
+                $xml->endElement(); // End the current element
+
+                while ($row = mysql_fetch_assoc($resultaat)) {
+                    // Write to XML
+                }
             } else { 
-                // we doen niets. 
+                // we do nothing
             }
 
 
