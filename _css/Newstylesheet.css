@@ -401,6 +401,40 @@ nav ul li ul li a:hover {
     margin: auto;    
 }
 /*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+
+/*                      \\\\\ About Us styling /////                    */
+#aboutus {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+}
+#aboutus h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 10px;
+    text-align: center;
+}
+#aboutus p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 15px;
+    width: 75%;
+    margin-bottom: 10px;
+}
+#aboutus img {
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*                      \\\\\ About us styling /////                    */
+
+
 /* temporaryform opmaak */
 #temporaryform form {
     text-align: left;
