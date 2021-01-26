@@ -1342,7 +1342,7 @@ nav ul li ul li a:hover {
 #addcompany_form input {
     margin-right: 10px;
 }
-#inputadduserrole{
+#inputaddcompany{
     display: flex;
     flex-direction: column;
     width: 80%;

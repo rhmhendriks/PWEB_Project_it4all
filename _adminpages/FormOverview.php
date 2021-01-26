@@ -8,19 +8,19 @@
 	<div id="formulierenlist">
 		<h2>Formulieren</h2>
 		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=add_company">Add a company</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=add_user_role">Add a user role</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=toevoegen_artikel">Artikel toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=admin_form">Admin toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=toevoegen_klant">Klant toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=tips_tricks_category">Tip-trick categorie toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=new_tiptrick">Tip trick toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=contactformulier">Contactformulier</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=author_toevoegen">Auteur toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=forms&form=artikelgroep_toevoegen">Artikelgroep toevoegen</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=auth&auth=ForgotPassword">Wachtwoord vergeten?</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=auth&auth=SignUp">Registreren</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=auth&auth=Activate">Activeer je account</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=auth&auth=RenewActivation">Opnieuw activeren </a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=add_user_role">Add a user role</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=toevoegen_artikel">Artikel toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=admin_form">Admin toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=toevoegen_klant">Klant toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=tips_tricks_category">Tip-trick categorie toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=new_tiptrick">Tip trick toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=contactformulier">Contactformulier</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=author_toevoegen">Auteur toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=forms&form=artikelgroep_toevoegen">Artikelgroep toevoegen</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=auth&auth=ForgotPassword">Wachtwoord vergeten?</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=auth&auth=SignUp">Registreren</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=auth&auth=Activate">Activeer je account</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&formtype=admin&page=auth&auth=RenewActivation">Opnieuw activeren </a>
 		</div>
 	<div id="overzichtenlist">
 		<h2>Overzichten</h2>
