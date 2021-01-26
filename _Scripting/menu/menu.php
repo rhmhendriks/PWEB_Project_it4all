@@ -76,14 +76,14 @@
                         echo'   
                     <li><a href="#">Gebruikers</a>
                         <ul>
-                            <li><a href="index.php?page=auth&auth=login">Inloggen</a></li>
-                            <li><a href="index.php?page=auth&auth=SignUp">Registreren</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=login">Inloggen</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=SignUp">Registreren</a></li>
                         </ul>
                         </li>
                         ';} else { echo '
                             <li><a href="#">Gebruikers</a>
                             <ul>
-                            <li><a href="index.php?page=auth&auth=LogOut">Uitloggen</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=LogOut">Uitloggen</a></li>
                             </ul>
                             </li>
                         ';}?>
@@ -92,7 +92,7 @@
                         echo '   
                     <li><a href="#">Admin Pages</a>
                         <ul>
-                            <li><a href="index.php?page=admin&admin=FormOverview">Forms & Views</a></li>
+                            <li><a href="index.php?inc=y&page=admin&admin=FormOverview">Forms & Views</a></li>
                             <li><a href="phpmyadmin">DB Beheer</a></li>
                         </ul>
                         </li>
