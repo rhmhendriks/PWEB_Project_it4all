@@ -57,16 +57,43 @@
                 file_put_contents('test.json', $json);
                 //immediate_redirect_to('test.json');
 
-                $xml = new SimpleXMLElement('<xml>');
 
-                for ($i = 1; $i <= 8; ++$i) {
-                    $track = $xml->addChild('track');
-                    $track->addChild('path', "song$i.mp3");
-                    $track->addChild('title', "Track $i - Track Title");
+
+
+
+
+
+                $xml = new SimpleXMLElement('<WEATHERDATA/>'); 
+/*
+                while($row = $resultarray['data']->fetch_array(MYSQLI_ASSOC)) {
+                    $measurement = $xml->addChild('MEASUREMENT');
+                    foreach($row as $tag => $value) {
+                        echo "$tag ====> $value";
+                        $measurement->addChild($tag, $value);
+                      }
+                }*/
+
+                //$xml->asXML(test.xml);
+
+                //print_r($myArray);
+                foreach($myArray as $mesrow){
+                    $measurement = $xml->addChild('MEASUREMENT');
+                    foreach($mesrow as $tag => $value) {
+                        //echo "$tag ====> $value";
+                        $measurement->addChild($tag, $value);
+                      }
                 }
 
-                Header('Content-type: text/xml');
-                print($xml);
+                $xml->asXML('test.xml');
+/*
+                for ($i = 1; $i <= 8; ++$i) {
+                    $track = $xml->addChild('MEASUREMENT');
+                    $track->addChild('path', "song$i.mp3");
+                    
+                }*/
+
+                //Header('Content-type: text/xml');
+                //print($xml);
                 //print($xml->asXML());
 
                 //json_encode($resultarray);
