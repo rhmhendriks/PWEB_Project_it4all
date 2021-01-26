@@ -4,11 +4,7 @@ if (isset($_GET['form'])){
     $dir = NULL;
     $form = $_GET['form'];
 
-<<<<<<< HEAD
-    switch ($type) {
-=======
     switch ($type){
->>>>>>> 344f894ed13934159b0de69f84a28fcba7904f1d
         case "content" :
             $dir = "_contentpages/forms/forms/";
             break;
@@ -18,15 +14,11 @@ if (isset($_GET['form'])){
         case "ordering" :
             $dir = "_Ordering/Forms/";
             break;
-<<<<<<< HEAD
-        } 
-=======
         default:
             $dir = "_forms";
             break;
         }
         
->>>>>>> 344f894ed13934159b0de69f84a28fcba7904f1d
 
     include "$dir/$form.php";
     }
