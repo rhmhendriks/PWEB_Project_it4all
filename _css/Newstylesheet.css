@@ -148,9 +148,91 @@ nav ul li ul li a:hover {
 /*                      \\\\\ Navigatie opmaak \\\\\                    */
 
 
+/*                      \\\\\ Home styling /////                        */
+#homeTekst {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+#homeTekst h1 {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#homeTekst p {
+    margin: auto;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    width: 70%;
+    text-align: center;
+}
+#homeTekst h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.homepicturewrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.homepictures {
+    height: 100%;
+    width: 100%;
+}
+.homepictures img {
+    height: 350px;
+    width: 400px;
+    padding: 2px;
+}
+/*                      \\\\\ Home styling /////                        */
 
-
-
+/*                      \\\\\ About Us styling /////                    */
+#aboutus {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+}
+#aboutus h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: black;
+    padding: 14px 12px 10px;
+    text-align: center;
+}
+#aboutus p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 15px;
+    width: 75%;
+    margin-bottom: 10px;
+}
+#aboutus img {
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*                      \\\\\ About us styling /////                    */
 
 #content {
     flex: 1 0 auto;
@@ -402,37 +484,7 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
 
-/*                      \\\\\ About Us styling /////                    */
-#aboutus {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    width: 80%;
-    justify-content: center;
-}
-#aboutus h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    color: black;
-    padding: 14px 12px 10px;
-    text-align: center;
-}
-#aboutus p {
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    padding-bottom: 15px;
-    width: 75%;
-    margin-bottom: 10px;
-}
-#aboutus img {
-    margin: auto;
-    height: 500px;
-    width: 800px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-/*                      \\\\\ About us styling /////                    */
+
 
 
 /* temporaryform opmaak */
@@ -1591,7 +1643,24 @@ footer div a:hover {
     color: #333333;
 }
 
-
+@media screen and (max-width: 1560px) {
+    /*                      \\\\\ Home styling /////                        */
+    .homepicturewrapper {
+        flex-direction: column;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .homepictures {
+        height: 100%;
+        width: 100%;
+    }
+    .homepictures img {
+        height: 425px;
+        width: 500px;
+    }
+    /*                      \\\\\ Home styling /////                        */
+}
 
 /*                      ////////////////////////////////                
                         /// Bij een scherm kleiner dan//
@@ -1614,6 +1683,19 @@ footer div a:hover {
         header p {
             font-size: 15px;
         }
+
+        /*                      \\\\\ Home styling /////                        */
+        #homeTekst h1 {
+            font-size: 28px;
+        }
+        #homeTekst p {
+            font-size: 15px;
+            width: 80%;
+        }
+        #homeTekst h3 {
+            font-size: 22px;
+        }
+        /*                      \\\\\ Home styling /////                        */
 
 /*                      ///// Artikel opmaak /////                      */
         #leftColumn {
@@ -1757,6 +1839,13 @@ footer div a:hover {
             #content #overzichtenlist {
                 width: 100%;
             }
+
+            /*                      \\\\\ Home styling /////                        */
+            .homepictures img {
+                height: 80%;
+                width: 80%;
+            }
+            /*                      \\\\\ Home styling /////                        */
 }
 
 
@@ -1766,6 +1855,18 @@ footer div a:hover {
                         /// toegepast.               ///
                         ////////////////////////////////                */
 @media screen and (max-width: 725px) {
+
+/*                      \\\\\ Home styling /////                        */
+                #homeTekst h1 {
+                    font-size: 24px;
+                }
+                #homeTekst p {
+                    font-size: 12px;
+                }
+                #homeTekst h3 {
+                    font-size: 18px;
+                }
+/*                      \\\\\ Home styling /////                        */
 
 /*                      ///// Artikel opmaak /////                      */
                 #leftColumn img {
