@@ -24,7 +24,7 @@
 		</div>
 	<div id="overzichtenlist">
 		<h2>Overzichten</h2>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Article">Artikelenoverzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Article">Artikelenoverzicht</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Customer">Klantenoverzicht</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=ArticleGroup">Artikelgroep weergeven</a>
 		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Author">Auteursoverzicht</a>
