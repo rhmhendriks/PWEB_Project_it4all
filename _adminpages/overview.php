@@ -12,6 +12,7 @@ if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
         if (isset($_GET['overview'])){ // controleren of er een tabel is meegegeven
             $OverviewTable = CheckValue($_GET['overview']); // Ny=u zorgen we ervoor dat er geen slechte code wordt meegenomen
             // nu bouwen we de pagina
+            echo "<div class=CRUDoverview>";
             echo "<h1>" . "Overzicht van de tabel: " . '"' . $OverviewTable . '"' . "</h1><br>";
             echo "<br>";
             echo "De iconen welke getoond zijn naast iedere bij zijn gemaakt door <b>SmashIcons</b> en <b>Freepik</b> van flaticon.com. ";
@@ -30,6 +31,7 @@ if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
                 // Hieronder wordt de tabel gemaakt
                 $funtionarray = MySqlDo_Overview('AdminForm', $columns, "ClientNumber", 'AdminForm');
                 echo $funtionarray['table'];
+                echo "</div>";
             
 
 

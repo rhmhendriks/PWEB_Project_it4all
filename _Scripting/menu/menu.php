@@ -62,9 +62,9 @@
                     <li class="liFade"><a href="#">Algemene Informatie</a>
                         <ul>
                             <li><a href="index.php?inc=y&page=statements&statement=cookie">Cookies</a></li>
-                            <li><a href="index.php?inc=y&page=statements&statement=privacy">Privacy</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=privacy_statement">Privacy</a></li>
                             <li><a href="index.php?inc=y&page=statements&statement=disclaimer">Disclaimer</a></li>
-                            <li><a href="index.php?inc=y&page=statements&statement=voorwaarden">Algemene Voorwaarden</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=algemene_voorwaarden">Algemene Voorwaarden</a></li>
                             <li><a href="index.php?inc=y&page=AboutUs">Over Ons</a></li>
                         </ul>
                     </li>
