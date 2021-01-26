@@ -4,7 +4,7 @@ if (isset($_GET['form'])){
     $dir = NULL;
     $form = $_GET['form'];
 
-    switch ($type):
+    switch ($type) {
         case "content" :
             $dir = "_contentpages/forms/forms/";
             break;
@@ -14,7 +14,7 @@ if (isset($_GET['form'])){
         case "ordering" :
             $dir = "_Ordering/Forms/";
             break;
-        
+        } 
 
     include "$dir/$form.php";
 }
