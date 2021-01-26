@@ -25,14 +25,14 @@
 	<div id="overzichtenlist">
 		<h2>Overzichten</h2>
 		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Article">Artikelenoverzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Customer">Klantenoverzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=ArticleGroup">Artikelgroep weergeven</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Author">Auteursoverzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Tip_Trick">Tip-trick overzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=TipsGroup">Tip trick groep overzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=User">Gebruikersoverzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Media">Media overzicht</a>
-		<a href="https://it4all.rhmhendriks.nl/index.php?page=overview&overview=Contactform">Contactformulier overzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Customer">Klantenoverzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=ArticleGroup">Artikelgroep weergeven</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Author">Auteursoverzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Tip_Trick">Tip-trick overzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=TipsGroup">Tip trick groep overzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=User">Gebruikersoverzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Media">Media overzicht</a>
+		<a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=admin&admin=overview&overview=Contactform">Contactformulier overzicht</a>
 	</div>
 </div>';}
 ?>
