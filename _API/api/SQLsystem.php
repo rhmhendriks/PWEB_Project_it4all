@@ -1,23 +1,29 @@
 <?php
+    require "../API_init.php";
     function createSelectStatementData($fromdate, $tildate){
-        return "SELECT * FROM Meting ORDER BY id WHERE Datum BETWEEN $fromdate AND $tildate";
+        return "SELECT * FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate'";
     }
 
     function runSelectStatement($statement){
-        $connectionArray = MySqlDo_Connector('Connect');
+        echo "HALOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
+        $ConnectionArray = MySqlDo_Connector('Connect');
+        //print_r($ConnectionArray);
         $conn = $ConnectionArray['connection'];
+        echo $ConnectionArray['debug'];
 
         $statementrunned = $conn->query($statement); // statement uitvoeren
 
-        if ($statementrunned->num_rows > 0) {
+        print_r($statementrunned);
+
+        /*if ($statementrunned->num_rows > 0) {
             $result = TRUE;
         } else {
             $result = FALSE;
-        }
+        }*/
 
-        $conn->close();
+        //$conn->close();
 
-        return $Information = array("data"=>$statementrunned, "result"=>$result);
+        return $Information = array("data"=>$statementrunned, "result"=>true, "debug"=>$ConnectionArray['debug']);
     }
 
 
