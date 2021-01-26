@@ -13,10 +13,10 @@
         ?token=rhgy8gfyeaihgfiuyeragyuiherauyigfhuh&from=23022021&til=25022021
         <?php
 
-            require "../api/SQLsystem.php"
-            if (isset($_GET['token'])){$token = $_GET['token']};
-            if (isset($_GET['from'])){$from = $_GET['from']};
-            if (isset($_GET['til'])){$til = $_GET['til']};
+            require "../api/SQLsystem.php";
+            if (isset($_GET['token'])){$token = $_GET['token'];}
+            if (isset($_GET['from'])){$from = $_GET['from'];}
+            if (isset($_GET['til'])){$til = $_GET['til'];}
 
             // check auth
         
