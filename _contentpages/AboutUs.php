@@ -8,10 +8,8 @@
 
 <div id="aboutus">
 	<h2> About Us </h2>
-	<p> IT4All is een website waar je al jouw elektronische apparaten kan kopen. Het gaat van telefoons naar laptops naar smarthomes. Naast ons brede assortiment kan je bij ons ook veel informatie vinden over de producten die wij aanbieden. Dit is te vinden onder het kopje tips and tricks.
-	</p>
-	<p> Onze website is opgebouwd door Luc Willemse, Ronald Hendriks, Jurre de Vries en Rienan Poortvliet. Wij zijn vier jongens van de opleiding HBO-ICT, die de opdracht hebben gekregen om een website in elkaar te zetten. Wij zijn halverwege September 2019 begonnen met het maken van deze website en hij is opgeleverd op 13 november 2019.
-	</p>
+	<p> IT4All is een website waar je al jouw elektronische apparaten kan kopen. Het gaat van telefoons naar laptops naar smarthomes. Naast ons brede assortiment kan je bij ons ook veel informatie vinden over de producten die wij aanbieden. Dit is te vinden onder het kopje tips and tricks.</p>
+	<p> Onze website is opgebouwd door Luc Willemse, Ronald Hendriks, Jurre de Vries en Rienan Poortvliet. Wij zijn vier jongens van de opleiding HBO-ICT, die de opdracht hebben gekregen om een website in elkaar te zetten. Wij zijn halverwege September 2019 begonnen met het maken van deze website en hij is opgeleverd op 13 november 2019.</p>
 
 	<img src="../_images/about.jpeg" alt="eigenarenfoto" height="500px">
 
