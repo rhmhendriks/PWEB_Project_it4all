@@ -16,13 +16,11 @@
 			<h2>Hoelang worden gegevens bewaard?</h2>
 				<p>Gegevens worden bewaart totdat u zelf aangeeft dat de gegevens niet meer bewaard mogen worden.</p>
 			<h2>U heeft het recht:</h2>
-				<ul>
-					<li>op inzage van de gegevens die wij van u hebben en u kunt deze laten corrigeren of verwijderen.</li>
-					<li>Uw toestemming voor bepaalde verwerkingen weer in te trekken.</li>
-					<li>Een klacht in te dienen via ons contactformulier.</li>
-				</ul>
+				<p><b>-</b> Op inzage van de gegevens die wij van u hebben en u kunt deze laten corrigeren of verwijderen.</p>
+				<p><b>-</b> Uw toestemming voor bepaalde verwerkingen weer in te trekken.</p>
+				<p><b>-</b> Een klacht in te dienen via ons contactformulier.</p>
 				<p><i>Wij zijn genoodzaakt bepaalde gegevens van u te bewaren. Gegevens van contactpersonen waaraan specifieke data is gekoppeld (zoals mails en offertes) kunnen niet worden verwijderd. Vanuit het oogpunt van veiligheid zijn wij ook genoodzaakt om back-ups te maken. Wij controleren deze op juistheid. Het is daarom niet mogelijk om uw gegevens achteraf uit back-ups te laten verwijderen.</i></p>
-			<p>U kunt uw vragen en verzoeken rond de verwerking van persoonsgegevens richten tot:</p>
+				<p>U kunt uw vragen en verzoeken rond de verwerking van persoonsgegevens richten tot:</p>
 			<table>
 				<tr>
 					<td><b>Webmaster</b></td>
