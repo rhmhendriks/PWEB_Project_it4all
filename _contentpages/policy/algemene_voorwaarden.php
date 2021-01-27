@@ -37,6 +37,10 @@
 		<h2>6.Betalingsvoorwaarde</h2>
 
 			<p>Is de webwinkel in verzuim of schiet hij op een andere wijze tekort in het nakomen van één of meer verplichtingen? Dan komen alle redelijke kosten ter verkrijging van voldoening voor zijn rekening, zowel de gerechtelijke als de buitengerechtelijke.</p>
+
+		<h2>7.Onze services aan bedrijven</h2>
+
+			<p>Naast onze webwinkel bieden wij ook onze services aan voor bedrijven. Wilt u onze services gebruiken? Vul dan het contactformulier in op onze website.</p>
 	</div>
 	
   </body>
