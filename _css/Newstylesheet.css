@@ -788,6 +788,7 @@ nav ul li ul li a:hover {
 }
 #contact_form textarea[name="vraag_opmerking"] {
     width: 98%;
+    resize: none;
 }
 #contact_form input[type="submit"] {
     border-radius: 5px;
@@ -849,6 +850,7 @@ nav ul li ul li a:hover {
 }
 #tiptrick_form textarea {
     max-width: 450px;
+    resize: none;
 }
 #tiptrick_form input[type="submit"] {
     border-radius: 5px;
@@ -982,6 +984,7 @@ nav ul li ul li a:hover {
 }
 #toevoegen_artikel_form textarea {
     width: 98%;
+    resize: none;
 }
 #artikelgegevens {
     display: flex;
@@ -1334,9 +1337,9 @@ nav ul li ul li a:hover {
 #adduserrole_form textarea{
     border-radius: 5px;
     padding: 6px 20px;
-    outline: none;
     resize: none;
     font-family: inherit;
+    width: 98%;
 }
 #adduserrole_form input[type="submit"] {
     border-radius: 5px;
@@ -1402,9 +1405,9 @@ nav ul li ul li a:hover {
 #addcompany_form textarea{
     border-radius: 5px;
     padding: 6px 20px;
-    outline: none;
     resize: none;
     font-family: inherit;
+    width: 98%;
 }
 #addcompany_form input[type="submit"] {
     border-radius: 5px;

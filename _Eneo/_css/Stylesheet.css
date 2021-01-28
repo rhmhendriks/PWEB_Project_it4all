@@ -179,14 +179,14 @@ nav ul li ul li a:hover {
 #ipwhitelist_form {
     max-width: 650px;
     margin: 10px auto;
-    background-color: #fff7e6;
+    background-color: #f2ffee;
     border-radius: 5px;
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
     border: 2px solid #98c013;
 }
-#ipwhitelist_form input[type="text"], #ipwhitelist_form input[type="email"], #ipwhitelist_form input[type="password"] {
+#ipwhitelist_form input[type="text"], #ipwhitelist_form input[type="date"] {
     border-radius: 5px;
     padding: 6px 12px;
     outline: none;

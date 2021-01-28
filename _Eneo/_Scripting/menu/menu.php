@@ -41,16 +41,16 @@
                     <?php
                     if (!$_SESSION['loggedin'] == 1){
                         echo'   
-                        <li><a href="#">Gebruikers</a>
+                        <li><a href="#">Users</a>
                             <ul>
-                                <li><a href="index.php?page=auth&auth=login">Inloggen</a></li>
-                                <li><a href="index.php?page=auth&auth=SignUp">Registreren</a></li>
+                                <li><a href="index.php?page=auth&auth=login">Log in</a></li>
+                                <li><a href="index.php?page=auth&auth=SignUp">Register</a></li>
                             </ul>
                         </li>
                         ';} else { echo '
-                            <li><a href="#">Gebruikers</a>
+                            <li><a href="#">Users</a>
                                 <ul>
-                                    <li><a href="index.php?page=auth&auth=LogOut">Uitloggen</a></li>
+                                    <li><a href="index.php?page=auth&auth=LogOut">Log out</a></li>
                                 </ul>
                             </li>
                         ';}?>
