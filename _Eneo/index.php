@@ -15,7 +15,7 @@
     ?>
     <header>
         <h1><a href="index.php">Eneo</a></h1>
-        <p><?php echo WelcomeUser(); ?></p>
+        <p>Welcome</p>
     </header>
     <?php
         require "_Scripting/menu/menu.php";
@@ -36,7 +36,7 @@
         <h2><?php include "../_Scripting/copyright_year.php"; ?></h2>
         <div>Icons made by <b>Freepik and SmashIcons</b> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a></div>
         <br>
-        <div> <a href="index.php?page=statements&statement=cookie">Cookie's</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=privacy">Privacy</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=disclaimer">Disclaimer</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=voorwaarden">Algemene Voorwaarden</a> </div>
+        <div> <a href="index.php?page=statements&statement=cookie">Cookies</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=privacy">Privacy</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=disclaimer">Disclaimer</a> &nbsp;&nbsp;&nbsp; <a href="index.php?page=statements&statement=voorwaarden">Terms & Services</a> </div>
 
     </footer>
 

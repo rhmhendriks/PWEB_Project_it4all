@@ -202,6 +202,42 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Home styling /////                        */
 
+/*                      \\\\\ Policies styling /////                    */
+#policies {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#policies h1 {
+    margin: auto;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#policies h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+    text-align: left;
+}
+#policies p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+/*                      \\\\\ Policies styling /////                    */
+
 /*                      \\\\\ About Us styling /////                    */
 #aboutus {
     display: flex;
@@ -752,6 +788,7 @@ nav ul li ul li a:hover {
 }
 #contact_form textarea[name="vraag_opmerking"] {
     width: 98%;
+    resize: none;
 }
 #contact_form input[type="submit"] {
     border-radius: 5px;
@@ -813,6 +850,7 @@ nav ul li ul li a:hover {
 }
 #tiptrick_form textarea {
     max-width: 450px;
+    resize: none;
 }
 #tiptrick_form input[type="submit"] {
     border-radius: 5px;
@@ -946,6 +984,7 @@ nav ul li ul li a:hover {
 }
 #toevoegen_artikel_form textarea {
     width: 98%;
+    resize: none;
 }
 #artikelgegevens {
     display: flex;
@@ -1298,9 +1337,9 @@ nav ul li ul li a:hover {
 #adduserrole_form textarea{
     border-radius: 5px;
     padding: 6px 20px;
-    outline: none;
     resize: none;
     font-family: inherit;
+    width: 98%;
 }
 #adduserrole_form input[type="submit"] {
     border-radius: 5px;
@@ -1366,9 +1405,9 @@ nav ul li ul li a:hover {
 #addcompany_form textarea{
     border-radius: 5px;
     padding: 6px 20px;
-    outline: none;
     resize: none;
     font-family: inherit;
+    width: 98%;
 }
 #addcompany_form input[type="submit"] {
     border-radius: 5px;
@@ -1424,7 +1463,7 @@ nav ul li ul li a:hover {
     margin: 10px;
     font-size: 14px;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 } /* The table */
 
 .OverviewTable a img {
@@ -1643,6 +1682,8 @@ footer div a:hover {
     color: #333333;
 }
 
+
+
 @media screen and (max-width: 1560px) {
     /*                      \\\\\ Home styling /////                        */
     .homepicturewrapper {
@@ -1660,13 +1701,22 @@ footer div a:hover {
         width: 500px;
     }
     /*                      \\\\\ Home styling /////                        */
+
+    /*                      \\\\\ Policies styling /////                    */
+    #policies {
+        width: 80%;
+    }
+    /*                      \\\\\ Policies styling /////                    */
 }
+
+
+
 
 /*                      ////////////////////////////////                
                         /// Bij een scherm kleiner dan//
                         /// 1024 pixels wordt deze   ///
                         /// css toegepast.           ///
-                        ////////////////////////////////                */
+                        ////////////////////////////////                    */
 @media screen and (max-width: 1024px) {
 
         header {
@@ -1696,6 +1746,20 @@ footer div a:hover {
             font-size: 22px;
         }
         /*                      \\\\\ Home styling /////                        */
+
+        /*                      \\\\\ Policies styling /////                    */
+        #policies h1 {
+            font-size: 28px;
+        }
+        #policies h2 {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        #policies p {
+            font-size: 15px;
+            margin-top: 5px;
+        }
+        /*                      \\\\\ Policies styling /////                    */
 
 /*                      ///// Artikel opmaak /////                      */
         #leftColumn {
@@ -1860,13 +1924,25 @@ footer div a:hover {
                 #homeTekst h1 {
                     font-size: 24px;
                 }
-                #homeTekst p {
-                    font-size: 12px;
-                }
                 #homeTekst h3 {
                     font-size: 18px;
                 }
+                #homeTekst p {
+                    font-size: 12px;
+                }
 /*                      \\\\\ Home styling /////                        */
+
+/*                      \\\\\ Policies styling /////                    */
+                #policies h1 {
+                    font-size: 24px;
+                }
+                #policies h2 {
+                    font-size: 18px;
+                }
+                #policies p {
+                    font-size: 12px;
+                }
+/*                      \\\\\ Policies styling /////                    */
 
 /*                      ///// Artikel opmaak /////                      */
                 #leftColumn img {
