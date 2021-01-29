@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT4ALL Index</title>
-    <link href="../_css/Newstylesheet.css" rel="stylesheet" type="text/css">
+    <link href="../_css/Newstylesheet.css?rnd=@Function.GUID~" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -25,7 +25,11 @@
         <?php
             if (isset($_GET['page'])){
                 $page = CheckValue($_GET['page']);
-                include $_SERVER['DOCUMENT_ROOT'] ."/_contentpages/$page.php";
+                if (isset($_GET['inc'])){
+                    include $_SERVER['DOCUMENT_ROOT'] ."/_Scripting/Including/$page.php";
+                } else {
+                    include $_SERVER['DOCUMENT_ROOT'] ."/_contentpages/$page.php";
+                }
             } else {
                 include "_contentpages/Home.php";
             }

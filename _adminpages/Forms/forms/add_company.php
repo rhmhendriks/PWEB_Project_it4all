@@ -10,8 +10,8 @@ if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
 			} echo '
 			<h1>Add a new company</h1>
 			<div id="inputaddcompany">
-                <label>Company name<span class="redStar">*</span></label>		<input type="text" name="company name" placeholder="Only use letters and numbers (max. 60)" pattern="[0-9a-Z\s-]{1,60}" size="40" required="">
-                <label>Description<span class="redStar">*</span></label>		<input type="text" name="description" placeholder="Only use letters and numbers (max. 200)" pattern="[0-9a-Z\s-]{1,200}" size="40" required="">
+				<label>Company<span class="redStar">*</span></label>		        <input type="text" name="company" placeholder="Give the name of the company" pattern="[0-9a-Z\s-]{1,60}" size="40" required="">
+				<label>Description<span class="redStar">*</span></label>			<textarea id="description" rows="4" cols="100" maxlength="200" placeholder="Give a description of the new company" required=""></textarea>
 			</div>
 			<div id="submitaddcompany">
 				<input type="submit" name="submit" value="submit">

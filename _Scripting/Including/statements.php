@@ -2,6 +2,6 @@
 
 if(isset($_GET['statement'])) {
 	$statement = CheckValue($_GET['statement']);
-	include "_statements/$statement.php";
+	include "_contentpages/policy/$statement.php";
 }
 ?>

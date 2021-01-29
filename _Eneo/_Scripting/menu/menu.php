@@ -21,54 +21,46 @@
             </div>
                 <ul class="links">
                     <li class="liFade"><a href="index.php">Home</a></li>
-                    <li class="liFade"><a href="#">Don't know</a>
+                    <li class="liFade"><a href="#">Temperature</a>
                         <ul>
-                            <li><a href="#1">1</a></li>
-                            <li><a href="#2">2</a></li>
-                            <li><a href="#3">3</a></li>
+                            <li><a href="#Graph">Graph/map</a></li>
+                            <li><a href="#Table">Table</a></li>
+                            <li><a href="#Export">Export</a></li>
                         </ul> 
                     </li>
-                    <li class="liFade"><a href="#">No idea</a>
+                    <li class="liFade"><a href="#">Wind speed</a>
                         <ul>
-                        <li><a href="#1">1</a></li>
-                        <li><a href="#2">2</a></li>
-                        <li><a href="#3">3</a></li>
+                            <li><a href="#Graph">Graph</a></li>
+                            <li><a href="#Table">Table</a></li>
+                            <li><a href="#Export">Export</a></li>
                         </ul> 
                     </li>
-                    <li class="liFade"><a href="#">No clue</a>
-                        <ul>
-                        <li><a href="#1">1</a></li>
-                        <li><a href="#2">2</a></li>
-                        <li><a href="#3">3</a></li>
-                        </ul>
-                    </li>
-                    <li class="liFade"><a href="#Oh no">Contact</a></li>
+                        <li class="liFade"><a href="https://it4all.rhmhendriks.nl/index.php">IT4ALL</a></li>
                     </ul>
                     <ul class="login">
                     <?php
                     if (!$_SESSION['loggedin'] == 1){
                         echo'   
-                    <li><a href="#">Gebruikers</a>
-                        <ul>
-                            <li><a href="index.php?page=auth&auth=login">Inloggen</a></li>
-                            <li><a href="index.php?page=auth&auth=SignUp">Registreren</a></li>
-                        </ul>
+                        <li><a href="#">Users</a>
+                            <ul>
+                                <li><a href="index.php?page=auth&auth=login">Log in</a></li>
+                                <li><a href="index.php?page=auth&auth=SignUp">Register</a></li>
+                            </ul>
                         </li>
                         ';} else { echo '
-                            <li><a href="#">Gebruikers</a>
-                            <ul>
-                            <li><a href="index.php?page=auth&auth=LogOut">Uitloggen</a></li>
-                            </ul>
+                            <li><a href="#">Users</a>
+                                <ul>
+                                    <li><a href="index.php?page=auth&auth=LogOut">Log out</a></li>
+                                </ul>
                             </li>
                         ';}?>
                     <?php
                     if ($_SESSION['loggedin'] == 1 && $_SESSION['IsAdmin'] == 1){
                         echo '   
-                    <li><a href="#">Admin Pages</a>
-                        <ul>
-                            <li><a href="index.php?page=admin&admin=FormOverview">Forms & Views</a></li>
-                            <li><a href="phpmyadmin">DB Beheer</a></li>
-                        </ul>
+                        <li><a href="#">Admin Pages</a>
+                            <ul>
+                                <li><a href="index.php?page=admin&admin=FormOverview">Forms & Views</a></li>
+                            </ul>
                         </li>
                         ';} 
                         ?>

@@ -29,7 +29,7 @@
                                     $StatementRunnedGetArticleLists = $DBconnect->query($StatementGetArticleLists);
 
                                 // Nu gaan we de link vaststellen 
-                                    $targetarticlelists = 'index.php?page=articlelist&ID=';
+                                    $targetarticlelists = 'index.php?age=articlelist&ID=';
                                     if($StatementRunnedGetArticleLists->num_rows > 0) {  // Als er rijen zijn gevonden
                                         // gegevens gebruiken
                                         echo '<li><a href="index.php?page=articlelist">Alle Artikelen</a></li>';
@@ -61,14 +61,14 @@
                     </li>
                     <li class="liFade"><a href="#">Algemene Informatie</a>
                         <ul>
-                            <li><a href="index.php?page=statements&statement=cookie">Cookies</a></li>
-                            <li><a href="index.php?page=statements&statement=privacy">Privacy</a></li>
-                            <li><a href="index.php?page=statements&statement=disclaimer">Disclaimer</a></li>
-                            <li><a href="index.php?page=statements&statement=voorwaarden">Algemene Voorwaarden</a></li>
-                            <li><a href="index.php?page=AboutUs">Over Ons</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=cookie">Cookies</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=privacy_statement">Privacy</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=disclaimer">Disclaimer</a></li>
+                            <li><a href="index.php?inc=y&page=statements&statement=algemene_voorwaarden">Algemene Voorwaarden</a></li>
+                            <li><a href="index.php?inc=y&page=AboutUs">Over Ons</a></li>
                         </ul>
                     </li>
-                    <li class="liFade"><a href="index.php?page=forms&form=contactformulier">Contact</a></li>
+                    <li class="liFade"><a href="index.php?inc=y&formtype=content&page=forms&form=contactformulier">Contact</a></li>
                     </ul>
                     <ul class="login">
                     <?php
@@ -76,14 +76,14 @@
                         echo'   
                     <li><a href="#">Gebruikers</a>
                         <ul>
-                            <li><a href="index.php?page=auth&auth=login">Inloggen</a></li>
-                            <li><a href="index.php?page=auth&auth=SignUp">Registreren</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=login">Inloggen</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=SignUp">Registreren</a></li>
                         </ul>
                         </li>
                         ';} else { echo '
                             <li><a href="#">Gebruikers</a>
                             <ul>
-                            <li><a href="index.php?page=auth&auth=LogOut">Uitloggen</a></li>
+                            <li><a href="index.php?inc=y&page=auth&auth=LogOut">Uitloggen</a></li>
                             </ul>
                             </li>
                         ';}?>
@@ -92,7 +92,7 @@
                         echo '   
                     <li><a href="#">Admin Pages</a>
                         <ul>
-                            <li><a href="index.php?page=admin&admin=FormOverview">Forms & Views</a></li>
+                            <li><a href="index.php?inc=y&page=admin&admin=FormOverview">Forms & Views</a></li>
                             <li><a href="phpmyadmin">DB Beheer</a></li>
                         </ul>
                         </li>

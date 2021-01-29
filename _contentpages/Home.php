@@ -5,25 +5,27 @@
 </head>
 <body>
 
-	<div class="homeTekst">
-	<h1> Welkom op onze website IT4ALL </h1>
-	<br>
-	<br>
-	<p style="color:red;">Deze website is een schoolproject! Bestelde producten zullen dan ook NOOIT aankomen, u zult alleen een mail kregen met deze boodschap. Accounts kunnen wel aangemaakt worden op deze site, en deze worden uiteraard met de hoogst mogelijke beveiliging toegevoegd aan de database. Dit wil zeggen dat uw persoonsgegevens en wachtwoord versleuteld worden opgeslagen (let op! Vul desondanks NOOIT uw eigen bangegevens in maar gebruik een dummy zoals GB33BUKB20201555555555 (dit is een genegeerd IBAN voor testdoeleinden). </p>
-	<br>
-	<br>
-	</div>
+	<div id="homeTekst">
+		<h1> Welkom op onze website IT4ALL </h1>
+		<p>Deze website is een schoolproject. Bestelde producten zullen dan ook <b>nooit</b> aankomen. U zult alleen een mail kregen met deze boodschap. Accounts kunnen wel aangemaakt worden op deze site, en deze worden uiteraard met de hoogst mogelijke beveiliging toegevoegd aan de database. Dit wil zeggen dat uw persoonsgegevens en wachtwoord versleuteld worden opgeslagen. 
+		(<b>Let op!</b> Vul desondanks <b>nooit</b> uw eigen bankgegevens in, maar gebruik een dummy IBAN, zoals GB33BUKB20201555555555 (dit is een genegeerd IBAN voor testdoeleinden). </p>
+		
+		<div class="homepicturewrapper">
+			<div class="homepictures">
+				<a href="../index.php?page=articlelist&ID=100"><img src="../_images/Home/laptop.jpg" alt="laptop"></a>
+			</div>
+			<div class="homepictures">
+				<a href="../index.php?page=articlelist&ID=104"><img src="../_images/Home/smartphone.jpg" alt="telefoon"></a>
+			</div>
+			<div class="homepictures">
+				<a href="../index.php?page=articlelist&ID=109"><img src="../_images/Home/tv.jpg" alt="tv"></a>
+			</div>
+			<div class="homepictures">
+				<a href="../index.php?page=articlelist&ID=106"><img src="../_images/Home/games.jpg" alt="games"></a>
+			</div>
+		</div>
 
-	<div class="homePictures">
-	<p><a href="../index.php?page=articlelist&ID=100"><img src="../_images/Home/laptop.jpg" alt="laptop" height="200"></a>
-		<a href="../index.php?page=articlelist&ID=104"><img src="../_images/Home/smartphone.jpg" alt="telefoon" height="200"></a>
-		<a href="../index.php?page=articlelist&ID=109"><img src="../_images/Home/tv.jpg" alt="tv" height="200"></a>
-		<a href="../index.php?page=articlelist&ID=106"><img src="../_images/Home/games.jpg" alt="games" height="200"></a>
-	</p>
-	</div>
-	<br><br>
-	<div class="homeTekst">
-	<h3>Koop nu uw nieuwe snufjes</h3>
+		<h3>Koop nu uw nieuwe snufjes!</h3>
 	</div>
 
 </body>
