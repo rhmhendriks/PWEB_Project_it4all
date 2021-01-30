@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="utf-8" />
@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title></title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../_css/Newstylesheet.css" type="text/css"/>
     <link rel="icon" href="images/favicon.png" />
 </head>
 
 <body>
-    <div id=2FAappTutorial div id=policies>
+    <div id="twofactortutorial">
         <h1>Hoe kan ik inloggen met behulp van mijn smartphone?</h1>
         <p>U heeft zojuist tweevoudige verificatie met uw smartphone geactiveerd. Op deze pagina leggen we u uit hoe u deze methode nu kunt gebruiken om in te loggen bij IT4all of een van onze service-websites. </p>
         <h2>Stap 1: Een QR code scanner installeren</h2>
