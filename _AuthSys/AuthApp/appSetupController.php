@@ -8,7 +8,7 @@
             $authstatus ="";
 
         // This script starts when the OTPapp form is submitted 
-            if (isset($_POST['inloggen'])){
+            if (isset($_POST['checkCode'])){
                 // request a new database connection
                 $Connectionarray = MySqlDo_Connector('Connect');
 

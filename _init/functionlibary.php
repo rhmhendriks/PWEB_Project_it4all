@@ -689,38 +689,6 @@
                         return array('debug'=>$ActionLog, 'result'=>$resultfunction, 'ID'=>$AddedID);
                     }
 
-                    /**
-                     * * MYSQLDO GET FUNCTION
-                     * 
-                     * THIS FUNTION IS USED TO GET DATA FROM THE DATABASE
-                     */
-                    function MySqlDo_DropDown($Values, $tablename, $DisplayName){
-                        // connectie maken met de database
-                        $Connection = MySqlDo_Connector('Connect');
-                        $DBconnect = $Connection['connection'];
-                        $returndebug = $Connection['debug'];
-                        
-                        // statement maken
-                        $statement = "SELECT `$Values` FROM `$tablename`";
-                        $statementrunned = $DBconnect->query($statement);
-                        if ($statementrunned->num_rows >0) { // Hier wordt het statement uitgevoerd en checken we of hij is geslaagd. 
-                            $return = "<select name=" . $DisplayName . ">";
-                            $returndebug .= "The statement did tun sucesfull!" . "<br />"; // Success geprint naar scherm
-                            while ($row = $statementrunned->fetch_assoc()){
-                                $option = $row["$Values"];
-                                $return .= "<option value=" . "'$option'". ">" . "$option" . "</option>" . "<br />";
-                            }
-                            $return .= "</select>";
-                            $resultfunction = true;
-                        } else {
-                            $returndebug .= "Oops! that did no go as we planned! The stament " . $statement . "Failed! The Information below is generated for the system administrator:" . "<br>" . $DBconnect->error . "<br /"; // Fout geprint naar scherm in Debug Style
-                            $resultfunction = false;
-                        }
-                        
-                    return array('optionfield'=>"$return", 'result'=>"$resultfunction", 'debug'=>"$returndebug");
-
-                    }
-
         
 /*
         function sendMail($subject, $reciever, $message, $debug){
@@ -768,7 +736,7 @@
         // Let's send thme mail
             mail($to, $subject, $VerMail, $headers);
             $debug .= "An email was send to $to with $subject as subject.";*/
-        }
+        //}
 
 
         

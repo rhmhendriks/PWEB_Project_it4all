@@ -1,6 +1,6 @@
 <?php session_start() ?>
     <div id="OTPappCheckForm">
-        <form method="post" action="SetupPin.php" class="authenticationforms-container">
+        <form method="post" action="setupPin.php" class="authenticationforms-container">
         <br><br>
         <h1> Persoonlijke pincode aanmaken</h1>
         <p>Het is tijd om een persoonlijke pincode aan te maken! Hieronder kunt u een pincode aanmaken van minimaal 6 cijfers. Wij adviseren u om een veilige pincode te kiezen en dus geen geboortedatum of een andere makkelijk te raden reeks aan getallen.</p>
@@ -13,10 +13,20 @@
                     <label>Pincode bevestigen<span class="redStar">*</span></label>              <input type="password" name="Pin2" id="Pin2" size="40">  
                     <label>Beveiligingsvraag "Wat is de naam van uw eerste school?"<span class="redStar">*</span></label>              <input type="password" name="sqA" id="sqA" size="40"> 
                     <label>Beveiligingsvraag "Wat is uw lievelingsmaaltijd?"<span class="redStar">*</span></label>              <input type="password" name="sqB" id="sqB" size="40"> 
-
                 </div>
+
+                <script language='javascript' type='text/javascript'>
+                    function checkConfirmation(input) {
+                        if (input.value != document.getElementById('Pin').value) {
+                            input.setCustomValidity('De wachtwoorden komen niet overeen');
+                        } //else {
+                            //input.setCustomValidity('');
+                        //}
+                    }
+                </script>
+
                 <div id="submit2FApinform">
-                    <input type="submit" class= "btn" value="Code Controleren" name="checkCode" id="checkCode">
+                    <input type="submit" class= "btn" value="Pincode Opslaan" name="savePin" id="savePin">
                 </div>
         </form>  
     </div>
