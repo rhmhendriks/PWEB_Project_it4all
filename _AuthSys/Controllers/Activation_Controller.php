@@ -4,7 +4,6 @@
         $message = "";
         $debug = "";
         session_start(); // De sessie wordt gestart
-        $options = ['cost' => 12]; // increate costts for better password encryption
 
     // We checken of het formulier is ingestuurd
         if (isset($_POST['Activeren'])){

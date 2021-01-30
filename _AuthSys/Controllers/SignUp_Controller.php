@@ -120,5 +120,5 @@ require "../../_init/initialize.php";
                                      }
         $_SESSION['message_su'] = $Message;
         $_SESSION['Debug_su'] = $Debug;
-        header('location: ../../index.php?page=auth&auth=SignUp');
+        header('location: ../../index.phpinc=y&page=auth&auth=SignUp');
 ?>

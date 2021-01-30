@@ -332,10 +332,10 @@
             //--------------------------------------------------------------//
             ## Function created on 20/10/2019                               ##
             ## Created by Ronald HM Hendriks                                ##
-            // last updated 24/10/2019 1:54PM by Ronald HM Hendriks         //
+            // last updated 30/01/2021 9:49AM by Ronald HM Hendriks         //
             //////////////////////////////////////////////////////////////////
                     function MySqlDo_Delete($table, $idColumn, $ID){
-                        $statementdel = "DELETE FROM " . `$table` . "WHERE " . $idColumn . " = " . $ID . ";";
+                        $statementdel = "DELETE FROM " . $table . "WHERE " . $idColumn . " = " . $ID . ";";
                         $Connection = MySqlDo_Connector('Connect');
                         if ($Connection['result']){
                             $returndebug = $Connection['debug'];
@@ -356,6 +356,9 @@
                     }
         
         ### MySqlDo ###
+            /**
+             * ! THIS METHOD NEEDS TO BE REFACTORED IF THERE IS TIME!
+             */
             //////////////////////////////////////////////////////////////////
             // MySqlDo_Delete Function                                      //
             //--------------------------------------------------------------//
@@ -369,7 +372,7 @@
             //--------------------------------------------------------------//
             ## Function created on 20/10/2019                               ##
             ## Created by Ronald HM Hendriks                                ##
-            // last updated 24/10/2019 1:54PM by Ronald HM Hendriks         //
+            // last updated 30/01/2021 09:49AM by Ronald HM Hendriks        //
             //////////////////////////////////////////////////////////////////
                     function MySqlDo($ToDo, $OnWhat, $var1 = NULL, $var2 = NULL, $var3 = NULL, $var4 = NULL, $var5 = NULL, $var6 = NULL, $var7 = NULL, $var8 = NULL, $var9 = NULL, $var10 = NULL, $var11 = NULL, $var12 = NULL, $var13 = NULL, $var14 = NULL, $var15 = NULL){
                         // Nu gaat de functie beginnen met aantal controles. 
@@ -643,14 +646,83 @@
                                             $resultfunction = $ResultOverview['result'];
                                             break;                    
                                     }
+                                } 
+                                
+/**
+ * * FROM THIS POINT ON WE STARTED WORKING ON PROJECT 2.2
+ * * SOME OF THE FUNTIONS ABOVE HAVE BEEN EDITED FOR THIS
+ * * PROJECT. IN THE SAME FOLDER AS THIS FILE IS A LIST 
+ * * WITH THE CHANGES THAT WE MADE THERE. 
+ */
+                                
+                                
+                                
+                                elseif ($OnWhat == "Contactform"){ //*
+                                    $table = 'ContactForm'; // We specificeren de exacte tabelnaam
+                                    $idColumn = 'ApplyID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
+                                    switch($ToDo){ //**
+                                        case "Add":
+                                            $columns = '`ApplyID`, `Name`, `PhoneNumber`, `EMailAddress`, `Question`'; // De kolommem specificeren ten behoeve van het uit te voeren statement uit mysqldo_add
+                                            $content = "NULL, '$var1', '$var2', '$var3', '$var4'"; // De toe te voegen waarden worden aangegeven ten behoeve van het uit te voeren statement in mysqldo_add
+                                            $AddArray = MySqlDo_Add($table, $columns, $content); // Hier wordt de array gecreeerd door de functie mysql_add opghaald. Tevens wordt hiermee geprobeerd om de gegevens aan de database toe te voegen.
+                                            $ActionLog = $AddArray['debug']; // Nu wordt de debug informatie afkomstig uit de funtie mysqldo_add weggeschreven naar de actionlog
+                                            $AddedID = $AddArray['ID']; // Het ID van het toegevoegde record word gespecificeerd
+                                            $resultfunction = $AddArray['result']; // De result boolean wordt gevuld met het resultaat van de funtie mysqldo_add
+                                            break;
+                                        case "Delete":
+                                            $ID = $var1;
+                                            $DelArray = MySqlDo_Delete($table, $idColumn, $ID);
+                                            $ActionLog = $DelArray['debug'];
+                                            $AddedID = $ID;
+                                            $resultfunction = $DelArray['result'];
+                                            break; 
+                                        case "Overview":
+                                            // we gaan de kolomnamen maken
+                                            $columns = ["ApplyID", "Name", "PhoneNumber", "EMailAddress", "Question"];
+                                            $ResultOverview = MySqlDo_Overview($table, $columns, $idColumn);
+                                            $ActionLog = $ResultOverview['debug'];
+                                            $AddedID = $ResultOverview['table'];
+                                            $resultfunction = $ResultOverview['result'];
+                                            break;                    
+                                    }
                                 }
                         return array('debug'=>$ActionLog, 'result'=>$resultfunction, 'ID'=>$AddedID);
                     }
 
-        ### mail sender ###
+                    /**
+                     * * MYSQLDO GET FUNCTION
+                     * 
+                     * THIS FUNTION IS USED TO GET DATA FROM THE DATABASE
+                     */
+                    function MySqlDo_DropDown($Values, $tablename, $DisplayName){
+                        // connectie maken met de database
+                        $Connection = MySqlDo_Connector('Connect');
+                        $DBconnect = $Connection['connection'];
+                        $returndebug = $Connection['debug'];
+                        
+                        // statement maken
+                        $statement = "SELECT `$Values` FROM `$tablename`";
+                        $statementrunned = $DBconnect->query($statement);
+                        if ($statementrunned->num_rows >0) { // Hier wordt het statement uitgevoerd en checken we of hij is geslaagd. 
+                            $return = "<select name=" . $DisplayName . ">";
+                            $returndebug .= "The statement did tun sucesfull!" . "<br />"; // Success geprint naar scherm
+                            while ($row = $statementrunned->fetch_assoc()){
+                                $option = $row["$Values"];
+                                $return .= "<option value=" . "'$option'". ">" . "$option" . "</option>" . "<br />";
+                            }
+                            $return .= "</select>";
+                            $resultfunction = true;
+                        } else {
+                            $returndebug .= "Oops! that did no go as we planned! The stament " . $statement . "Failed! The Information below is generated for the system administrator:" . "<br>" . $DBconnect->error . "<br /"; // Fout geprint naar scherm in Debug Style
+                            $resultfunction = false;
+                        }
+                        
+                    return array('optionfield'=>"$return", 'result'=>"$resultfunction", 'debug'=>"$returndebug");
+
+                    }
 
         
-
+/*
         function sendMail($subject, $reciever, $message, $debug){
 
             require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
@@ -677,7 +749,7 @@
                 $debug .= 'Email error: ' . $mail->ErrorInfo . "\n";
             } else {
                 
-            }
+            }*/
             
             /*
             //Let's prepare the mail.

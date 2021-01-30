@@ -12,7 +12,7 @@
         <?php echo '<p style="color:Red">' . $CustomerID . '</p>'; if (DebugisOn) {echo '<p style="color:Red">' . $debug . '</p>';} ?>
         <?php if (isset($_SESSION['Message_Act'])){ echo '<p style="color:Red">' . $_SESSION['Message_Act'] . '</p>'; } if (DebugisOn && isset($_SESSION['Debug_Act'])){ echo '<p style="color:Red">' . $_SESSION['Debug_Act'] . '</p>';}?>
         <div id="activatiegegevens">
-            																		<input type=text name="token" id="token" value="<?php echo $_GET['token'];?>">
+            																		<input type=hidden name="token" id="token" value="<?php echo $_GET['token'];?>">
             <label>Klantnummer<span class="redStar">*</span></label>				<input 		type="text" 	name="klantnummer"			id="klantnummer" 			size="40" value="<?php echo $CustomerID; ?>" required disabled>
 	        <label>E-mailadres<span class="redStar">*</span></label>	    		<input 		type="email" 	name="emailadres"			id="emailadres" 			size="40" value="<?php echo  $EmailAddress; ?>" required disabled>
         	<label>Activatiecode<span class="redStar">*</span></label>	    		<input 		type="password" 	name="activatiecode"			id="activatiecode" 			size="40" required>
