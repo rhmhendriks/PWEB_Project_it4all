@@ -1,6 +1,7 @@
 <?php
     require "../../_init/initialize.php";
-    
+
+
     if (isset($_POST['submit'])) {
         // Laten we eerst gaan controleren of de ingevoerde wachtwoorden hetzelfde zijn
         if (isset($_POST['wachtwoord']) && $_POST['wachtwoord'] !== $_POST['wachtwoordb']){
@@ -19,7 +20,7 @@
             $Country                        = CheckValue($_POST['land']);
             $BIC                            = CheckValue($_POST['BIC']);
             $IBAN                           = CheckValue($_POST['IBAN']);
-            $PasswordHash                   = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
+            $PasswordHash                   = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT, $options);
             $Admin                          = CheckValue($_POST['IsAdmin']);
             $MailVerified                   = CheckValue($_POST['MailVerified']);
 
@@ -71,7 +72,7 @@
                         
                                 $token = bin2hex(random_bytes(50));  // Het token aanmaken voor de verificatie
                                 $Password = mt_rand(10000000, 99999999); // Activatiecode aanmaken
-                                $PasswordHash = password_hash($Password, PASSWORD_DEFAULT);
+                                $PasswordHash = password_hash($Password, PASSWORD_DEFAULT, $options);
                             } else {
                        
                                 $token = NULL; // Er is geen token nodig

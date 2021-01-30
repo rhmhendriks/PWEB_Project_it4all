@@ -19,6 +19,7 @@
         // include basic libary's
         require "config.php";
         require "functionlibary.php";
+        require $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
         #require "sendMail.php";
         // load composer packages
         #require __DIR__ . '/vendor/autoload.php';
