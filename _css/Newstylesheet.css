@@ -276,6 +276,7 @@ nav ul li ul li a:hover {
     background-color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*                      ///// Artikel opmaak /////                      */
 .articleTitle {
     font-family: Arial, Helvetica, sans-serif;
@@ -1315,6 +1316,50 @@ nav ul li ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 /*activatie form opmaak */
+
+/*                      \\\\\ 2FA styling /////                    */
+#twofactortutorial {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#twofactortutorial h1 {
+    margin: auto;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#twofactortutorial h2 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+    text-align: left;
+}
+#twofactortutorial p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+#twofactortutorial img {
+    width: 100px;
+    height: 100px;
+}
+#twofactortutorial a {
+    
+}
+/*                      \\\\\ 2FA styling /////                    */
+
 
 /*                      \\\\\ Adduserrole styling /////                     */
 #adduserrole_form {
