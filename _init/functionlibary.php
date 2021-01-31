@@ -109,7 +109,7 @@
             ## Created by Ronald HM Hendriks                                ##
             // last updated 12/10/2019 10:16PM by Ronald HM Hendriks        //
             //////////////////////////////////////////////////////////////////
-                function ShowError($WitchError, $var1, $var2, $var3){
+                /**function ShowError($WitchError, $var1, $var2, $var3){
                     switch($WitchError) {
                         case InvalidPageID :
                             $message =      nl2br("<div id='ERROR'>" /n);
@@ -124,7 +124,7 @@
                             $message .=      nl2br("</p> /n </div>");
                             return($message);
                     }
-                }
+                }*/
 
 
         ### MySqlDo_DropDown ###
@@ -198,7 +198,7 @@
                     $returndebug = $Connection['debug'] . "<br>";
             
                     // We gaan als eerste het statement opmaken
-                    if ($other == AdminForm) {
+                    if ($other == "AdminForm") {
 						$statement = "SELECT Customers.*, Users.EMail, Users.Number_Login_Attempts, Users.Verified, Users.PrivacyAcknoledge FROM Users JOIN Customers ON Users.CustomerID=Customers.ClientNumber";
 					} else {
 						$statement = "SELECT  * FROM {$table}";
@@ -738,6 +738,11 @@
             $debug .= "An email was send to $to with $subject as subject.";*/
         //}
 
+        function generateQRcode($token){
+            $url = 'https://it4all.rhmhendriks.nl/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=index&update=y&Token=' + "$token";
+            $data = urlencode($url);
+            return '<img src="https://api.qrserver.com/v1/create-qr-code/?data=' . $url . '&amp;size=150x150" alt="QR Secured" title="" />';
+        }
 
         
 ?>

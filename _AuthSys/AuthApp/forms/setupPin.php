@@ -47,7 +47,7 @@
 
 
                     $stmGetOTP = "UPDATE AUTH_2FAlinks SET Pincode = $pin, SecurityQuestionA = '$sqA', SecurityQuestionB = '$sqB', Token = 'null' WHERE 'AUTH_2FAlinks.ID' = $sessionID;";
-                    $runned = $DBconnect->query($statementGetUDATA);
+                    $runned = $DBconnect->query($stmGetOTP);
 
                     if($DBconnect->affected_rows <= 0){
                         $message .= "Er ging iets fout aan onze kant! Probeer het later opnieuw!";

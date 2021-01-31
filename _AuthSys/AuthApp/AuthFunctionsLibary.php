@@ -68,8 +68,11 @@
                 $failReason = 2;
             }
 
-        return array('debug'=>$returndebug, 'result'=>$result, 'reason'=>$failReason, 'user'=>$data['user'], 'OTP'=>$data['OTP'], 'sessionID'=>$data['sessionID']);
+        return array('debug'=>$debug, 'result'=>$result, 'reason'=>$failReason, 'user'=>$data['user'], 'OTP'=>$data['OTP'], 'sessionID'=>$data['sessionID']);
     }
+
+    
+
 
 
 ?>

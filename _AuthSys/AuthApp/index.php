@@ -73,20 +73,28 @@
                 }
                     
 
-            } elseif (isset($_GET['update']) && (isset($_GET['token'])) {
+            } elseif (isset($_GET['update']) && (isset($_GET['token']))) {
+                echo "";
                 // 1. validate token
                 // 2. send mail with OTP for verification (30min)
                 // 3. check OTP 
                 // 4. Give user form to create pincode
                 // 6. test if it works
 
-            } elseif (isset($_GET['authenticate']) && (isset($_GET['token'])) {
+            } elseif (isset($_GET['authenticate']) && (isset($_GET['token']))) {
+                $token = $_GET['token'];
                 // 1. validate token
-                // 2. ask for the pincode of the user
-                // 3. validate user pin
-                // 4. create otp 
-                // 5. place hashed otp in databse (60sec)
-                // 6. display otp to user with timer. 
+                $tokenResult = tokenValidator($token);
+
+                if ($tokenResult['result'] == true){
+                    // present the user with the pincode form,
+                    // after filling this the user will be presented
+                    // with the OTP. 
+                    // * This is managed from the form controller.
+
+                    immediate_redirect_to("../forms/validationForm.php?sessionID=$sessionID");
+                }
+
             } else {
                 echo "<h1>Something went wrong!</h1>";
                 echo "<p>The given action in the URL is incorrect. Try again later</p>";
