@@ -61,7 +61,7 @@
                     $message .= "Er is iets fout gegaan aan onze kant! Probeer het over een paar seconden opnieuw!";
                     $_SESSION['Debug_2FAsetup'] = $message;
                     $_SESSION['Debug_2FAsetup'] = $debug;
-                    $redirectlocation = $_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp";
+                    immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp");
                 }
             }
                                                 

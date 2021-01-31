@@ -23,14 +23,44 @@
                     $enteredPin2 = CheckValue($_POST['Pin2']);
                     $enteredsqA = CheckValue($_POST['sqA']);
                     $enteredsqB = CheckValue($_POST['sqB']);
+
+                    if(!$enteredPin == $enteredPin2){
+                        $message .= "De pincodes komen niet overeen! Probeer het opnieuw.";
+                        $debug .= "The passwords didn't match, the javascript must have been disabled.";
                         
-                    // now we need to retrieve the OTP hash to very the identification code
-                    $stmGetOTP = "UPDATE `AUTH_2FAlinks` SET `Pincode` = 'nbrfhrt', `SecurityQuestionA` = 'vva', `SecurityQuestionB` = 'vva' WHERE `AUTH_2FAlinks`.`ID` = 1;";
+                        // remove possible old debug and message info
+                        unset($_SESSION['message_su']);
+                        unset($_SESSION['Debug_su']);
+
+                        $_SESSION['Debug_2FAsetup'] = $message;
+                        $_SESSION['Debug_2FAsetup'] = $debug;
+
+                        immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp");
+                    }
+                        
+                    // Now we need to hash the data and send it to the database
+                    // We also remove the token because of the fact that 2FAapp is enabled from now on. 
+                    $pin = password_hash($enteredPin, PASSWORD_DEFAULT);
+                    $sqA = password_hash($enteredsqA, PASSWORD_DEFAULT);
+                    $sqB = password_hash($enteredsqB, PASSWORD_DEFAULT);
+
+
+
+                    $stmGetOTP = "UPDATE AUTH_2FAlinks SET Pincode = $pin, SecurityQuestionA = '$sqA', SecurityQuestionB = '$sqB', Token = 'null' WHERE 'AUTH_2FAlinks.ID' = $sessionID;";
                     $runned = $DBconnect->query($statementGetUDATA);
 
-                    while ($row = $statementRunnedGetUDATA->fetch_assoc()) {
-                        $user = $row['User'];
-                        $OTPhash = $row['OTP'];
+                    if($DBconnect->affected_rows <= 0){
+                        $message .= "Er ging iets fout aan onze kant! Probeer het later opnieuw!";
+                        $debug .= "No rows are updated!";
+                        
+                        // remove possible old debug and message info
+                        unset($_SESSION['message_su']);
+                        unset($_SESSION['Debug_su']);
+
+                        $_SESSION['Debug_2FAsetup'] = $message;
+                        $_SESSION['Debug_2FAsetup'] = $debug;
+
+                        immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp");
                     }
 
                     if (!password_verify($PasswordEntered, $PasswordHash)){
@@ -44,7 +74,7 @@
                         $_SESSION['Debug_2FAsetup'] = $message;
                         $_SESSION['Debug_2FAsetup'] = $debug;
 
-                        $redirectlocation = $_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp";
+                        immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAPin");
                     } else {
                         // Correct OTP was entered
 
@@ -64,7 +94,7 @@
                     $message .= "Er is iets fout gegaan aan onze kant! Probeer het over een paar seconden opnieuw!";
                     $_SESSION['Debug_2FAsetup'] = $message;
                     $_SESSION['Debug_2FAsetup'] = $debug;
-                    $redirectlocation = $_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAapp";
+                    immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=setup2FAPin");
                 }
             }
                                                 
