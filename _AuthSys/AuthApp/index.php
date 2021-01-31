@@ -87,6 +87,7 @@
                 $tokenResult = tokenValidator($token);
 
                 if ($tokenResult['result'] == true){
+                    $sessionID = $tokenResult['sessionID'];
                     // present the user with the pincode form,
                     // after filling this the user will be presented
                     // with the OTP. 

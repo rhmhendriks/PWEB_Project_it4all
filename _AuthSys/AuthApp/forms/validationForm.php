@@ -1,6 +1,9 @@
-<?php session_start() ?>
+<?php session_start() 
+/**
+ * TODO: Display OTP when available
+ */?>
     <div id="pinForm">
-        <form method="post" action="appSetupController.php" class="authenticationforms-container">
+        <form method="post" action="validationFormController.php" class="authenticationforms-container">
         <h1> Uw persoonlijke pincode </h1>
         <p>Om verder te gaan met inloggen moet kunt u hieronder uw pincode intoetsen. Wanneer deze juist is ontvangt u uw eenamlige aanmeldcode.</p>
         <p style="color:blue">LET OP! Deze code is nog maar .... geldig </p>
