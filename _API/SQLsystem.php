@@ -3,6 +3,16 @@
     function createSelectStatementData($fromdate, $tildate){
         return "SELECT * FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate'";
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 
     function runSelectStatement($statement){
         echo "HALOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
