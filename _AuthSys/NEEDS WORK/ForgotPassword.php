@@ -1,4 +1,4 @@
-<div id="temporaryform">
+<div id="passwordforgot_form">
 <?php
     // Dit deel vult wat informatie automatisch in voor de klant
         // eerst een aantal waarden inistialiseren 
@@ -128,22 +128,20 @@
             
 
 ?>
-<h1>Wachtwoord vergeten?</h1><br>
-<br>
+<h1>Wachtwoord vergeten?</h1>
 <p>Bent u uw wachtwoord vergeten? Dan kunt u doormiddel van dit formulier uw inloggegevens aanpassen. <b> LET OP: Wanneer u het formulier verstuurd worden uw huidige gegevens onmiddelijk geblokkeerd tot je de stappen in de mail hebt voltooid!</b><p><br>
-<br>
-<br>
-<form action="" method="POST">
-    <fieldset>
-        <legend><h3>Wachtwoord Herstellen</h3></legend>
-            <br>
+
+    <form action="" method="POST">
+        <h3>Wachtwoord Herstellen</h3>
+        <div id="inputforgotpassword">
             <?php 
-		        echo '<pre><p style="color:red">' . $message. '</p><br></pre>' . '<pre> <p style="color:red">' . $debug . '</p><br></pre> '; 
+		        echo '<p><p style="color:red">' . $message. '</p></p>' . '<p> <p style="color:red">' . $debug . '</p></p> '; 
 	        ?>
-            <br>
-            <pre>Klantnummer:       <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> ></pre><br>
-            <pre>Email Adres:       <input type="email" name="emailaddress" id="emailaddress" value=<?php if (isset($CustomerID)){echo '"' . $EmailAddress . "\"";} else { echo '"" required';}?> ></pre><br>
-            <pre>   <input type="submit" name="submit" id="submit" value="Aanvragen"></pre><br><br>
-    </fieldset>
+            <label>Klantnummer<span class="redStar">*</span></label>                <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
+            <label>E-mail address<span class="redStar">*</span></label>             <input type="email" name="emailaddress" id="emailaddress" value=<?php if (isset($CustomerID)){echo '"' . $EmailAddress . "\"";} else { echo '"" required';}?> >
+        </div>
+        <div id="submitforgotpassword">
+            <input type="submit" name="submit" value="aanvragen">
+        </div>
 </form>
 </div>

@@ -14,7 +14,7 @@
         require "../_init/initialize.php";    
     ?>
     <header>
-        <h1><a href="index.php">Eneo</a></h1>
+        <h1><a href="index.php"></a></h1>
         <p>Welcome</p>
     </header>
     <?php
