@@ -16,15 +16,17 @@
             if (isset($_GET['token'])){$token = $_GET['token'];}
             if (isset($_GET['from'])){$from = $_GET['from'];}
             if (isset($_GET['til'])){$til = $_GET['til'];}
-            if (isset($_GET['where'])){$where = $_GET['where'];}
-            if (isset($_GET['between'])){$where = $_GET['where'];}
-            if (isset($_GET['equalto'])){$equalto = $_GET['equalto'];}
-            if (isset($_GET['secondwhere'])){$secondwhere = $_GET['secondwhere'];}
-            if (isset($_GET['secondequalto'])){$secondequalto = $_GET['secondequalto'];}
-            if (isset($_GET['secondbetween'])){$secondbetween = $_GET['secondbetween'];}
-            if (isset($_GET['orderby'])){$secondbetween = $_GET['orderby'];}           
+            if (isset($_GET['stations'])){$stations = $_GET['stations'];} else {$stations = null;}
+            if (isset($_GET['filetype'])){$ft = $_GET['filetype'];}
+            //if (isset($_GET['where'])){$where = $_GET['where'];}
+            //if (isset($_GET['between'])){$where = $_GET['where'];}
+            //if (isset($_GET['equalto'])){$equalto = $_GET['equalto'];}
+            //if (isset($_GET['secondwhere'])){$secondwhere = $_GET['secondwhere'];}
+            //if (isset($_GET['secondequalto'])){$secondequalto = $_GET['secondequalto'];}
+            //if (isset($_GET['secondbetween'])){$secondbetween = $_GET['secondbetween'];}
+            //if (isset($_GET['orderby'])){$secondbetween = $_GET['orderby'];}           
 
-            if (isset($_GET['type'])){$type = $_GET['type'];}
+            if (isset($_GET['type'])){$type = $_GET['type'];} 
 
             // get date as they are in SQL
             $from = date('Y-m-d', strtotime($from));
@@ -53,12 +55,18 @@
             checkAuth();
         
             // create statement
-            $stat = createSelectStatementData($from, $til); 
-            echo $from . "<br>";
-            echo $til . "<br>";
-            echo $stat . "<br>";
+            $resultarray = retrieveData($from, $til, $type, $stations);
 
-            $resultarray = runSelectStatement($stat); // <<<<<
+            echo $resultarray["debug"] . "<br>";
+
+            if ($resultarray['result']){
+                $data = $resultarray["data"];
+                if ($ft="xml"){
+                    createXML($data);
+                } elseif ($ft="json"){
+                    createJSON($data);
+                }
+            }
 
             echo $resultarray["debug"] . "<br>";
 

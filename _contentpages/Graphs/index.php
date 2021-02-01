@@ -38,7 +38,7 @@
                             ],
                             borderWidth: 1
                         },{
-                            label: 'Weather Data',
+                            label: 'None',
                             data: [],  // Y-As
                             backgroundColor: [
                                 'rgba(250, 172, 207, 0.4)',
@@ -48,7 +48,7 @@
                             ],
                             borderWidth: 1
                         },{
-                            label: 'Weather Data',
+                            label: 'None',
                             data: [],  // Y-As
                             backgroundColor: [
                                 'rgba(57, 92, 50, 0.2)',

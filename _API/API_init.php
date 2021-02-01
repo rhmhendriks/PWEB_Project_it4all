@@ -108,7 +108,7 @@
     }
 
     ### Data Retriever ###
-    function retrieveData($fromDate=null, $tilDate=null, $types){
+    function retrieveData($fromDate=null, $tilDate=null, $types, $stations = null ){
         // create connection
         $ConnectionArray = MySqlDo_Connector('Connect');
         $conn = $ConnectionArray['connection'];
@@ -122,54 +122,75 @@
             $tempArray = strtoupper($types);
             $typesArrayChars = str_split($types);
 
-            $columns = array();
+            $columns = "";
 
             for ($i=0;$i<sizeof($typesArrayChars)-1;$i++){
                 $ch=$typesArrayChars[$i];
 
                 switch($ch){
                     case W:
-                        array_push($columns, "Windsnelheid");
+                        $columns .= ", Windsnelheid";
                         break;
                     case T:
-                        array_push($columns, "Temperatuur");
+                        $columns .= ", Temperatuur";
                         break;
                     case N:
-                        array_push($columns, "Neerslag");
+                        $columns .= ", Neerslag";
                         break;
                     case S:
-                        array_push($columns, "Sneeuwval");
+                        $columns .= ", Sneeuwval";
                         break;
                     case D:
-                        array_push($columns, "Windrichting");
+                        $columns .= ", Windrichting";
                         break;
                     case P:
-                        array_push($columns, "Luchtdruk_Station");
+                        $columns .= ", Luchtdruk_Station";
                         break;
                     case O:
-                        array_push($columns, "Luchtdruk_Zee");
+                        $columns .= ", Luchtdruk_Zee";
                         break;
                     case X:
-                        array_push($columns, "stn");
+                        $columns .= ", stn";
                         break;
                     case V:
-                        array_push($columns, "Zicht");
+                        $columns .= ", Zicht";
                         break;
                     case C:
-                        array_push($columns, "Bewolking");
+                        $columns .= ", Bewolking";
                         break;
                     case E:
-                        array_push($columns, "Gebeurtenis");
+                       $columns .= ", Gebeurtenis";
                         break;
                     case Z:
-                        array_push($columns, "Dauwpunt");
+                        $columns .= ", Dauwpunt";
                         break;
-                }
-
-                
+                }  
+                $columns = trim($columns, ", ");
             }
 
-        
+            if (!$stations = null || !$stations = ""){
+                $stationArray = explode("-",$stations);
+                $stmSelect = "SELECT $columns FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate' AND 'stn' = $stationArray[0]";
+
+                for ($i=1;$i<sizeof($stationArray)-1;$i++){
+                    $stmSelect .= " OR 'stn' = $stationArray[$i]";
+                }
+                
+            } else {
+                $stmSelect = "SELECT $columns FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate'";
+            }
+
+            $statementrunned = $conn->query($stmSelect); // statement uitvoeren
+
+            if ($statementrunned->num_rows > 0) {
+                $result = true;
+                $debug .= "RETRIEVEDATA: we have data <br>";
+            } else {
+                $result = false;
+                $debug .= "RETRIEVEDATA: no data! <br>";
+            }
+            
+            return array ("data"=>$statementrunned, "result"=>$result, "debug"=>$debug);
         }
 
     }
