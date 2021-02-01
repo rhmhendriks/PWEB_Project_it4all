@@ -135,18 +135,35 @@
                         array_push($columns, "Temperatuur");
                         break;
                     case N:
-                        array_push($columns, "Temperatuur");
+                        array_push($columns, "Neerslag");
                         break;
-                    case T:
-                        array_push($columns, "Temperatuur");
+                    case S:
+                        array_push($columns, "Sneeuwval");
                         break;
-                    case T:
-                        array_push($columns, "Temperatuur");
+                    case D:
+                        array_push($columns, "Windrichting");
                         break;
-                    case T:
-                        array_push($columns, "Temperatuur");
+                    case P:
+                        array_push($columns, "Luchtdruk_Station");
                         break;
-
+                    case O:
+                        array_push($columns, "Luchtdruk_Zee");
+                        break;
+                    case X:
+                        array_push($columns, "stn");
+                        break;
+                    case V:
+                        array_push($columns, "Zicht");
+                        break;
+                    case C:
+                        array_push($columns, "Bewolking");
+                        break;
+                    case E:
+                        array_push($columns, "Gebeurtenis");
+                        break;
+                    case Z:
+                        array_push($columns, "Dauwpunt");
+                        break;
                 }
             }
 
