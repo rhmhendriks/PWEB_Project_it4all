@@ -39,7 +39,7 @@
                             borderWidth: 1
                         },{
                             label: 'Weather Data',
-                            data: [2, 8, 22, 28, 19, 55],  // Y-As
+                            data: [2, 8, 22, 14, 19, 16],  // Y-As
                             backgroundColor: [
                                 'rgba(250, 172, 207, 0.4)',
                             ],
@@ -49,12 +49,12 @@
                             borderWidth: 1
                         },{
                             label: 'Weather Data',
-                            data: [2, 8, 22, 24, 16, 3],  // Y-As
+                            data: [12, 16, 22, 24, 16, 12],  // Y-As
                             backgroundColor: [
-                                'rgba(245, 228, 166, 0.4)',
+                                'rgba(255, 163, 163, 0.4)',
                             ],
                             borderColor: [
-                                'rgba(191, 151, 4, 10)',
+                                'rgba(145, 0, 0, 10)',
                             ],
                             borderWidth: 1
                         }]
