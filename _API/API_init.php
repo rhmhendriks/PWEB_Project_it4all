@@ -161,7 +161,7 @@
                     case E:
                        $columns .= ", Gebeurtenis";
                         break;
-                    case Z:
+                    case Z:Eneo/
                         $columns .= ", Dauwpunt";
                         break;
                 }  
