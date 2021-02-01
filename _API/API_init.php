@@ -10,7 +10,6 @@
     define("APIIPtableName", "API_IPwhitelist");
 
     function MySqlDo_Connector($action, $Connection = NULL, $DB = "unwdmi_ron"){
-        echo "KOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK";
         $returnconnection = "";
         if ($action == 'Connect'){
             $Connection = @new mysqli(ServerName, DBSigninName, DBKey, $DB);
@@ -69,30 +68,108 @@
         $ConnectionArray = MySqlDo_Connector('Connect');
         $conn = $ConnectionArray['connection'];
         $debug = $ConnectionArray['debug'];
+       
 
-        // Select the query
-        $query = "SELECT" . "*" . "FROM" . APITOKENtableName . "WHERE Token = " . $token; //. ", Valid = " . $valid_til . ", Company = " . $company
-        $result = mysqli_query($conn, $sql); // Erase line after testing
+        if ($ConnectionArray['result']){
+
+            $debug .= "CHECKTOKEN: The connection with the database was sucesfull <br>";
+            
+            // Select the query
+            $query = "SELECT" . "*" . "FROM" . APITOKENtableName . "WHERE Token = " . $token; //. ", Valid = " . $valid_til . ", Company = " . $company
+            $result = mysqli_query($conn, $sql); // Erase line after testing
 
 
-        $statementrunned = $conn->query($statement); // statement uitvoeren
+            $statementrunned = $conn->query($statement); // statement uitvoeren
 
-        //print_r($statementrunned);
+            //print_r($statementrunned);
 
-        if ($statementrunned->num_rows > 0) {
-            while($row = $statementrunned->fetch_assoc()) {
-                $dbdate = date('Y-m-d', strtotime($row['Valid']));
-                if (date('Y-m-d') <= $dbdate){
-                    $result = TRUE;
-                } else {
-                    $result = FALSE;
+            if ($statementrunned->num_rows > 0) {
+                while($row = $statementrunned->fetch_assoc()) {
+                    $dbdate = date('Y-m-d', strtotime($row['Valid']));
+                    if (date('Y-m-d') <= $dbdate){
+                        $result = TRUE;
+                    } else {
+                        $result = FALSE;
+                    }
                 }
+            } else {
+                $result = FALSE;
             }
         } else {
             $result = FALSE;
+            $statementrunned = 'None';
+            $debug .= "CHECKTOKEN: The connection with the database failed! <br>";
+            
         }
 
+        
+
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
+    }
+
+    ### Data Retriever ###
+    function retrieveData($fromDate=null, $tilDate=null, $types){
+        // create connection
+        $ConnectionArray = MySqlDo_Connector('Connect');
+        $conn = $ConnectionArray['connection'];
+        $debug = $ConnectionArray['debug'];
+
+        if ($ConnectionArray['result']){
+            // write debug
+            $debug .= "RETRIEVEDATA: The connection with the database was sucesfull <br>";
+
+            // translate the types using wileConstruction
+            $tempArray = strtoupper($types);
+            $typesArrayChars = str_split($types);
+
+            $columns = array();
+
+            for ($i=0;$i<sizeof($typesArrayChars)-1;$i++){
+                $ch=$typesArrayChars[$i];
+
+                switch($ch){
+                    case W:
+                        array_push($columns, "Windsnelheid");
+                        break;
+                    case T:
+                        array_push($columns, "Temperatuur");
+                        break;
+                    case N:
+                        array_push($columns, "Neerslag");
+                        break;
+                    case S:
+                        array_push($columns, "Sneeuwval");
+                        break;
+                    case D:
+                        array_push($columns, "Windrichting");
+                        break;
+                    case P:
+                        array_push($columns, "Luchtdruk_Station");
+                        break;
+                    case O:
+                        array_push($columns, "Luchtdruk_Zee");
+                        break;
+                    case X:
+                        array_push($columns, "stn");
+                        break;
+                    case V:
+                        array_push($columns, "Zicht");
+                        break;
+                    case C:
+                        array_push($columns, "Bewolking");
+                        break;
+                    case E:
+                        array_push($columns, "Gebeurtenis");
+                        break;
+                    case Z:
+                        array_push($columns, "Dauwpunt");
+                        break;
+                }
+            }
+
+        
+        }
+
     }
 
     ### AUTH Check ###
