@@ -43,6 +43,10 @@
         $query = "SELECT" . "*" . "FROM" . APIIPtableName . "WHERE 'IP Address = " . $ip;
         $result = mysqli_query($conn, $sql); // Erase line after testing
 
+        echo $query;
+        echo $result;
+
+
 
         $statementrunned = $conn->query($statement); // statement uitvoeren
 
@@ -51,12 +55,15 @@
                 $dbdate = date('Y-m-d', strtotime($row['Valid']));
                 if (date('Y-m-d') <= $dbdate){
                     $result = TRUE;
+                    echo "ja";
                 } else {
                     $result = FALSE;
+                    echo "nee";
                 }
             }
         } else {
             $result = FALSE;
+            echo "nee2";
         }
 
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
