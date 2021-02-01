@@ -47,6 +47,16 @@
                                 'rgba(232, 0, 104, 10)',
                             ],
                             borderWidth: 1
+                        },{
+                            label: 'Weather Data',
+                            data: [2, 8, 22, 24, 16, 3],  // Y-As
+                            backgroundColor: [
+                                'rgba(245, 228, 166, 0.4)',
+                            ],
+                            borderColor: [
+                                'rgba(191, 151, 4, 10)',
+                            ],
+                            borderWidth: 1
                         }]
                 },
                 options: {
