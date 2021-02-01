@@ -11,8 +11,8 @@
                     <input type="submit" class= "btn" value="inloggen" name="inloggen" id="inloggen">
                 </div>
                 <div id="linksloginform">
-                    <p><a href="index.php?page=auth&auth=ForgotPassword">Wachtwoord vergeten?</a></p>
-                    <p>Je kunt je hier <a href="index.php?page=auth&auth=SignUp">registreren</a></p>
+                    <p><a href="index.php?inc=y&formtype=admin&page=auth&auth=ForgotPassword">Wachtwoord vergeten?</a></p>
+                    <p>Je kunt je hier <a href="index.php?inc=y&formtype=admin&page=auth&auth=SignUp">registreren</a></p>
                 </div>
         </form>  
     </div>
