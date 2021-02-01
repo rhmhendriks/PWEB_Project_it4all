@@ -1332,7 +1332,7 @@ nav ul li ul li a:hover {
     flex-direction: column;
     border: 2px solid #ffaa00;
 }
-#passwordforgot_form input[type="hidden"], #passwordforgot_form input[type="email"] {
+#passwordforgot_form input[type="email"] {
     border-radius: 5px;
     padding: 6px 12px;
     outline: none;
@@ -1354,14 +1354,12 @@ nav ul li ul li a:hover {
     font-size: 34px;
     text-align: center;
 }
-#passwordforgot_form h3 {
-    font-size: 28px;
-    text-align: center;
-}
 #passwordforgot_form p {
     display: flex;
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 #passwordforgot_form label {
     font-size: 15px;

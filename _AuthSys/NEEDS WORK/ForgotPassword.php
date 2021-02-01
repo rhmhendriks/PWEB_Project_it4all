@@ -129,19 +129,19 @@
 
 ?>
 <h1>Wachtwoord vergeten?</h1>
-<p>Bent u uw wachtwoord vergeten? Dan kunt u doormiddel van dit formulier uw inloggegevens aanpassen. <b> LET OP: Wanneer u het formulier verstuurd worden uw huidige gegevens onmiddelijk geblokkeerd tot je de stappen in de mail hebt voltooid!</b><p><br>
+    <p>Bent u uw wachtwoord vergeten? Dan kunt u doormiddel van dit formulier uw inloggegevens aanpassen. </p>
+    <p><b>LET OP: Wanneer u het formulier verstuurd worden uw huidige gegevens onmiddelijk geblokkeerd tot je de stappen in de mail hebt voltooid!</b><p>
 
     <form action="" method="POST">
-        <h3>Wachtwoord Herstellen</h3>
         <div id="inputforgotpassword">
             <?php 
 		        echo '<p><p style="color:red">' . $message. '</p></p>' . '<p> <p style="color:red">' . $debug . '</p></p> '; 
 	        ?>
-            <label>Klantnummer<span class="redStar">*</span></label>                <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
+            <span></span>                                                           <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
             <label>E-mail address<span class="redStar">*</span></label>             <input type="email" name="emailaddress" id="emailaddress" value=<?php if (isset($CustomerID)){echo '"' . $EmailAddress . "\"";} else { echo '"" required';}?> >
         </div>
         <div id="submitforgotpassword">
             <input type="submit" name="submit" value="aanvragen">
         </div>
-</form>
+    </form>
 </div>
