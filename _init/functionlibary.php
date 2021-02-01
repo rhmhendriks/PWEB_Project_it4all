@@ -657,8 +657,8 @@
                                 
                                 
                                 
-                                elseif ($OnWhat == "Contactform"){ //*
-                                    $table = 'ContactForm'; // We specificeren de exacte tabelnaam
+                                elseif ($OnWhat == "UserMemberships"){ //*
+                                    $table = 'UserMemberships'; // We specificeren de exacte tabelnaam
                                     $idColumn = 'ApplyID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
                                     switch($ToDo){ //**
                                         case "Add":

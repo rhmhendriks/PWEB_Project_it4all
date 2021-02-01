@@ -137,7 +137,8 @@
             <?php 
 		        echo '<p><p style="color:red">' . $message. '</p></p>' . '<p> <p style="color:red">' . $debug . '</p></p> '; 
 	        ?>
-            <span></span>                                                           <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
+
+            <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
             <label>E-mail address<span class="redStar">*</span></label>             <input type="email" name="emailaddress" id="emailaddress" value=<?php if (isset($CustomerID)){echo '"' . $EmailAddress . "\"";} else { echo '"" required';}?> >
         </div>
         <div id="submitforgotpassword">
