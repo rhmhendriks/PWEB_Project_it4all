@@ -165,6 +165,8 @@
                         array_push($columns, "Dauwpunt");
                         break;
                 }
+
+                
             }
 
         

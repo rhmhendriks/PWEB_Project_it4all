@@ -22,9 +22,7 @@
             if (isset($_GET['secondwhere'])){$secondwhere = $_GET['secondwhere'];}
             if (isset($_GET['secondequalto'])){$secondequalto = $_GET['secondequalto'];}
             if (isset($_GET['secondbetween'])){$secondbetween = $_GET['secondbetween'];}
-            if (isset($_GET['orderby'])){$secondbetween = $_GET['orderby'];}
-        
-            
+            if (isset($_GET['orderby'])){$secondbetween = $_GET['orderby'];}           
 
             if (isset($_GET['type'])){$type = $_GET['type'];}
 

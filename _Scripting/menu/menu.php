@@ -29,7 +29,7 @@
                                     $StatementRunnedGetArticleLists = $DBconnect->query($StatementGetArticleLists);
 
                                 // Nu gaan we de link vaststellen 
-                                    $targetarticlelists = 'index.php?age=articlelist&ID=';
+                                    $targetarticlelists = 'index.php?page=articlelist&ID=';
                                     if($StatementRunnedGetArticleLists->num_rows > 0) {  // Als er rijen zijn gevonden
                                         // gegevens gebruiken
                                         echo '<li><a href="index.php?page=articlelist">Alle Artikelen</a></li>';
