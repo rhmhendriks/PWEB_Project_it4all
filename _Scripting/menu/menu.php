@@ -66,9 +66,10 @@
                             <li><a href="index.php?inc=y&page=statements&statement=disclaimer">Disclaimer</a></li>
                             <li><a href="index.php?inc=y&page=statements&statement=algemene_voorwaarden">Algemene Voorwaarden</a></li>
                             <li><a href="index.php?inc=y&page=AboutUs">Over Ons</a></li>
+                            <li><a href="index.php?inc=y&formtype=content&page=forms&form=contactformulier">Contact</a></li>
                         </ul>
                     </li>
-                    <li class="liFade"><a href="index.php?inc=y&formtype=content&page=forms&form=contactformulier">Contact</a></li>
+                        <li><a id="translate" href="#">Translate</a></li>
                     </ul>
                     <ul class="login">
                     <?php

@@ -134,10 +134,9 @@
 
     <form action="" method="POST">
         <div id="inputforgotpassword">
-            <?php 
-		        echo '<p><p style="color:red">' . $message. '</p></p>' . '<p> <p style="color:red">' . $debug . '</p></p> '; 
-	        ?>
-            <span></span>                                                           <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
+        <?php if (isset($_SESSION['Message_Act']) || isset($_SESSION['Message_si'])){ echo '<p style="color:Red">' . $_SESSION['Message_Act'] . "<br>" . $_SESSION['Message_si'] . '<br></p>'; } if (DebugisOn && isset($_SESSION['Debug_Act']) || DebugisOn && isset($_SESSION['Debug_si']) ){ echo '<p style="color:Red">' . $_SESSION['Debug_Act'] . "<br" . $_SESSION['Debug_si'] . '</p>';}?>
+        
+            <!--<labal>Klantnr<span class="redStar">*</span></label>  -->                  <input type="hidden" name="clientnumber" id="clientnumber" value=<?php if (isset($CustomerID)){echo '"' . $CustomerID . "\" required disabled";} else { echo '""' . ' ' . "disabled";}?> >
             <label>E-mail address<span class="redStar">*</span></label>             <input type="email" name="emailaddress" id="emailaddress" value=<?php if (isset($CustomerID)){echo '"' . $EmailAddress . "\"";} else { echo '"" required';}?> >
         </div>
         <div id="submitforgotpassword">
