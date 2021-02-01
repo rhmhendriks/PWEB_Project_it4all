@@ -5,7 +5,7 @@
             <span class="close">&times;</span>
             <h1> Choose a language to translate the website </h1>
             <p> Have fun browsing</p>
-            <div id="google_translate_element"></div>
+                <div id="google_translate_element"></div>
         </div>
     </div>
 
@@ -120,10 +120,11 @@
             }
         }
     </script>
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                    pageLanguage: 'en',
+                    pageLanguage: 'nl',
                     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
                 },
                 'google_translate_element');
