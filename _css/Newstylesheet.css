@@ -525,6 +525,10 @@ nav ul li ul li a:hover {
 
 
 /* temporaryform opmaak */
+#temporaryform {
+    margin-left: auto;
+    margin-right: auto;
+}
 #temporaryform form {
     text-align: left;
 }
@@ -1354,9 +1358,20 @@ nav ul li ul li a:hover {
 #twofactortutorial img {
     width: 100px;
     height: 100px;
+    margin-right: auto;
+    margin-left: auto;
 }
-#twofactortutorial a {
-    
+#twofactortutorial a:link {
+    color: aqua;
+    text-decoration: none;
+}
+#twofactortutorial a:visited {
+    color: darkcyan;
+    text-decoration: none;
+}
+#twofactortutorial a:hover {
+    color: darkblue;
+    text-decoration: underline;
 }
 /*                      \\\\\ 2FA styling /////                    */
 
@@ -1498,6 +1513,17 @@ nav ul li ul li a:hover {
 /*                      \\\\\ Addcompany styling /////                     */
 
 
+.CRUDoverview h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+.CRUDoverview p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
 
 #tableOverflow {
     overflow-x: scroll;
@@ -1509,6 +1535,8 @@ nav ul li ul li a:hover {
     font-size: 14px;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-right: auto;
+    margin-left: auto;
 } /* The table */
 
 .OverviewTable a img {
@@ -1553,6 +1581,8 @@ nav ul li ul li a:hover {
     flex-direction: column;
     margin: auto;
     background-color: #ffaa00;
+    margin-left: auto;
+    margin-right: auto;
 }
 #winkelwagenWrapper a {
     color: white;
@@ -1568,7 +1598,9 @@ nav ul li ul li a:hover {
     background-color: #ffaa00;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 .error {    
     text-align: center;
@@ -1608,6 +1640,10 @@ nav ul li ul li a:hover {
     background-color: transparent;
 }
 
+#ShoppingOverflow {
+    margin-left: auto;
+    margin-right: auto;
+}
 #ShoppingOverflow table {
     margin: auto;
 }
@@ -1752,6 +1788,11 @@ footer div a:hover {
         width: 80%;
     }
     /*                      \\\\\ Policies styling /////                    */
+    /*                      \\\\\ 2FA styling /////                         */
+    #twofactortutorial {
+        width: 80%;
+    }
+    /*                      \\\\\ 2FA styling /////                         */
 }
 
 
@@ -1975,6 +2016,9 @@ footer div a:hover {
                 #homeTekst p {
                     font-size: 12px;
                 }
+                #twofactortutorial img {
+                    width: 80%;
+                }
 /*                      \\\\\ Home styling /////                        */
 
 /*                      \\\\\ Policies styling /////                    */
@@ -1988,6 +2032,18 @@ footer div a:hover {
                     font-size: 12px;
                 }
 /*                      \\\\\ Policies styling /////                    */
+
+/*                      \\\\\ 2FA styling /////                         */
+                #twofactortutorial h1 {
+                    font-size: 24px;
+                }
+                #twofactortutorial h2 {
+                    font-size: 18px;
+                }
+                #twofactortutorial p {
+                    font-size: 12px;
+                }
+/*                      \\\\\ 2FA styling /////                         */
 
 /*                      ///// Artikel opmaak /////                      */
                 #leftColumn img {

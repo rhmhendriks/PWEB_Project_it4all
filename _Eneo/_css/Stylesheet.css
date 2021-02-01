@@ -242,6 +242,62 @@ nav ul li ul li a:hover {
 
 /*                      \\\\\ retrieve api url form styling /////   */
 
+/*                      \\\\\ formoverview styling /////            */
+.formovertitle {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#eneoadminlist {
+    width: 800px;
+    background-color: #fff7e6;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #0d69a5;
+    border-radius: 5px;
+}
+#eneoadminlist h2 {
+    text-align: center;
+    font-size: 24px;
+}
+#formslist {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+#formslist a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+#formslist a:hover {
+    background-color: #0d69a5;
+}
+#tablelist {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+#tablelist a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: blue;
+}
+#tablelist a:hover {
+    background-color: #0d69a5;
+}
+/*                      \\\\\ formoverview styling /////            */
+
 /*                      \\\\\ Footer styling /////                  */
 footer {
     background-color: #666666;
@@ -329,6 +385,19 @@ footer div a:hover {
                 display: block;
                 cursor: pointer;
             }
+
+            /*      overview style         */
+            #eneoadminlist {
+                flex-direction: column;
+                width: 70%
+            }
+            #formslist {
+                width: 100%;
+            }
+            #tablelist {
+                width: 100%;
+            }
+            /*      overview style         */
 
 
 }       /*        Ending } of @media screen 768 px                  */
