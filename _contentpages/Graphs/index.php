@@ -31,7 +31,7 @@
                             label: 'Weather Data',
                             data: [5, 10, 13, 12, 8, 2],  // Y-As
                             backgroundColor: [
-                                'rgba(234, 248, 186, 1)',
+                                'rgba(234, 248, 186, 0.5)',
                             ],
                             borderColor: [
                                 'rgba(152, 192, 19, 1)',
