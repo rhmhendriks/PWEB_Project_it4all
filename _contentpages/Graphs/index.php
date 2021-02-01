@@ -31,10 +31,10 @@
                             label: 'Weather Data',
                             data: [5, 10, 13, 12, 8, 2],  // Y-As
                             backgroundColor: [
-                                'rgba(234, 248, 186, 0.5)',
+                                'rgba(157, 219, 250, 0.4)',
                             ],
                             borderColor: [
-                                'rgba(152, 192, 19, 1)',
+                                'rgba(13, 105, 165, 10)',
                             ],
                             borderWidth: 1
                         }]
