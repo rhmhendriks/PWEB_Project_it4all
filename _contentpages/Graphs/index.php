@@ -14,19 +14,27 @@
             <canvas id="myChart" width="100" height="80"></canvas>
         </div>
         <script>
+            <?php 
+                // haal data uit database
+                // maak logische datumverdeling 
+
+                $labels = '["' . $value;
+                $value = '["' . $value;            
+            
+            ?> 
             var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["1", "2", "3", "4", "5", "6"],
+                    labels: <?php echo $labels; ?>// ["1", "2", "3", "4", "5", "6"], // X-As
                     datasets: [{
                             label: 'Weather Data',
-                            data: [5, 10, 13, 12, 8, 2],
+                            data: [5, 10, 13, 12, 8, 2],  // Y-As
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(242, 255, 238, 0.2)',
                             ],
                             borderColor: [
-                                'rgba(255,99,132,1)',
+                                'rgba(152, 192, 19, 1)',
                             ],
                             borderWidth: 1
                         }]
