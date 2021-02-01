@@ -26,7 +26,7 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: <?php echo $labels; ?>// ["1", "2", "3", "4", "5", "6"], // X-As
+                    labels: ["1", "2", "3", "4", "5", "6"], // X-As
                     datasets: [{
                             label: 'Weather Data',
                             data: [5, 10, 13, 12, 8, 2],  // Y-As
