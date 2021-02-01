@@ -183,8 +183,8 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Form required styling /////           */
 
-/*                      \\\\\ ip whitelist form styling /////       */
-#ipwhitelist_form {
+/*                      \\\\\ general form styling /////       */
+#general_form {
     max-width: 650px;
     margin: 10px auto;
     background-color: #f2ffee;
@@ -194,12 +194,12 @@ nav ul li ul li a:hover {
     flex-direction: column;
     border: 2px solid #98c013;
 }
-#ipwhitelist_form input[type="text"], #ipwhitelist_form input[type="date"] {
+#general_form input[type="text"], #general_form input[type="date"] {
     border-radius: 5px;
     padding: 6px 12px;
     outline: none;
 }
-#ipwhitelist_form input[type="submit"] {
+#general_form input[type="submit"] {
     border-radius: 5px;
     padding: 4px 10px;
     outline: none;
@@ -209,156 +209,39 @@ nav ul li ul li a:hover {
     margin-top: 10px;
     border: 2px solid #98c013;
 }
-#ipwhitelist_form input[type="submit"] {
+#general_form input[type="submit"] {
     border: 2px solid #98c013;
 }
-#ipwhitelist_form h1 {
+#general_form h1 {
     font-size: 28px;
     text-align: center;
 }
-#ipwhitelist_form label {
+#general_form label {
     font-size: 15px;
     margin-right: 10px;
 }
-#ipwhitelist_form input {
+#general_form input {
     margin-right: 10px;
 }
-#inputipwhitelist {
+#inputgeneral {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: auto;
 }
-#inputipwhitelist label, #inputipwhitelist input {
+#inputgeneral label, #inputgeneral input {
     margin-bottom: 5px;
 }
-#submitipwhitelist {
+#submitgeneral {
     outline: none;
 }
-#ipwhitelist_form p {
+#general_form p {
     display: flex;
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
-/*                      \\\\\ ip whitelist form styling /////       */
+/*                      \\\\\ general form styling /////       */
 
-/*                      \\\\\ ip whitelistcheck form styling /////  */
-#ipwhitelistcheck_form {
-    max-width: 650px;
-    margin: 10px auto;
-    background-color: #f2ffee;
-    border-radius: 5px;
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #98c013;
-}
-#ipwhitelistcheck_form input[type="text"] {
-    border-radius: 5px;
-    padding: 6px 12px;
-    outline: none;
-}
-#ipwhitelistcheck_form input[type="submit"] {
-    border-radius: 5px;
-    padding: 4px 10px;
-    outline: none;
-    background-color: white;
-    cursor: pointer;
-    margin-left: 10%;
-    margin-top: 10px;
-    border: 2px solid #98c013;
-}
-#ipwhitelistcheck_form input[type="submit"] {
-    border: 2px solid #98c013;
-}
-#ipwhitelistcheck_form h1 {
-    font-size: 28px;
-    text-align: center;
-}
-#ipwhitelistcheck_form label {
-    font-size: 15px;
-    margin-right: 10px;
-}
-#ipwhitelistcheck_form input {
-    margin-right: 10px;
-}
-#inputipwhitelistcheck {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-}
-#inputipwhitelistcheck label, #inputipwhitelistcheck input {
-    margin-bottom: 5px;
-}
-#submitipwhitelistcheck {
-    outline: none;
-}
-#ipwhitelistcheck_form p {
-    display: flex;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/*                      \\\\\ ip whitelistcheck form styling /////  */
-
-/*                      \\\\\ retrieve api url form styling /////   */
-#retrieveapiurl_form {
-    max-width: 650px;
-    margin: 10px auto;
-    background-color: #f2ffee;
-    border-radius: 5px;
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #98c013;
-}
-#retrieveapiurl_form input[type="text"], #retrieveapiurl_form input[type="date"] {
-    border-radius: 5px;
-    padding: 6px 12px;
-    outline: none;
-}
-#retrieveapiurl_form input[type="submit"] {
-    border-radius: 5px;
-    padding: 4px 10px;
-    outline: none;
-    background-color: white;
-    cursor: pointer;
-    margin-left: 10%;
-    margin-top: 10px;
-    border: 2px solid #98c013;
-}
-#retrieveapiurl_form input[type="submit"] {
-    border: 2px solid #98c013;
-}
-#retrieveapiurl_form h1 {
-    font-size: 28px;
-    text-align: center;
-}
-#retrieveapiurl_form label {
-    font-size: 15px;
-    margin-right: 10px;
-}
-#retrieveapiurl_form input {
-    margin-right: 10px;
-}
-#inputretrieveapiurl {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-}
-#inputretrieveapiurl label, #inputretrieveapiurl input {
-    margin-bottom: 5px;
-}
-#submitretrieveapiurl {
-    outline: none;
-}
-#retrieveapiurl_form p {
-    display: flex;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/*                      \\\\\ retrieve api url form styling /////   */
 
 /*                      \\\\\ formoverview styling /////            */
 .formovertitle {
