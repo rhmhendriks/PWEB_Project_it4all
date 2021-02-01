@@ -52,12 +52,7 @@ Last updated on 12/11/2019 at 13:39 PM
 								<label>Email<span class="redStar">*</span></label>			<input type="email" name="email" id="email"	placeholder="vul hier het e-mailadres in" size="40" pattern="[a-Z0-9._-]+@[a-Z0-9.-]+\.[a-Z]{2,}$" required>
 								<label>Wachtwoord<span class="redStar">*</span></label>		<input type="password" name="wachtwoord" placeholder="vul hier het wachtwoord in" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" size="40" required>
 								<label>Bevestigen<span class="redStar">*</span></label>		<input type="password" name="wachtwoordb" placeholder="bevestig het wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" size="40" required>
-								<h4> One is required, both are optional </h4>
-								<div id="TwoFactor">
-									<input id="option" type="checkbox" name="field" value="option" required>
-									<label for="option"> Google Authenticator </label>
-									<label for="option"> E-mail authenticator </label>
-								</div>
+								<label>Two factor enabled?</label>							<input type="checkbox" name="TwoFactor" id="TwoFactor" value="true">
 								<label>Admin?</label>										<input type="checkbox" name="IsAdmin" id="IsAdmin" value="true">
 								<label>E-mail Pre-Verified?</label>			  				<input type="checkbox" name="MailVerified" id="MailVerified" value="true">
 							</div>
