@@ -33,6 +33,40 @@
 
 
         <?php 
+
+            //$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010-870160');
+            // gemaakt door Luc, zit een kleine kanttekening bij deze functie, maar die haal ik er morgen uit.
+            function calculator($json) {
+                $array = json_decode($json, true);
+                $i = 0;
+                $list = array();
+                $countryCode = 0;
+                $listTemp = array();
+                $listDate = array();
+                foreach($array as $key => $value) {
+                    foreach($value as $key2 => $value2) {
+                        if ($key2 == "stn") {
+                            if ($value2 != $countryCode && $i != 0) {
+                                $countryCode = $value2;
+                                
+                                array_push($list, array($listTemp, $listDate));
+                            } 
+                        }
+                        elseif ($key2 == "Temperatuur") {
+                            $i += 1;
+                            array_push($listTemp, $value2);
+                        }
+                        elseif ($key2 == "Datum") {
+                            $i += 1;
+                            array_push($listDate, $value2);
+                        }
+                    }
+                }
+                return $list;
+            }
+
+            //echo calculator($json)[1][0][0];
+
         
             function getXandY($type){
                 /**
