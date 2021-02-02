@@ -17,8 +17,8 @@
         <p>U heeft zojuist tweevoudige verificatie met uw smartphone geactiveerd. Op deze pagina leggen we u uit hoe u deze methode nu kunt gebruiken om in te loggen bij IT4all of een van onze service-websites. </p>
         <h2>Stap 1: Een QR code scanner installeren</h2>
         <p>Om deze inlogmethode te kunnen gebruiken heeft u een QR code scanner nodig. In de winkel van bijna alle smartphones zijn honderden apps die deze funtionaliteit bevatten, maar nieuwere telefoons hebben ook vaak een scanner ingebouwd. <br> Voor
-            een uitleg over de ingebouwde QR code scanner op een Apple iPhone klikt u <a href="https://support.apple.com/en-us/HT208843#:~:text=Open%20the%20Camera%20app%20from,code%20and%20shows%20a%20notification.">HIER</a> (u word doorgelink naar apple.com),
-            voor een uitgebreide uitleg over Android telefoons kunt u <a href="https://www.androidplanet.nl/tips/qr-code-scannen-android/">HIER</a> terecht (u wordt doorgestuurt naar www.androidplanet.nl) </p>
+            een uitleg over de ingebouwde QR code scanner op een Apple iPhone klikt u <a href="https://support.apple.com/en-us/HT208843#:~:text=Open%20the%20Camera%20app%20from,code%20and%20shows%20a%20notification." target="_blank">HIER</a> (u word doorgelink naar apple.com),
+            voor een uitgebreide uitleg over Android telefoons kunt u <a href="https://www.androidplanet.nl/tips/qr-code-scannen-android/" target="_blank">HIER</a> terecht (u wordt doorgestuurt naar www.androidplanet.nl) </p>
 
         <h2>Stap 2: Inloggen op de normale manier</h2>
         <p>Het eerste deel van het inlogproces verloop op de normalen manier. U kunt gewoon inloggen met uw e-mailadres en wachtwoord door in het menu voor "gebruikers" en vervolgens voor inloggen te kiezen. U kunt dat via het onderstaande scherm inloggen:</p>

@@ -26,7 +26,7 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                include "_contentpages/Forms/forms/ipwhitelist.php";
+                include "_contentpages/Home.php";
             }
         ?>
     </div>

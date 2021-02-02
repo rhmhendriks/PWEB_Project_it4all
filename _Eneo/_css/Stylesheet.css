@@ -40,7 +40,7 @@ header h1 a {
     padding: 14px 0px 0px 0px;
 }
 header h1 a:before {
-    content: 'E';
+    content: 'e';
     color: white;
     font-size: 50px;
 }
@@ -142,6 +142,54 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Content styling /////                 */
 
+/*                      \\\\\ homepage styling /////                */
+#homenotification {
+    float: left;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+}
+#homenotification h1 {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#homenotification p {
+    margin: auto;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 70%;
+    text-align: center;
+}
+/*                      \\\\\ map styling /////                     */
+#homemap {
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+/*                      \\\\\ graph styling /////                   */
+#homegraph {
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+/*                      \\\\\ homepage styling /////                */
+
 /*                      \\\\\ Form required styling /////           */
 .redStar {
     color: red;
@@ -174,9 +222,6 @@ nav ul li ul li a:hover {
     cursor: pointer;
     margin-left: 10%;
     margin-top: 10px;
-    border: 2px solid #98c013;
-}
-#general_form input[type="submit"] {
     border: 2px solid #98c013;
 }
 #general_form h1 {
@@ -326,6 +371,31 @@ footer div a:hover {
         }
 /*                      \\\\\ Header styling /////                  */
 
+/*                      \\\\\ homepage styling /////                */
+        #homenotification {
+            width: 100%;
+        }
+        #homenotification h1 {
+            font-size: 28px;
+        }
+        #homenotification p {
+            font-size: 15px;
+            width: 80%;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /*                      \\\\\ map styling /////                     */
+        #homemap {
+            width: 100%;
+        }
+        /*                      \\\\\ graph styling /////                   */
+        #homegraph {
+            float: left;
+            width: 100%;
+        }
+/*                      \\\\\ homepage styling /////                */
+
 /*                      \\\\\ footer styling /////                  */
         footer{
             height: 60px;
@@ -398,6 +468,28 @@ footer div a:hover {
                         /// 725 pixels               ///
                         ////////////////////////////////            */
 @media screen and (max-width: 725px) {
+
+/*                      \\\\\ homepage styling /////                */
+                #homenotification h1 {
+                    font-size: 25px;
+                }
+                #homenotification p {
+                    font-size: 14px;
+                    width: 85%;
+                }
+/*                      \\\\\ homepage styling /////                */
+
+/*                      \\\\\ general form style /////              */
+                #general_form h1 {
+                    font-size: 28px;
+                }
+                #inputgeneral {
+                    width: 90%;
+                }
+                #general_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/*                      \\\\\ general form style /////              */
 
 /*                      \\\\\ Footer styling /////                  */
                 footer h2 {
