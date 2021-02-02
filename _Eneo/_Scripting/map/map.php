@@ -19,13 +19,7 @@
 <?php 
 include $_SERVER['DOCUMENT_ROOT'] . "/_init/functionlibary.php";
 
-$jsonCameroon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100');
-$jsonChad = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=647000');
-$jsonCAR = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=646500');
-$jsonCongo = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=644000');
-$jsonCongo2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=644500');
-$jsonGabon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645000');
-$jsonGabon2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645010');
+$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010');
 
 ?>
 <style>
@@ -136,8 +130,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Chad</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 
 },
@@ -149,8 +143,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Central African Republic</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -161,8 +155,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Republic of the Congo</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -173,8 +167,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Republic of the Congo</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -185,8 +179,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Gabon</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -197,8 +191,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Gabon</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {

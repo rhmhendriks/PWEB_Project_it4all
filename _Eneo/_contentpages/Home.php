@@ -4,17 +4,17 @@
     <title>Eneo Home</title>
 </head>
 <body>
-    <div class="homenotification">
-    <h1> Welcome to the Eneo website </h1>
-    <p> announcements </p>
+    <div id="homenotification">
+    <h1>Welcome to the Eneo website</h1>
+    <h2>announcements </h2>
     </div>
 
     <?php
-        echo '<div class="homemap">';
+        echo '<div id="homemap">';
         echo 'hier moeten de filters';
         echo '</div>';
 
-        echo '<div class="homegraph">';
+        echo '<div id="homegraph">';
         echo 'hier moet de graph of tabel';
         echo '</div>'
     ?>
