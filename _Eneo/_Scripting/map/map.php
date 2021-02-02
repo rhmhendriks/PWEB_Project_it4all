@@ -125,7 +125,6 @@ map.addSource('places', {
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
                         echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
-//'description': '<strong>Weather station</strong><p>Cameroon</p>',
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -136,8 +135,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Chad</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 
 },
@@ -149,8 +148,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Central African Republic</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -161,8 +160,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Republic of the Congo</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -173,8 +172,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Republic of the Congo</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -185,8 +184,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Gabon</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -197,8 +196,8 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Gabon</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
