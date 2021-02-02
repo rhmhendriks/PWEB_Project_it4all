@@ -1,18 +1,23 @@
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
+    <!-- The popup -->
+    <div id="mypopup" class="popup">
+        <!-- popup content -->
+        <div class="popupcontent">
             <span class="close">&times;</span>
             <h1> Choose a language to translate the website </h1>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?
-    cb=googleTranslateElementInit"></script>
-            <p> Have fun browsing</p>
+            <div id="translate_wrapper">
                 <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'nl'}, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
         </div>
     </div>
 
     <style>
-        .modal {
+        .popup {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
             z-index: 1; /* Sit on top */
@@ -26,21 +31,15 @@
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
         /* Modal Content */
-        .modal-content {
+        .popupcontent {
             background-color: #fefefe;
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
             width: 30%;
         }
-        .modal-content h1 {
+        .popupcontent h1 {
             font-size: 30px;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .modal-content p {
-            font-size: 17px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             margin-bottom: 8px;
@@ -53,72 +52,83 @@
             font-weight: bold;
         }
         .close:hover, .close:focus {
-            color: #000;
+            color: #000000;
             text-decoration: none;
             cursor: pointer;
         }
 
-        div #google_translate_element div.goog-te-gadget-simple {
+        #translate_wrapper {
+            margin-left: 35%;
+        }
+        #google_translate_element .goog-te-gadget-simple {
             font-size: 19px;
         }
-
-        div #google_translate_element div.goog-te-gadget-simple {
+        #google_translate_element .goog-te-gadget-simple {
             background-color: black;
         }
-
-        div #google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
-            color: green
+        #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span {
+            color: green;
         }
-
-        div #google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover {
-            color: blue
+        #google_translate_element .goog-te-gadget-simple a.goog-te-menu-value span:hover {
+            color: blue;
         }
-
-        div #google_translate_element div.goog-te-gadget-simple {
+        #google_translate_element .goog-te-gadget-simple {
             border: none;
         }
 
         @media screen and (max-width: 1560px){
-            .modal-content {
+            .popupcontent {
                 width: 55%
             }
         }
 
         @media screen and (max-width: 1024px){
-            .modal-content {
+            .popupcontent {
                 width: 90%;
             }
-            .modal-content h1 {
+            .popupcontent h1 {
                 font-size: 24px;
                 margin-bottom: 7px;
             }
-            .modal-content p {
+            .popupcontent p {
                 font-size: 14px;
                 margin-bottom: 7px;
+            }
+        }
+
+        @media screen and (max-width: 850px){
+            #translate_wrapper {
+                margin-left: 37%;
+            }
+        }
+
+        @media screen and (max-width: 725px){
+            #translate_wrapper {
+                margin-left: 30%;
             }
         }
 
     </style>
 
     <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        // Get the button that opens the modal
-        var btn = document.getElementById("translate");
-        // Get the <span> element that closes the modal
+        // Get the popup
+        var popup = document.getElementById("mypopup");
+        // Get the button that opens the popup
+        var button = document.getElementById("translate");
+        // Get the <span> element that closes the popup
         var span = document.getElementsByClassName("close")[0];
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
+        // When the user clicks the button, open the popup 
+        button.onclick = function() {
+            popup.style.display = "block";
         }
-        // When the user clicks on <span> (x), close the modal
+        // When the user clicks on <span> (x), close the popup
         span.onclick = function() {
-            modal.style.display = "none";
+            popup.style.display = "none";
         }
-        // When the user clicks anywhere outside of the modal, close it
+        // When the user clicks anywhere outside of the popup, close it
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (event.target == popup) {
+                popup.style.display = "none";
             }
         }
     </script>

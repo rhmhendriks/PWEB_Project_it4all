@@ -9,8 +9,8 @@
                 <?php  if (isset($_SESSION['Debug_2FAsetup']) && DebugisOn) echo '<p style="color:Red">'. $_SESSION['Debug_2FAsetup'] . '</p>';?>
                 <div id="verificatiegegevens">
                     <input type="hidden" name="session" id="session" size="40" value="<?php echo $_GET['sessionID'];?>" required>
-                    <label>Pincode<span class="redStar">*</span></label>              <input type="password" name="Pin" id="Pin" size="40">
-                    <label>Pincode bevestigen<span class="redStar">*</span></label>              <input type="password" name="Pin2" id="Pin2" size="40">  
+                    <label>Pincode<span class="redStar">*</span></label>              <input type="password" pattern="[0-9].{8,}" name="Pin" id="Pin" size="40">
+                    <label>Pincode bevestigen<span class="redStar">*</span></label>              <input type="password" pattern="[0-9].{8,}" name="Pin2" id="Pin2" size="40">  
                     <label>Beveiligingsvraag "Wat is de naam van uw eerste school?"<span class="redStar">*</span></label>              <input type="password" name="sqA" id="sqA" size="40"> 
                     <label>Beveiligingsvraag "Wat is uw lievelingsmaaltijd?"<span class="redStar">*</span></label>              <input type="password" name="sqB" id="sqB" size="40"> 
                 </div>

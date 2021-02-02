@@ -27,11 +27,11 @@
             $Connection = @new mysqli(ServerName, DBSigninName, DBKey, $DB);
             if ($Connection->connect_error) { // Er wordt gecontroleerd op fouten bij de databaseverbinding
                 $returndebug = die("Oops! The databse connection failed!, The infotmation below is generated for the site administrator. " . "<br />" . $Connection->connect_error) . "<br />";
-                echo "Oops! The databse connection failed!, The infotmation below is generated for the site administrator. " . "<br />" . $Connection->connect_error . "<br />";
+                //echo "Oops! The databse connection failed!, The infotmation below is generated for the site administrator. " . "<br />" . $Connection->connect_error . "<br />";
                 $resultfunction = false;
             } else {
                 $returndebug = "Yeah! The connection is active! Now we can do some SQL statement!" . "<br />"; // Nu wordt er weergegeven dat de database connectie geslaagd is
-                echo "Yeah! The connection is active! Now we can do some SQL statement!" . "<br />";
+                //echo "Yeah! The connection is active! Now we can do some SQL statement!" . "<br />";
                 $resultfunction = true;
                 $returnconnection = $Connection;
             }
@@ -60,8 +60,8 @@
         $query = "SELECT" . "*" . "FROM" . APIIPtableName . "WHERE 'IP Address = " . $ip;
         $result = mysqli_query($conn, $sql); // Erase line after testing
 
-        echo $query;
-        echo $result;
+        //echo $query;
+        //echo $result;
 
 
 
@@ -72,15 +72,15 @@
                 $dbdate = date('Y-m-d', strtotime($row['Valid']));
                 if (date('Y-m-d') <= $dbdate){
                     $result = TRUE;
-                    echo "ja";
+                    //echo "ja";
                 } else {
                     $result = FALSE;
-                    echo "nee";
+                    //echo "nee";
                 }
             }
         } else {
             $result = FALSE;
-            echo "nee2";
+            //echo "nee2";
         }
 
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
@@ -131,7 +131,7 @@
             
         }
 
-        echo $result;
+        //echo $result;
 
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
     }
@@ -143,11 +143,13 @@
      * @return An array with the statement, the data found and debug information. 
      */
     function retrieveData($fromDate=null, $tilDate=null, $types, $stations = null ){
+        
         //echo "RETDAT FROM $fromDate AND TIL $tilDate <br>";
         // create connection
         $ConnectionArray = MySqlDo_Connector('Connect');
         $conn = $ConnectionArray['connection'];
         $debug = $ConnectionArray['debug'];
+        //echo $stations;
 
         if ($ConnectionArray['result']){
             // write debug
@@ -205,12 +207,16 @@
                 $columns = trim($columns, ", ");
             }
 
-            if (!$stations = null || !$stations = ""){
-                $stationArray = explode("-",$stations);
-                $stmSelect = "SELECT stn, Datum, $columns FROM Meting WHERE Datum BETWEEN '$fromDate' AND '$tilDate' AND 'stn' = $stationArray[0]";
+            //echo "<br><br> AAAAAAAAAAAAAAAAAAAAA: $stations";
 
-                for ($i=1;$i<sizeof($stationArray)-1;$i++){
-                    $stmSelect .= " OR 'stn' = $stationArray[$i]";
+            if (!$stations == null){
+                //echo "station not null <br> $stations";
+                $stationArray = explode("-",$stations);
+                print_r($stationArray);
+                $stmSelect = "SELECT stn, Datum, $columns FROM Meting WHERE Datum BETWEEN '$fromDate' AND '$tilDate' AND stn = $stationArray[0]";
+
+                for ($i=1;$i<sizeof($stationArray);$i++){
+                    $stmSelect .= " OR stn = $stationArray[$i]";
                 }
                 
             } else {
@@ -242,9 +248,9 @@
             $token = $_GET['token'];
             $tokenarray = checkToken($token);
             $ip = $_SERVER['REMOTE_ADDR'];
-            echo "SERVERIP: $ip";
+            //echo "SERVERIP: $ip";
             //$iparray = checkIP($ip);
-            echo $tokenarray['result'];
+            //echo $tokenarray['result'];
             if ($tokenarray['result'] != true /*&& $iparray['result'] != true*/){
                 header('HTTP/1.0 403 Forbidden');
                 //immediate_redirect_to('403.html');
@@ -266,16 +272,16 @@
         $token = $_GET['token'];
 
         if (!is_dir("_Data/$token/")) {
-            echo "Dir does not exist";
+            //echo "Dir does not exist";
             // dir doesn't exist, make it
             //mkdir('upload/$token/');
             mkdir("_Data/" . $token);
-            echo "dir made";
+            //echo "dir made";
           }
 
-        echo "Dir does exist!";
+        //echo "Dir does exist!";
         $filepath ="_Data/$token/". date('Y-m-d_hisu').'.json';
-        echo "<br>" . $filepath;
+        //echo "<br>" . $filepath;
         //echo $json;
         file_put_contents($filepath, $json);
         immediate_redirect_to($filepath);

@@ -657,13 +657,14 @@
                                 
                                 
                                 
-                                elseif ($OnWhat == "UserMemberships"){ //*
-                                    $table = 'UserMemberships'; // We specificeren de exacte tabelnaam
-                                    $idColumn = 'ApplyID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
+                                elseif ($OnWhat == "AUTH2FAlinks"){ //*
+                                    $table = 'AUTH2FAlinks'; // We specificeren de exacte tabelnaam
+                                    $idColumn = 'sessionID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
+                                    $columns = '`sessionID`, `user`, `2FAapp`, `2FAmail`, `Pincode`, `PinAttempts`, `SecurityQuestionA`, `SecurityQuestionB`, `Token`, `GenerationDate`, `OTP`'; // De kolommem specificeren ten behoeve van het uit te voeren statement uit mysqldo_add
+
                                     switch($ToDo){ //**
                                         case "Add":
-                                            $columns = '`ApplyID`, `Name`, `PhoneNumber`, `EMailAddress`, `Question`'; // De kolommem specificeren ten behoeve van het uit te voeren statement uit mysqldo_add
-                                            $content = "NULL, '$var1', '$var2', '$var3', '$var4'"; // De toe te voegen waarden worden aangegeven ten behoeve van het uit te voeren statement in mysqldo_add
+                                            $content = "NULL, '$var1', '$var2', '$var3', '$var4', '$var5', '$var6', '$var7', '$var8', '$var9', '$var10', '$var11'"; // De toe te voegen waarden worden aangegeven ten behoeve van het uit te voeren statement in mysqldo_add
                                             $AddArray = MySqlDo_Add($table, $columns, $content); // Hier wordt de array gecreeerd door de functie mysql_add opghaald. Tevens wordt hiermee geprobeerd om de gegevens aan de database toe te voegen.
                                             $ActionLog = $AddArray['debug']; // Nu wordt de debug informatie afkomstig uit de funtie mysqldo_add weggeschreven naar de actionlog
                                             $AddedID = $AddArray['ID']; // Het ID van het toegevoegde record word gespecificeerd
@@ -678,7 +679,6 @@
                                             break; 
                                         case "Overview":
                                             // we gaan de kolomnamen maken
-                                            $columns = ["ApplyID", "Name", "PhoneNumber", "EMailAddress", "Question"];
                                             $ResultOverview = MySqlDo_Overview($table, $columns, $idColumn);
                                             $ActionLog = $ResultOverview['debug'];
                                             $AddedID = $ResultOverview['table'];
@@ -742,6 +742,46 @@
             $url = 'https://it4all.rhmhendriks.nl/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=index&update=y&Token=' + "$token";
             $data = urlencode($url);
             return '<img src="https://api.qrserver.com/v1/create-qr-code/?data=' . $url . '&amp;size=150x150" alt="QR Secured" title="" />';
+        }
+
+            ### calculator ###
+            //////////////////////////////////////////////////////////////////
+            //                                    //
+            //--------------------------------------------------------------//
+            // This function is used add data to an database table          //
+            // This function is only used in combination with MySqlDo()     //
+            //                                                              //
+            //     Function Sytax example:                                  //
+            //        MySqlDo_DropDown($action, $Connection (only close))   //
+            //                                                              //
+            //                                                              //
+            //--------------------------------------------------------------//
+            ## Function created on 20/10/2019                               ##
+            ## Created by Ronald HM Hendriks                                ##
+            // last updated 30/01/2021 09:49AM by Ronald HM Hendriks        //
+            //////////////////////////////////////////////////////////////////
+        function calculator($json) {
+            $array = json_decode($json, true);
+            $highest = -100;
+            $lowest = 100;
+            $total = 0;
+            $i = 0;
+            foreach($array as $key => $value) {
+                foreach($value as $key2 => $value2) {
+                    if ($key2 == "Temperatuur") {
+                        $i += 1;
+                        $total += $value2;
+                        if ($value2 < $lowest) {
+                            $lowest = $value2;
+                        }
+                        elseif ($value2 > $highest) {
+                            $highest = $value2;
+                        }
+                    }
+                }
+            }
+            $average = $total / $i;
+            return array(round($highest, 1), round($lowest, 1), round($average, 1));
         }
 
         
