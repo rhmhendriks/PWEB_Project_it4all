@@ -48,8 +48,7 @@ $jsonGabon2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?to
 ?>
 
 <h2>Heat table</h2>
-
-<table style="width:100%">
+<table class="generaltable">
   <tr>
     <th>Weather station</th>
     <th>Highest temperature</th>
