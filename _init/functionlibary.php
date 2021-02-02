@@ -746,7 +746,7 @@
 
             ### calculator ###
             //////////////////////////////////////////////////////////////////
-            // MySqlDo_Delete Function                                      //
+            //                                    //
             //--------------------------------------------------------------//
             // This function is used add data to an database table          //
             // This function is only used in combination with MySqlDo()     //
