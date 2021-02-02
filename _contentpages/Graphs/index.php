@@ -4,8 +4,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
         <style type="text/css">
             .container {
-                width: 50%;
-                margin: 15px auto;
+                width: 60%;
+                margin: 1px auto;
             }
         </style>
     </head>
@@ -29,7 +29,7 @@
                     labels: ["1", "2", "3", "4", "5", "6"], // X-As
                     datasets: [{
                             label: 'Weather Data',
-                            data: [5, 10, 13, 12, 8, 2],  // Y-As
+                            data: <?php echo $data1; ?>[5, 10, 13, 12, 8, 2],  // Y-As
                             backgroundColor: [
                                 'rgba(157, 219, 250, 0.4)',
                             ],

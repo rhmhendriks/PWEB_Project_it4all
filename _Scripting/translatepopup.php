@@ -4,6 +4,8 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h1> Choose a language to translate the website </h1>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?
+    cb=googleTranslateElementInit"></script>
             <p> Have fun browsing</p>
             <div id="google_translate_element"></div>
         </div>
@@ -120,14 +122,5 @@
             }
         }
     </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                },
-                'google_translate_element');
-                }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?
-    cb=googleTranslateElementInit"></script>
+   
+    

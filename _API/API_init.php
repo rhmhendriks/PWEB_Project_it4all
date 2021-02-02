@@ -88,34 +88,35 @@
 
             $statementrunned = $conn->query($statement); // statement uitvoeren
 
-            //print_r($statementrunned);
+            print_r($statementrunned);
 
             if ($statementrunned->num_rows > 0) {
                 while($row = $statementrunned->fetch_assoc()) {
                     $dbdate = date('Y-m-d', strtotime($row['Valid']));
                     if (date('Y-m-d') <= $dbdate){
-                        $result = TRUE;
+                        $result = true;
                     } else {
-                        $result = FALSE;
+                        $result = false;
                     }
                 }
             } else {
-                $result = FALSE;
+                $result = false;
             }
         } else {
-            $result = FALSE;
+            $result = false;
             $statementrunned = 'None';
             $debug .= "CHECKTOKEN: The connection with the database failed! <br>";
             
         }
 
-        
+        echo $result;
 
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
     }
 
     ### Data Retriever ###
     function retrieveData($fromDate=null, $tilDate=null, $types, $stations = null ){
+        //echo "RETDAT FROM $fromDate AND TIL $tilDate <br>";
         // create connection
         $ConnectionArray = MySqlDo_Connector('Connect');
         $conn = $ConnectionArray['connection'];
@@ -127,12 +128,14 @@
 
             // translate the types using wileConstruction
             $tempArray = strtoupper($types);
-            $typesArrayChars = str_split($types);
+            $typesArrayChars = str_split($tempArray);
 
             $columns = "";
+            //print_r( $typesArrayChars);
 
-            for ($i=0;$i<sizeof($typesArrayChars)-1;$i++){
+            for ($i=0;$i<sizeof($typesArrayChars);$i++){
                 $ch=$typesArrayChars[$i];
+                //echo "i=$i and ch = $ch <br>";
 
                 switch($ch){
                     case W:
@@ -168,7 +171,7 @@
                     case E:
                        $columns .= ", Gebeurtenis";
                         break;
-                    case Z:Eneo/
+                    case Z/
                         $columns .= ", Dauwpunt";
                         break;
                 }  
@@ -177,16 +180,18 @@
 
             if (!$stations = null || !$stations = ""){
                 $stationArray = explode("-",$stations);
-                $stmSelect = "SELECT $columns FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate' AND 'stn' = $stationArray[0]";
+                $stmSelect = "SELECT stn, Datum, $columns FROM Meting WHERE Datum BETWEEN '$fromDate' AND '$tilDate' AND 'stn' = $stationArray[0]";
 
                 for ($i=1;$i<sizeof($stationArray)-1;$i++){
                     $stmSelect .= " OR 'stn' = $stationArray[$i]";
                 }
                 
             } else {
-                $stmSelect = "SELECT $columns FROM Meting WHERE Datum BETWEEN '$fromdate' AND '$tildate'";
+                $stmSelect = "SELECT stn, Datum, $columns FROM Meting WHERE Datum BETWEEN '$fromDate' AND '$tilDate'";
             }
 
+            echo $stmSelect;
+            
             $statementrunned = $conn->query($stmSelect); // statement uitvoeren
 
             if ($statementrunned->num_rows > 0) {
@@ -208,14 +213,13 @@
             $token = $_GET['token'];
             $tokenarray = checkToken($token);
             $ip = $_SERVER['REMOTE_ADDR'];
-            $iparray = checkIP($ip);
-            if ($tokenarray['result'] != TRUE && $iparray['result'] != TRUE){
+            echo "SERVERIP: $ip";
+            //$iparray = checkIP($ip);
+            echo $tokenarray['result'];
+            if ($tokenarray['result'] != true /*&& $iparray['result'] != true*/){
                 header('HTTP/1.0 403 Forbidden');
-                immediate_redirect_to('403.html');
+                //immediate_redirect_to('403.html');
             } 
-        } else {
-            header('HTTP/1.0 403 Forbidden');
-            immediate_redirect_to('403.html');
         }
     }
 
@@ -225,13 +229,27 @@
         }
         $json = json_encode($myArray);
 
+        
+
         $token = $_GET['token'];
-        $filepath = __DIR__ . './data/' . "$token" . '/' . date('Y-m-d_hisu').'.json';
+
+        if (!is_dir("_Data/$token/")) {
+            echo "Dir does not exist";
+            // dir doesn't exist, make it
+            //mkdir('upload/$token/');
+            mkdir("_Data/" . $token);
+            echo "dir made";
+          }
+
+        echo "Dir does exist!";
+        $filepath ="_Data/$token/". date('Y-m-d_hisu').'.json';
+        echo "<br>" . $filepath;
+        //echo $json;
         file_put_contents($filepath, $json);
         immediate_redirect_to($filepath);
     }
 
-    function createXML($data){
+    function createXML($data){ 
         $xml = new SimpleXMLElement('<WEATHERDATA/>'); 
             while($row = $data->fetch_array(MYSQLI_ASSOC)) {
                 $myArray[] = $row;
@@ -246,8 +264,20 @@
             }
 
         $token = $_GET['token'];
-        $filepath = __DIR__ . './data/' . "$token" . '/' . date('Y-m-d_hisu').'.xml';
-        $xml->asXML($filepath);
+
+        if (!is_dir("_Data/$token/")) {
+            //echo "Dir does not exist";
+            // dir doesn't exist, make it
+            mkdir("_Data/" . $token);
+            //echo "dir made";
+          }
+
+        //echo "Dir does exist!";
+        $filepath ="_Data/$token/". date('Y-m-d_hisu').'.xml';
+        //echo "<br>" . $filepath;
+        //echo $json;
+        //$xml->asXML($filepath);
+        file_put_contents($filepath, $xml->asXML());
         immediate_redirect_to($filepath);
     }
 

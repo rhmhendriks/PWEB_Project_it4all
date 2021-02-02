@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
         <meta charset="UTF-8">
         <title>API</title>
     </head>
@@ -9,7 +9,7 @@
     <body>
         <!--?token=rhgy8gfyeaihgfiuyeragyuiherauyigfhuh&from=23022021&til=25022021-->
         <?php
-            require "SQLsystem.php";
+            //require "SQLsystem.php";
             require "API_init.php";
 
             // retrieve GET parameters
@@ -31,6 +31,9 @@
             // get date as they are in SQL
             $from = date('Y-m-d', strtotime($from));
             $til = date('Y-m-d', strtotime($til));
+            echo "from date $from <br> til date $til <br>";
+
+            //https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=01022020&til=02022020&filetype=JSON&type=WT
 
             /*
                 -------------------------------
@@ -58,17 +61,18 @@
             $resultarray = retrieveData($from, $til, $type, $stations);
 
             echo $resultarray["debug"] . "<br>";
-
+            echo $ft;
             if ($resultarray['result']){
                 $data = $resultarray["data"];
-                if ($ft="xml"){
+                $ft = strtoupper($ft);
+                if ($ft == "XML"){
                     createXML($data);
-                } elseif ($ft="json"){
+                } elseif ($ft=="JSON"){
                     createJSON($data);
                 }
             }
 
-            echo $resultarray["debug"] . "<br>";
+            //echo $resultarray["debug"] . "<br>";
 
             /*
             //if ($resultarray['result']){
