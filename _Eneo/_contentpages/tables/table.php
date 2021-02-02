@@ -14,7 +14,7 @@ table, th, td {
 <body>
 
 <?php 
-include $_SERVER['DOCUMENT_ROOT'] . "_init/functionlibary.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/_init/functionlibary.php";
 
 $jsonCameroon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100');
 $jsonChad = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=647000');
