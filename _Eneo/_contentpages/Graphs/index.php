@@ -13,15 +13,33 @@
         <div class="container">
             <canvas id="myChart" width="100" height="80"></canvas>
         </div>
-        <script>
-            <?php 
-                // haal data uit database
-                // maak logische datumverdeling 
 
-                $labels = '["' . $value;
-                $value = '["' . $value;            
-            
-            ?> 
+        <div id="inputgeneral" >
+            <form id="graphstationpicker">
+            <label for="Cameroon (DOUALA OBS.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Cameroon" name="CB_Cameroon"  value="CB_Cameroon" >
+            <label for="Central African Republic (BANGUI) ">Verifieren via QR-code</label><input type="checkbox" id="CB_car" name="CB_car"  value="CB_car" >
+            <label for="Chad (NDJAMENA) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Chad" name="CB_Chad"  value="CB_Chad" >
+            <label for="Congo (DPOINTE-NOIRE.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_congo" name="CB_congo"  value="CB_congo" >
+            <label for="Congo (BRAZZAVILLE/MAYA-M) ">Verifieren via QR-code</label><input type="checkbox" id="CB_congo2" name="CB_congo2"  value="CB_congo2" >
+            <label for="Gabon (LIBREVILLE) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Gabon" name="CB_Gabon"  value="CB_Gabon" >
+            <label for="Gabon (DOUALA OBS.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Gabon2" name="CB_Gabon2"  value="CB_Gabon2" >
+                
+            <div id="submitgeneral">
+                <input type="submit" class= "btn" value="Pincode Opslaan" name="savePin" id="savePin">
+            </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script>
             var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
                 type: 'line',
