@@ -323,6 +323,8 @@ nav ul li ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     padding-bottom: 20px;
+    text-align: left;
+    width: 80%;
 }
 .inStock {
     font-family: Arial, Helvetica, sans-serif;
@@ -425,7 +427,9 @@ nav ul li ul li a:hover {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    padding-top: 10px;    
+    padding-top: 10px;
+    text-align: left;
+    width: 80%;    
 }
 /*                      \\\\\ Artikelen lijst opmaak \\\\\              */
 
@@ -1328,7 +1332,6 @@ nav ul li ul li a:hover {
 /*activatie form opmaak */
 
 /*                      \\\\\ forgot password style /////           */
-/* activatie form opmaak */
 #passwordforgot_form {
     max-width: 650px;
     margin: 10px auto;
@@ -1389,7 +1392,7 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ forgot password style /////           */
 
-/*                      \\\\\ 2FA styling /////                     */
+/*                      \\\\\ 2FA tutorial styling /////            */
 #twofactortutorial {
     display: flex;
     justify-content: center;
@@ -1402,6 +1405,7 @@ nav ul li ul li a:hover {
 #twofactortutorial h1 {
     margin: auto;
     margin-top: 12px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 32px;
     font-family: Arial, Helvetica, sans-serif;
@@ -1424,22 +1428,32 @@ nav ul li ul li a:hover {
     margin-top: 10px;
 }
 #twofactortutorial img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     margin-right: auto;
     margin-left: auto;
 }
 #twofactortutorial a:link {
-    color: aqua;
+    color: #0d69a5;
     text-decoration: none;
 }
 #twofactortutorial a:visited {
-    color: darkcyan;
+    color: #0d69a5;
     text-decoration: none;
 }
 #twofactortutorial a:hover {
-    color: darkblue;
+    color: #98c013;
     text-decoration: underline;
+}
+#twofactortutorial input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
 }
 /*                      \\\\\ 2FA styling /////                    */
 
@@ -2060,6 +2074,14 @@ footer div a:hover {
             }
             #content #overzichtenlist {
                 width: 100%;
+            }
+
+            #infoDiv p {
+                width: 90%;
+            }
+
+            #rightColumn p {
+                width: 90%;
             }
 
             /*                      \\\\\ Home styling /////                        */

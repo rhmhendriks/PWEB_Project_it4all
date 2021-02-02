@@ -60,12 +60,12 @@
                 target="_blank">www.flaticon.com</a></div>
         <br>
         <div> <a href="index.php?inc=y&page=statements&statement=cookie">Cookie's</a> &nbsp;&nbsp;&nbsp; <a
-                href="index.php?inc=y&page=statements&statement=privacy">Privacy</a> &nbsp;&nbsp;&nbsp; <a
+                href="index.php?inc=y&page=statements&statement=privacy_statement">Privacy</a> &nbsp;&nbsp;&nbsp; <a
                 href="index.php?inc=y&page=statements&statement=disclaimer">Disclaimer</a> &nbsp;&nbsp;&nbsp; <a
-                href="index.php?inc=y&page=statements&statement=voorwaarden">Algemene Voorwaarden</a> </div>
+                href="index.php?inc=y&page=statements&statement=algemene_voorwaarden">Algemene Voorwaarden</a> </div>
 
     </footer>
-
+    
     <script src="_Scripting/menu/menu.js"></script>
     <script src="_Scripting/Coockie-popup/Coockie.js"></script>
 

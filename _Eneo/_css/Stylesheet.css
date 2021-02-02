@@ -21,7 +21,7 @@ body {
 /*                      \\\\\ Header styling /////                  */
 header {
     background-color: #0d69a5;
-    height: 125px;
+    height: 80px;
     flex-shrink: 0;
 }
 header h1 {
@@ -29,7 +29,7 @@ header h1 {
     text-align: center;
     font-size: 0;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 14px 0px 0px 0px
+    padding: 14px 0px 0px 0px;
 }
 header h1 a {
     text-decoration: none;
@@ -37,10 +37,10 @@ header h1 a {
     text-align: center;
     font-size: 0;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 14px 0px 0px 0px
+    padding: 14px 0px 0px 0px;
 }
 header h1 a:before {
-    content: 'E';
+    content: 'e';
     color: white;
     font-size: 50px;
 }
@@ -52,18 +52,6 @@ header h1 a:after {
 header h1 a:hover {
     cursor: pointer;
 }
-header p {
-    margin: auto;
-    text-align: center;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-}
-header a {
-    margin: auto;
-    text-align: center;
-    margin-left: 90%;
-}
 /*                  \\\\\ Header styling /////                       */
 
 /*                  \\\\\ Navigation styling //////                  */
@@ -71,9 +59,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 65px;
+    min-height: 48px;
     width: 100%;
-    background-color: #333333;
+    background-color: #0d69a5;
     font-family: Arial, Helvetica, sans-serif;
 }
 .links {
@@ -96,28 +84,29 @@ nav {
     position: relative;
 }
 nav ul li a:hover {
-    color: #98c013;
+    color: #0d69a5;
+    background-color: #98c013;
 }
 nav ul li a {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 15px;
-    padding: 23px 18px;
+    padding: 15px 12px;
     text-decoration: none;
 }
 nav ul li ul {
     display: none;
     position: absolute;
-    background-color: #333333;
-    padding: 8px;
+    background-color: #98c013;
+    padding: 7px;
     border-radius: 0px 0px 5px 5px;
 }
 nav ul li:hover ul {
     display: block;
 }
 .links li ul li {
-    width: 220px;
+    width: 140px;
     border-radius: 5px;
 }
 .login li ul li {
@@ -128,7 +117,7 @@ nav ul li ul li a {
     padding: 8px 14px;
 }
 nav ul li ul li a:hover {
-    background-color: rgba(44, 42, 42);
+    background-color: #98c013;
 } 
 .burger div {
     width: 25px;
@@ -142,28 +131,6 @@ nav ul li ul li a:hover {
     position: absolute;
     left: 10px;
 }
-/*                      \\\\\ Burger animation styling /////        */
-.nav-active {
-    transform: translateX(0%);
-}
-@keyframes navLinkFade{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-.toggleBurger .line1 {
-    transform: rotate(-45deg) translate(-5px,6px);
-}
-.toggleBurger .line2 {
-    opacity: 0;
-}
-.toggleBurger .line3 {
-    transform: rotate(45deg) translate(-5px,-6px);
-}
-/*                      \\\\\ Burger animation styling /////        */
 /*                      \\\\\ Navigation styling /////              */
 
 /*                      \\\\\ Content styling /////                 */
@@ -175,6 +142,54 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Content styling /////                 */
 
+/*                      \\\\\ homepage styling /////                */
+#homenotification {
+    float: left;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+}
+#homenotification h1 {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#homenotification p {
+    margin: auto;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 70%;
+    text-align: center;
+}
+/*                      \\\\\ map styling /////                     */
+#homemap {
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+/*                      \\\\\ graph styling /////                   */
+#homegraph {
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+/*                      \\\\\ homepage styling /////                */
+
 /*                      \\\\\ Form required styling /////           */
 .redStar {
     color: red;
@@ -183,7 +198,7 @@ nav ul li ul li a:hover {
 }
 /*                      \\\\\ Form required styling /////           */
 
-/*                      \\\\\ general form styling /////       */
+/*                      \\\\\ general form styling /////            */
 #general_form {
     max-width: 650px;
     margin: 10px auto;
@@ -207,9 +222,6 @@ nav ul li ul li a:hover {
     cursor: pointer;
     margin-left: 10%;
     margin-top: 10px;
-    border: 2px solid #98c013;
-}
-#general_form input[type="submit"] {
     border: 2px solid #98c013;
 }
 #general_form h1 {
@@ -240,7 +252,16 @@ nav ul li ul li a:hover {
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
-/*                      \\\\\ general form styling /////       */
+/*                      \\\\\ general form styling /////            */
+
+
+/*                      \\\\\ general table styling /////           */
+
+/*                      \\\\\ general table styling /////           */
+
+/*                      \\\\\ general graph styling /////           */
+
+/*                      \\\\\ general graph styling /////           */
 
 
 /*                      \\\\\ formoverview styling /////            */
@@ -303,7 +324,7 @@ nav ul li ul li a:hover {
 footer {
     background-color: #666666;
     flex-shrink: 0;
-    height: 105px;
+    height: 75px;
     text-align: center;
 }
 footer h2 {
@@ -335,24 +356,49 @@ footer div a:hover {
 
 /*                      \\\\\ Header Styling /////                   */
         header {
-            height: 100px; 
+            height: 80px; 
         }
         header h1 {
             font-size: 38px;
-            padding: 5px 0px 0px 0px;
+            padding: 9px 0px 0px 0px;
         }
         header h1 a {
             font-size: 38px;
-            padding: 5px 0px 0px 0px;
+            padding: 9px 0px 0px 0px;
         }
         header p {
             font-size: 15px;
         }
 /*                      \\\\\ Header styling /////                  */
 
+/*                      \\\\\ homepage styling /////                */
+        #homenotification {
+            width: 100%;
+        }
+        #homenotification h1 {
+            font-size: 28px;
+        }
+        #homenotification p {
+            font-size: 15px;
+            width: 80%;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /*                      \\\\\ map styling /////                     */
+        #homemap {
+            width: 100%;
+        }
+        /*                      \\\\\ graph styling /////                   */
+        #homegraph {
+            float: left;
+            width: 100%;
+        }
+/*                      \\\\\ homepage styling /////                */
+
 /*                      \\\\\ footer styling /////                  */
         footer{
-            height: 90px;
+            height: 60px;
         }
         footer h2 {
             font-size: 17px;
@@ -375,14 +421,14 @@ footer div a:hover {
 
 /*                      \\\\\ Navigation styling /////              */
             .liFade:hover ul {
-                left: 175px;
-                top: 5px;
+                left: 105px;
+                top: 0;
             }
             .links {
                 position: absolute;
                 left: 0px;
-                background-color: #333;
-                top: 145px;
+                background-color: #98c013;
+                top: 128px;
                 display: flex;
                 flex-direction: column;
                 transform: translateX(-100%);
@@ -393,7 +439,7 @@ footer div a:hover {
             }            
             .login {
                 position: absolute;
-                right: 10px;
+                right: 20px;
             }
             .burger {
                 display: block;
@@ -423,6 +469,28 @@ footer div a:hover {
                         ////////////////////////////////            */
 @media screen and (max-width: 725px) {
 
+/*                      \\\\\ homepage styling /////                */
+                #homenotification h1 {
+                    font-size: 25px;
+                }
+                #homenotification p {
+                    font-size: 14px;
+                    width: 85%;
+                }
+/*                      \\\\\ homepage styling /////                */
+
+/*                      \\\\\ general form style /////              */
+                #general_form h1 {
+                    font-size: 28px;
+                }
+                #inputgeneral {
+                    width: 90%;
+                }
+                #general_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/*                      \\\\\ general form style /////              */
+
 /*                      \\\\\ Footer styling /////                  */
                 footer h2 {
                     font-size: 15px;
@@ -433,3 +501,27 @@ footer div a:hover {
 /*                      \\\\\ Footer styling /////                  */
 
 }
+
+
+/*                      \\\\\ Burger animation styling /////        */
+.nav-active {
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.toggleBurger .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggleBurger .line2 {
+    opacity: 0;
+}
+.toggleBurger .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+/*                      \\\\\ Burger animation styling /////        */
