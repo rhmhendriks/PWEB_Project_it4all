@@ -110,7 +110,7 @@ nav ul li:hover ul {
     border-radius: 5px;
 }
 .login li ul li {
-    width: 100px;
+    width: 75px;
     border-radius: 5px;
 }
 nav ul li ul li a {
@@ -153,10 +153,20 @@ nav ul li ul li a:hover {
 }
 #homenotification h1 {
     margin: auto;
+    width: 90%;
     margin-bottom: 10px;
     margin-top: 12px;
     text-align: center;
-    font-size: 32px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+#homenotification h2 {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
@@ -165,7 +175,7 @@ nav ul li ul li a:hover {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    width: 70%;
+    width: 75%;
     text-align: center;
 }
 /*                      \\\\\ map styling /////                     */
@@ -347,6 +357,37 @@ footer div a:hover {
 }
 /*                      \\\\\ Footer styling /////                  */
 
+/*                      ////////////////////////////////                
+                        /// Screen size smaller than ///
+                        /// 1560 pixels.             ///
+                        ////////////////////////////////             */
+@media screen and (max-width: 1560px) {
+    /*                      \\\\\ homepage styling /////                */
+    #homenotification {
+        width: 100%;
+    }
+    #homenotification h1 {
+        font-size: 26px;
+    }
+    #homenotification h2 {
+        font-size: 19px;
+    }
+    #homenotification p {
+        font-size: 15px;
+        width: 80%;
+    }
+    /*                      \\\\\ map styling /////                     */
+    #homemap {
+        width: 100%;
+    }
+    /*                      \\\\\ graph styling /////                   */
+    #homegraph {
+        float: left;
+        width: 100%;
+    }
+/*                      \\\\\ homepage styling /////                */
+}
+
 
 /*                      ////////////////////////////////                
                         /// Screen size smaller than ///
@@ -370,31 +411,6 @@ footer div a:hover {
             font-size: 15px;
         }
 /*                      \\\\\ Header styling /////                  */
-
-/*                      \\\\\ homepage styling /////                */
-        #homenotification {
-            width: 100%;
-        }
-        #homenotification h1 {
-            font-size: 28px;
-        }
-        #homenotification p {
-            font-size: 15px;
-            width: 80%;
-            text-align: left;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        /*                      \\\\\ map styling /////                     */
-        #homemap {
-            width: 100%;
-        }
-        /*                      \\\\\ graph styling /////                   */
-        #homegraph {
-            float: left;
-            width: 100%;
-        }
-/*                      \\\\\ homepage styling /////                */
 
 /*                      \\\\\ footer styling /////                  */
         footer{
@@ -471,7 +487,10 @@ footer div a:hover {
 
 /*                      \\\\\ homepage styling /////                */
                 #homenotification h1 {
-                    font-size: 25px;
+                    font-size: 23px;
+                }
+                #homenotification h2 {
+                    font-size: 17px;
                 }
                 #homenotification p {
                     font-size: 14px;
