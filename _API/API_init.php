@@ -207,7 +207,9 @@
 
     }
 
-    ### AUTH Check ###
+    /**
+     * 
+     */
     function checkAuth(){
         if(isset($_GET['token'])){
             $token = $_GET['token'];
