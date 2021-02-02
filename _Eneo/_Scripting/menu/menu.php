@@ -44,7 +44,6 @@
                         <li><a href="#">Users</a>
                             <ul>
                                 <li><a href="index.php?page=auth&auth=login">Log in</a></li>
-                                <li><a href="index.php?page=auth&auth=SignUp">Register</a></li>
                             </ul>
                         </li>
                         ';} else { echo '
