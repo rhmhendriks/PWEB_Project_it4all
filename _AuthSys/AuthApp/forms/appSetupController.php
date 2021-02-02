@@ -1,4 +1,7 @@
 <?php
+    /**
+     * The appSetupController file 
+     */
     require "../../_init/initialize.php";
     session_start();
 

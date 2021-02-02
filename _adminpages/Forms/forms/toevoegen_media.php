@@ -1,15 +1,11 @@
-<!--
+<?php
+/**
+ * The toevoegen_media file adds types of media to the database.
+ * 
+ * @author Rienan Poortvliet and Jurre de Vries
+ * @version 2.0
+ */
 
-This is the file to add types of media to the database
-
-The author of this file is Jurre de Vries
-This file is created on 23/10/2019 at 10:30 AM
-
-Last updated by Rienan Poortvliet
-Last updated on 12/11/2019 at 20:54 PM
-
- -->
- <?php
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {
@@ -35,10 +31,10 @@ Last updated on 12/11/2019 at 20:54 PM
 }?>
 <?php
 
-// Verbinding met Initialize vaststellen
+// Create connection with Initialize
 require('../../_init/initialize.php');
 
-// wegschrijven naar variabele
+// Write to variable
 $Article = ($_POST['artikel']);
 $TipsTricks = ($_POST['tips_tricks']);
 $Else = ($_POST['overig']);

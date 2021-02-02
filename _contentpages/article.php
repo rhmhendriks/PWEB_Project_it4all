@@ -19,38 +19,38 @@
 		$message = "";
 		$Debug = "";
 
-	// Maken van het statement 
-		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
+	// Create a statement
+		$ID = CheckValue($_GET['ID']); // Get ID and protect against sql injection
 		$StatementGet = "SELECT * FROM Articles WHERE ArticleID = $ID";
 	
-	// Maken van de verbinding
-		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connection['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect
+	// Create a connection
+		$Connection = MySqlDo_Connector('Connect'); // Create the connection, use the result array as $Connection
+		if ($Connection['result']){ // If there is a connection with the database database
+			$DBconnect = $Connection['connection']; // Pass around the connection to $DBconnect
 			$Debug .= $Connection['debug'];
 			$Debug .= "<br>";
 
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($StatementGet); // Het artikel ophalen
+			// Execute the statement
+			$statementRun = $DBconnect->query($StatementGet); // Get the article
 			
-			if($statementRun->num_rows >0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if($statementRun->num_rows >0) {  // If rows are found
+			// Get the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$ArticleID = $row["ArticleID"];
 					$ArticleTitle = $row['ArticleTitle'];
 					$ArticleDescription = $row['ArticleDescription'];
 					$ArticleGroup = $row['ArticleGroup'];
-					// Auteurnaam ophalen
+					// Get the author name
 					$StatementGetCatTitle = "SELECT FirstName, LastName FROM Authors WHERE AuthorID = $ArticleGroup";
-					$StatementGetCatTitle = $DBconnect->query($StatementGetCatTitle); // De auteurnaam ophalen
+					$StatementGetCatTitle = $DBconnect->query($StatementGetCatTitle); // Get the author name
 					while ($rowa = $StatementGetCatTitle->fetch_assoc()){
 						$GroupTitle = $rowa['FirstName'] . " " . $rowa['LastName'];
 					}
 
 					$NumberInStock = $row['NumberInStock'];
 
-					// Vooraad controleren
+					// Check the stock
 					if ($NumberInStock > 25){
 						$StockSentance = '<h3 class="inStockList">Er zijn ' . $NumberInStock . ' exemplaren beschikbaar!</h3>';
 					} elseif ($NumberInStock < 25 && $NumberInStock >= 1){
@@ -62,7 +62,7 @@
 					$SellingPrice = $row['SellingPrice'];
 				}
 				
-				// De pagina opmaken
+				// Get the page
 					
 					echo	  '<h1 class="articleTitle">';
 					echo	  $ArticleTitle;

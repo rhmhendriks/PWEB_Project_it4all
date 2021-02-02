@@ -1,4 +1,10 @@
- <?php
+<?php
+/**
+ * The tips_tricks_category file creates the tip trick category.
+ * 
+ * @author Ronald H.M. Hendriks
+ * @version 2.0
+ */
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

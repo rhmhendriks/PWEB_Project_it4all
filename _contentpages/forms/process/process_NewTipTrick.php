@@ -1,4 +1,10 @@
 <?php
+    /**
+     * The process_NewTipTrick file processes the new tip trick.
+     * 
+     * @author Ronald H.M. Hendriks
+     * @version 2.0
+     */
     require "../../_init/initialize.php";
     if (isset($_POST['submit'])) {
         $message                    = "";
@@ -8,10 +14,10 @@
         $CategoryTitle              = CheckValue($_POST['categorie']);
         $Content                    = CheckValue($_POST['inhoud'], true);
         $Sources                    = CheckValue($_POST['bron'], true);
-        $media                      = $_POST['fotoofvideo']; // Wordt niet gecontroleerd, dit gebeurd later! 
+        $media                      = $_POST['fotoofvideo']; // Won't be checked, this happens later! 
 
-        // Nu een tweetal script om ID nummers op te halen
-                // We gaan het ID ophalen van de gekozen auteur
+        // Now a couple of scripts to get the ID numbers
+                // We pick up the ID of the chosen author
                 $connection = MySqlDo_Connector('Connect');
                 if ($connection['result']){
                     if (DebugisOn){
@@ -19,7 +25,7 @@
                         $message .= "<br>";
                     } 
                     $DBconnect = $connection['connection'];
-                // We gaan het statement aanmaken en uitvoeren
+                // We create and execute the statement
                 $statement = "SELECT AuthorID FROM Authors WHERE FirstName = '$Authorname'";
                 $statementRun = $DBconnect->query($statement);
                 while ($row = $statementRun->fetch_assoc()){
@@ -30,8 +36,8 @@
                     $message .= "<br>";
                 }
             }
-                // We gaan het ID van de categorie ophalen
-                // We gaan het statement aanmaken en uitvoeren
+                // We get the ID of the category
+                // We create and execute the statement
                 $statement = "SELECT CategoryID FROM TipsTricksCategory WHERE CategoryTitle = '$CategoryTitle'";
                 $statementRun = $DBconnect->query($statement);
                 while ($row = $statementRun->fetch_assoc()){
@@ -45,7 +51,7 @@
             MySqlDo_Connector('disconnect', $DBconnect);
         }
 
-        // Nu gaan we verder met het verwerken van het formulier naar de database
+        // Now we continue to process the form to the database
         if (isset($AuthorID, $CategoryID)){
             $AddArray = MySqlDo('Add', 'Tip_Trick', "$PageTitle", "$Date", "$AuthorID", "$CategoryID", "$Content", "$Sources");
             if (DebugisOn){

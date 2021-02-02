@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 
+<?php
+/**
+ * The algemene_voorwaarden file displays the general conditions.
+ * 
+ * @author Rienan Poortvliet, Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
+
 <html lang="nl">
   <head>
 	<title>Algemene voorwaarden</title>

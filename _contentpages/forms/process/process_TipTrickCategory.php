@@ -1,13 +1,19 @@
 <?php
+    /**
+     * The process_TipTrickCategory file processes the new tip trick category.
+     * 
+     * @author Ronald H.M. Hendriks
+     * @version 2.0
+     */
     require "../../_init/initialize.php";
     if (isset($_POST['submit'])) {
         $message                        = "";
         $GroupTitle              		= CheckValue($_POST['categorytitel']);
 
-        // Tijd de informatie naar de database te schrijven
+        // It's time to write information to the database
         $AddArray = MySqlDo('Add', 'TipsGroup', "$GroupTitle");
         if (DebugisOn){
-            // nu een beetje debug informatie
+            // Now a bit of debug information
             $message .= $AddArray['debug'];
             $message .= "<br>";
         } 
@@ -17,7 +23,7 @@
         } else {
             $message .= "Er is iets fout gegeaan! Probeer het later opnieuw!";
         }
-        // terugsturen naar het formulier met feedback informatie
+        // Sending back to the form with feedback information
         $output = $message;
         $redirectlocation = "../../index.php?page=forms&form=tips_tricks_category". "&result=" .urlencode($output);
         immediate_redirect_to($redirectlocation);

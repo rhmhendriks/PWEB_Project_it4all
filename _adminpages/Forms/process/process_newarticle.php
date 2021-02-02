@@ -1,4 +1,10 @@
 <?php
+/**
+ * The process_newarticle file processes a new article.
+ * 
+ * @author Jurre de Vries and Ronald Hendriks
+ * @version 2.0
+ */
 require "../../_init/initialize.php";
 if (isset($_POST['submit'])) {
     $message                        = "";
@@ -9,7 +15,7 @@ if (isset($_POST['submit'])) {
     $SellingPriceField				= CheckValue($_POST['verkoopprijs']);
     $StockPriceField				= CheckValue($_POST['inkoopprijs']);
 
-    // We gaan het ID ophalen van het geselecteerde artikel groep
+    // We get the ID of the selected article group
     $connection = MySqlDo_Connector('Connect');
     if ($connection['result']){
         if (DebugisOn){
@@ -17,7 +23,7 @@ if (isset($_POST['submit'])) {
             $message .= "<br>";
         } 
         $DBconnect = $connection['connection'];
-        // We gaan het statement aanmaken en uitvoeren
+        // We create and execute the statement
         $statement = "SELECT ArticleGroupID FROM ArticleGroups WHERE GroupTitle = '$ArticleGroupField'";
         $statementRun = $DBconnect->query($statement);
         while ($row = $statementRun->fetch_assoc()){

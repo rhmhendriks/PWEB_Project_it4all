@@ -1,14 +1,11 @@
-<!--
-
-This is the contact form
-
-The author of this file is Jurre de Vries
-This file is created on 22/10/2019 at 10:30 AM
-
-Last updated by Rienan Poortvliet
-Last updated on 12/11/2019 at 15:56 PM
-
- -->
+<?php
+/**
+ * The contactformulier file creates the contact form.
+ * 
+ * @author Rienan Poortvliet and Jurre de Vries
+ * @version 2.0
+ */
+ ?>
 <div id="contact_form">
 	<form method="post" action="../process/process_contactform.php">
 		<?php if (isset($_GET['result'])){

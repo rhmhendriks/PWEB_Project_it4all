@@ -24,7 +24,7 @@
 	  $message = "";
 	  $Debug = "";
 
-	// Maken van het statement 
+	// Create a statement
 		
 		if (isset($_GET['ID'])){
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
@@ -34,7 +34,7 @@
 		}
 		
 		
-	// Maken van de verbinding
+	// Create a connection
 		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
 		if ($Connection['result']){ // Als er een verbinding is met de database
 			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect

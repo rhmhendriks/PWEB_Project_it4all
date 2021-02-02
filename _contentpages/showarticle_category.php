@@ -21,12 +21,12 @@
 	
 	include "../_init/initialize.php";
 	
-	// Maken van het statement 
+	// Create a statement
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
 		$StatementGet = "SELECT * FROM Articles WHERE ArticleGroupID = $ID";
 		
-	// Maken van de verbinding
-		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
+	// Create a connection
+		$Connection = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
 		if ($Connection['result']){ // Als er een verbinding is met de database
 			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect
 			$Debug .= $Connection['debug'];

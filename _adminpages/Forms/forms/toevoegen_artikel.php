@@ -1,9 +1,10 @@
-<!-- 	Geschreven door: Luc Willemse
-		Gaat over: formulier, toevoegen Artikel.
-		Laatste update: 20:19, 12-11-2019.
-		Door: Rienan Poortvliet.
--->
 <?php
+ /**
+ * The toevoegen_artikel file adds an article.
+ * 
+ * @author Rienan Poortvliet and Luc Willemse
+ * @version 2.0
+ */
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

@@ -1,9 +1,15 @@
 <?php
+    /**
+    * The process_AdmCustForm file processes an admin user.
+    * 
+    * @author Jurre de Vries and Ronald Hendriks
+    * @version 2.0
+    */
     require "../../_init/initialize.php";
 
 
     if (isset($_POST['submit'])) {
-        // Laten we eerst gaan controleren of de ingevoerde wachtwoorden hetzelfde zijn
+        // First we check if the filled in passwords match
         if (isset($_POST['wachtwoord']) && $_POST['wachtwoord'] !== $_POST['wachtwoordb']){
             $message = "De opgegeven wachtwoorden komen niet overeen! Probeer het nogmaals!";
         } else {
@@ -36,7 +42,7 @@
                 $MailVerified = false;
             }
 
-            // Nu maken we een databasen connectie
+            // Now we create a database connection
             $ConnectionArray = MySqlDo_connector('Connect');
             $DBconnect = $ConnectionArray['connection'];
             $message .= $ConnectionArray['debug'];
@@ -47,51 +53,51 @@
                 $message .= $ConnectionArray['debug'];
             }
 
-            // We gaan controleren of de gebruiker nog niet bestaat
+            // We check if the user doesn't exist
             
-                // Nu gaan we controleren of de gebruiker al bestaat
+                // Now e check if the user does exist
                 if ($StatementRunned->num_rows > 0){
-                    // De gebruiker betstaat al!
+                    // The user does exists!
                     $message .= 'Er bestaat al een gebruiker dit mailadres! Je kunt <a href="../../index.php?page=forms&form=login">HIER INLOGGEN</a>';
                 } else {
-                    // De gebruiker bestaat nog niet
-                        // Tijd om het eerste deel van de waarden naar de database te schrijven in de tabel Customers
+                    // The user doesn't exists yet
+                        // It's time to write the first part of the values to the database into the table Customers
                         $AddArray = MySqlDo('Add', 'Customer', "$FirstName", "$LastName", "$DateofBirth", "$Gender", "$Adress", "$PostalCode", "$City", "$Country", "$BIC", "$IBAN");
                         
                         if (DebugisOn){
-                            // nu een beetje debug informatie
+                            // Now a bit of debug information
                             $message .= "<b> Adding to the Customers Table </b><br>";
                             $message .= $AddArray['debug'];
                             $message .= "<br>";
                         } if ($AddArray['result']){
-                            // We noteren het klantnummer voor later
+                            // We note the customer nuumber for later
                             $CustomerID = $AddArray['ID'];
                         
-                            // Nu gaan we checken of het mail adres nog geverifeerd moet worden.
+                            // Now we check if the mail address has to be verified
                             if (!$MailVerified == TRUE){
                         
-                                $token = bin2hex(random_bytes(50));  // Het token aanmaken voor de verificatie
-                                $Password = mt_rand(10000000, 99999999); // Activatiecode aanmaken
+                                $token = bin2hex(random_bytes(50));  // Adding the token for verification
+                                $Password = mt_rand(10000000, 99999999); // Adding the activation code
                                 $PasswordHash = password_hash($Password, PASSWORD_DEFAULT, $options);
                             } else {
                        
-                                $token = NULL; // Er is geen token nodig
+                                $token = NULL; // No token is needed
                             }
-                            // Nu voegen we de waarden toe aan de tabel users
+                            // Now we add values to the table users
                             $AddArray2 = MySqlDo('Add', 'User', "$Email", "$CustomerID", "$PasswordHash", $Admin, 0, $MailVerified, "$token", true, "#FFFFFF");
                             if (DebugisOn){
-                                // nu een beetje debug informatie
+                                // Now we add debug information
                                 $message .= "<br><b> Adding to the Users Table </b><br>";
                                 $message .= $AddArray2['debug'];
                                 $message .= "<br>";
                             }
                             if ($AddArray2['result']){
-                                // Een beetje feedback voor de gebruiker naasr het scherm
-                                    // Eerst gaan we kijken of er een verificatiemail moet worden verstuurd
+                                // A bit of feedback for the user to the screen
+                                    // First we look if a verification mail must be send
                                     if ($MailVerified != TRUE){
-                                        // Nu gaan we de verificatiemail versturen
+                                        // Now we send the verification mail
                                             $ActivationCode = $Password;
-                                            // We gaan de mail voorbereiden
+                                            // Now we prepare the mail
                                             $to         =       $Email;
                                             $subject    =       'IT4ALL - Verify your email address';
                                             $headers    =       "From: webmaster.it4all@gmail.com\r\n";
@@ -101,13 +107,13 @@
                                                                         
                                             require "../../_AuthSys/Authentication_mails/MAIL_Verification.php";
                                                                         
-                                            // Nu gaan we de mail verzenden
+                                            // Now we send the mail
                                             mail($to, $subject, $VerMail, $headers);
 
                                             $message .= "De klant met klantnummer  <b>$CustomerID</b> is toegevoegd aan de database! Er is een verificatiemail verstuurd.  <br>";
                                     } else {
-                                        // De gebruiker is al geverifieerd
-                                            // we sturen een welkomstmail!
+                                        // The user has already been verified
+                                            // We send a welcome mail!
                                                 $to         =       $Email;
                                                 $subject    =       'IT4ALL - Welkom op onze site!';
                                                 $headers    =       "From: webmaster.it4all@gmail.com\r\n";
@@ -117,7 +123,7 @@
                                                                             
                                                 require "../../_AuthSys/Authentication_mails/MAIL_Welcome.php";
                                                                     
-                                            // Nu gaan we de mail verzenden
+                                            // Now we send a mail
                                             mail($to, $subject, $WelMail, $headers);
 
                                         $message .= "De klant met klantnummer  <b>$CustomerID</b> is toegevoegd aan de database! Er is welkomstmail versturd. <br>";
@@ -128,7 +134,7 @@
                         } else {
                             $message .= "Er is iets fout gegeaan! Probeer het later opnieuw!";
                         }
-                        // terugsturen naar het formulier met feedback informatie
+                        // Now we send back the form with feedback information
                         $output = $message;
                         $redirectlocation = '../../index.php?page=forms&form=admin_form'. '&result=' .urlencode($output);
                         immediate_redirect_to($redirectlocation);

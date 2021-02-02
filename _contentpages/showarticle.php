@@ -27,7 +27,7 @@
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
 		$StatementGet = "SELECT * FROM Articles WHERE ArticleID = $ID";
 	
-	// Maken van de verbinding
+	// Create a connection
 		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
 		if ($Connection['result']){ // Als er een verbinding is met de database
 			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect

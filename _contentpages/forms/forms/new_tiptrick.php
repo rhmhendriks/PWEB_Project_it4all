@@ -1,14 +1,10 @@
-
-<!--
-
-The author of this file is Ronald HM Hendriks
-This file is created on 20/10/2019 at 16:25 AM
-
-Last updated by Ronald HM Hendriks
-Last updated on 27/10/2019 at 3:01 PM
-
- -->
-  <?php
+<?php
+/**
+ * The new_tiptrick file creates a new tip trick.
+ * 
+ * @author Ronald H.M. Hendriks
+ * @version 2.0
+ */
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {
