@@ -14,29 +14,8 @@ table, th, td {
 <body>
 
 <?php 
-function calculator($json) {
-    $array = json_decode($json, true);
-    $highest = -100;
-    $lowest = 100;
-    $total = 0;
-    $i = 0;
-    foreach($array as $key => $value) {
-        foreach($value as $key2 => $value2) {
-            if ($key2 == "Temperatuur") {
-                $i += 1;
-                $total += $value2;
-                if ($value2 < $lowest) {
-                    $lowest = $value2;
-                }
-                elseif ($value2 > $highest) {
-                    $highest = $value2;
-                }
-            }
-        }
-    }
-    $average = $total / $i;
-    return array(round($highest, 1), round($lowest, 1), round($average, 1));
-}
+include $_SERVER['DOCUMENT_ROOT'] . "_init/functionlibary.php";
+
 $jsonCameroon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100');
 $jsonChad = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=647000');
 $jsonCAR = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=646500');
@@ -44,7 +23,6 @@ $jsonCongo = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?tok
 $jsonCongo2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=644500');
 $jsonGabon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645000');
 $jsonGabon2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645010');
-
 ?>
 
 <h2>Heat table</h2>
