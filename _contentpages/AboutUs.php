@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+
+<?php
+/**
+ * The AboutUs file displays the about us page.
+ * 
+ * @author Rienan Poortvliet, Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
+
 <html>
 	<link rel="stylesheet" href="../_css/Newstylesheet.css" type="text/css">
 <head>

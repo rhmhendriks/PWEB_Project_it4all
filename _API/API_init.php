@@ -1,4 +1,11 @@
 <?php 
+    /**
+     * The API_init file initializes the connection with the API. The API can be used retrieve the data from the database.
+     * It can also be used to retrieve the data used to get access to the database.
+     * 
+     * @author Jurre de Vries and Ronald H.M. Hendriks
+     * @version 3.0
+     */
     // Below we have the databse parameters
     define("ServerName", "localhost:3306");
     define("DBSigninName", "it4alldbuser");
@@ -9,6 +16,11 @@
     define("APITOKENtableName", "API_token");
     define("APIIPtableName", "API_IPwhitelist");
 
+    /**
+     * This function creates the connection to the database.
+     * 
+     * @return An array with debug information, the result and the connection.
+     */
     function MySqlDo_Connector($action, $Connection = NULL, $DB = "unwdmi_ron"){
         $returnconnection = "";
         if ($action == 'Connect'){
@@ -32,6 +44,11 @@
         return $Information = array("debug"=>"$returndebug", "result"=>$resultfunction, "connection"=>$returnconnection);
     }
 
+    /**
+     * This function checks if an IP-address exists.
+     * 
+     * @return An array with the statement, the data found and debug information.
+     */
     function checkIP($ip) {
 
         // create connection
@@ -69,6 +86,11 @@
         return $Information = array("data"=>$statementrunned, "result"=>$result, "debug"=>$ConnectionArray['debug']);
     }
 
+    /**
+     * This function checks if a token exists.
+     * 
+     * @return An array with the statement, the data found and debug information.
+     */
     function checkToken($token) {
 
         // create connection
@@ -115,6 +137,11 @@
     }
 
     ### Data Retriever ###
+    /**
+     * This function retrieves the data which has to be shown to the user.
+     * 
+     * @return An array with the statement, the data found and debug information. 
+     */
     function retrieveData($fromDate=null, $tilDate=null, $types, $stations = null ){
         
         //echo "RETDAT FROM $fromDate AND TIL $tilDate <br>";
@@ -214,7 +241,7 @@
     }
 
     /**
-     * 
+     * This function checks the authentication of an user.
      */
     function checkAuth(){
         if(isset($_GET['token'])){
@@ -231,6 +258,9 @@
         }
     }
 
+    /**
+     * This function create a .JSON file of the requested data.
+     */
     function createJSON($data){
         while($row = $data->fetch_array(MYSQLI_ASSOC)) {
             $myArray[] = $row;
@@ -257,6 +287,9 @@
         immediate_redirect_to($filepath);
     }
 
+    /**
+     * This function create a .XML file of the requested data.
+     */
     function createXML($data){ 
         $xml = new SimpleXMLElement('<WEATHERDATA/>'); 
             while($row = $data->fetch_array(MYSQLI_ASSOC)) {
@@ -290,6 +323,9 @@
     }
 
     ### Imidiate Redirect ###
+    /**
+     * This function redirects the user to another location
+     */
     function immediate_redirect_to($redirectlocation){
         header("location: {$redirectlocation}");
         exit;	

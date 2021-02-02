@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 
+<?php
+/**
+ * The cookie file displays the cookie notification.
+ * 
+ * @author Rienan Poortvliet, Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
+
 <html lang="nl">
   <head>
 	<title>Cookie statement</title>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * The add_company file adds the company.
+ * 
+ * @author Rienan Poortvliet and Ronald H.M. Hendriks
+ */
 if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

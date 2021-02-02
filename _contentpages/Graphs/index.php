@@ -14,9 +14,16 @@
             <canvas id="myChart" width="100" height="80"></canvas>
         </div>
         <script>
-            <?php 
-                // haal data uit database
-                // maak logische datumverdeling 
+            <?php
+                /**
+                 * The index file shows the graph to the website.
+                 * 
+                 * @author Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+                 * @version 2.0
+                 */
+
+                // Get data from database
+                // Make a logical datum partition
 
                 $labels = '["' . $value;
                 $value = '["' . $value;            
@@ -26,10 +33,10 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["1", "2", "3", "4", "5", "6"], // X-As
+                    labels: ["1", "2", "3", "4", "5", "6"], // X axis
                     datasets: [{
                             label: 'Weather Data',
-                            data: <?php echo $data1; ?>[5, 10, 13, 12, 8, 2],  // Y-As
+                            data: <?php echo $data1; ?>[5, 10, 13, 12, 8, 2],  // Y axis
                             backgroundColor: [
                                 'rgba(157, 219, 250, 0.4)',
                             ],
@@ -39,7 +46,7 @@
                             borderWidth: 1
                         },{
                             label: 'None',
-                            data: [],  // Y-As
+                            data: [],  // Y axis
                             backgroundColor: [
                                 'rgba(250, 172, 207, 0.4)',
                             ],
@@ -49,7 +56,7 @@
                             borderWidth: 1
                         },{
                             label: 'None',
-                            data: [],  // Y-As
+                            data: [],  // Y axis
                             backgroundColor: [
                                 'rgba(57, 92, 50, 0.2)',
                             ],

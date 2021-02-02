@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 
+<?php
+/**
+ * The privacy_statement file displays the privacy statement.
+ * 
+ * @author Rienan Poortvliet, Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
+
 <html lang="nl">
   <head>
 	<title>Privacy statement</title>

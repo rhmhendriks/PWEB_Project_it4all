@@ -21,11 +21,11 @@
 		
 	  include "../_init/initialize.php";
 	
-		// Maken van het statement 
+		// Create a statement
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
 		$StatementGet = "SELECT * FROM TipsandTricks WHERE PageID = $ID";
 	
-	// Maken van de verbinding
+	// Create a connection
 		$Connector = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
 		if ($Connection['result']){ // Als er een verbinding is met de database
 			$DBconnect = $Connector['Connection']; // De verbinding doorgeven aan $DBconnect

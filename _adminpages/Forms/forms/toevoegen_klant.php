@@ -1,7 +1,11 @@
-<!-- 	Geschreven door: Luc Willemse
-		Gaat over: formulier, toevoegen klant.
-		Laatste update: 18:11, 27-10-2019 door Ronald HM Hendriks
--->
+<?php 
+/**
+ * The file toevoegen_klant adds a customer.
+ * 
+ * @author Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
 <div id="toevoegen_klant_form">
 	<form method="post" action="../process/process_NewCustomer.php">
 		<?php if (isset($_GET['result'])){

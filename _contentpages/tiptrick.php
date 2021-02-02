@@ -23,12 +23,12 @@
 		$message = "";
 		$Debug = "";
 	
-		// Maken van het statement 
+		// Create a statement
 		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
 		$StatementGet = "SELECT * FROM TipsandTricks WHERE PageID = $ID";
 
 	
-	// Maken van de verbinding
+	// Create a connection
 		$Connector = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
 		if ($Connector['result']){ // Als er een verbinding is met de database
 			$DBconnect = $Connector['connection']; // De verbinding doorgeven aan $DBconnect

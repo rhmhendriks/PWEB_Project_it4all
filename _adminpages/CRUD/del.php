@@ -1,6 +1,11 @@
 
 	<?php
-
+	/**
+	 * The del file deletes records from the database. It will be used with CRUD.
+	 * 
+	 * @author Ronald Hendriks 
+	 * @version 2.0
+	 */
 	if (isset($_GET['table'])) {
 	 	
 	  

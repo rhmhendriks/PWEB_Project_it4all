@@ -9,6 +9,12 @@
     <body>
         <!--?token=rhgy8gfyeaihgfiuyeragyuiherauyigfhuh&from=23022021&til=25022021-->
         <?php
+            /**
+             * The index file shows the requested data.
+             * 
+             * @author Jurre de Vries and Ronald H.M. Hendriks
+             * @version 3.0
+             */
             //require "SQLsystem.php";
             require "API_init.php";
 
@@ -26,6 +32,7 @@
             //if (isset($_GET['secondbetween'])){$secondbetween = $_GET['secondbetween'];}
             //if (isset($_GET['orderby'])){$secondbetween = $_GET['orderby'];}           
 
+            // Check the weather type
             if (isset($_GET['type'])){$type = $_GET['type'];} 
 
             // get date as they are in SQL

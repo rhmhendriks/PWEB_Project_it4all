@@ -1,13 +1,10 @@
-<!--
-
-The author of this file is Jurre de Vries
-This file is created on 24/10/2019 at 11:30 AM
-
-Last updated by Rienan Poortvliet
-Last updated on 12/11/2019 at 15:39 PM
-
- -->
-  <?php
+<?php
+ /**
+ * The author_toevoegen file adds a new author.
+ * 
+ * @author Rienan Poortvliet and Jurre de Vries
+ * @version 2.0
+ */
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

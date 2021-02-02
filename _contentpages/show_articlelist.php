@@ -21,24 +21,24 @@
 	
 	include "../_init/initialize.php";
 	
-	// Maken van het statement 
-		$ID = CheckValue($_GET['ID']); // ID ophalen en bescherming tegen sql injection
+	// Create a statement
+		$ID = CheckValue($_GET['ID']); // Get ID and protect against sql injection
 		$StatementGet = "SELECT * FROM Articles WHERE ArticleGroupID = $ID";
 		
-	// Maken van de verbinding
-		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connection['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect
+	// Create a connection
+		$Connection = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
+		if ($Connection['result']){ // If there is a connection to the database
+			$DBconnect = $Connection['connection']; // Give the connection to $DBconnect
 			$Debug .= $Connection['debug'];
 			$Debug .= "<br>";
 			
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($StatementGet); // De artikelgroep ophalen
+			// Execute statement
+			$statementRun = $DBconnect->query($StatementGet); // Get the article group
 			
-			if($statementRun->num_rows >0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if($statementRun->num_rows >0) {  // If the rows are found
+			// Use the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$ArticleID = $row["ArticleID"];
 					$ArticleTitle = $row['ArticleTitle'];
 					$ArticleDescription = $row['ArticleDescription'];

@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 
+<?php
+/**
+ * The disclaimer file displays the disclaimer page.
+ * 
+ * @author Rienan Poortvliet, Jurre de Vries, Luc Willemse and Ronald H.M. Hendriks
+ * @version 2.0
+ */
+?>
+
 <html lang="nl">
   <head>
 	<title>Disclaimer</title>

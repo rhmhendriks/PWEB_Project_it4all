@@ -5,6 +5,14 @@
 </head>
 <body>
 
+	<?php
+	/**
+	 * The home file displays the homepage of the website.
+	 * 
+	 * @author Rienan Poortvliet
+	 * @version 2.0
+	 */
+	?>
 	<div id="homeTekst">
 		<h1> Welkom op onze website IT4ALL </h1>
 		<p>Deze website is een schoolproject. Bestelde producten zullen dan ook <b>nooit</b> aankomen. U zult alleen een mail kregen met deze boodschap. Accounts kunnen wel aangemaakt worden op deze site, en deze worden uiteraard met de hoogst mogelijke beveiliging toegevoegd aan de database. Dit wil zeggen dat uw persoonsgegevens en wachtwoord versleuteld worden opgeslagen. 

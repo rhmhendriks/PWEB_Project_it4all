@@ -1,13 +1,10 @@
-<!--
-
-The author of this file is Luc Willemse
-This file is created on 16/10/2019 at 11:22 AM
-
-Last updated by Rienan Poortvliet
-Last updated on 12/11/2019 at 13:39 PM
-
- -->
 <?php
+/**
+ * The add_company file processes the company that must be added.
+ * 
+ * @author Rienan Poortvliet and Luc Willemse
+ * @version 2.0
+ */
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

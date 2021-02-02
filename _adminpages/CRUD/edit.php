@@ -6,6 +6,12 @@
 <body>
 
 	<?php
+	/**
+	 * The edit file edits records from the database. It will be used with CRUD.
+	 * 
+	 * @author Ronald Hendriks 
+	 * @version 2.0
+	 */
 
 	if (isset($_GET['table'])) {
 	 	
