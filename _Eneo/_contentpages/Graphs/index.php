@@ -32,7 +32,75 @@
 
 
 
+        <?php 
+        
+            function getXandY($type){
+                /**
+                 * TODO: Last 2 weeks dates
+                 */
+                $data = file_get_contents("https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=$type&stations=649100-647000-646500-644000-644500-645000-645010");
+                $arrayData = json_decode($data, true);
+                $constructuredData = array();
 
+                foreach($arrayData as $v ){
+                    $datum = $v['Datum'];
+                    $stn = $v['stn'];
+                    $temp = $v['Temperatuur'];
+                    
+
+                    if (array_key_exists($datum, $constructuredData)){
+                        if (array_key_exists($stn, $constructuredData[$datum])){
+                            $constructuredData[$datum][$stn][sizeof($constructuredData[$datum][$stn])+1] = $temp;
+                        } else {
+                            $constructuredData[$datum][$stn][0] = $temp;
+                        }
+                    } else {
+                        $constructuredData[$datum][$stn][0] = $temp;
+                    }
+                }
+
+                $arraystnav = array();
+
+                foreach($constructuredData as $k => $a ){
+                    $arraystnav[$k];
+                    foreach($a as $k2 => $b ){
+                        $arraystnav[$k][$k2] = array_sum($b)/count($b);
+                    }
+                }
+                $dates = "[";
+
+
+                $stnArrays = array();
+
+
+
+                
+                // lijstje met datums
+                // lijstje met stationnummetd
+                // lijstje waarden per station
+
+
+
+                array_sum($a)/count($a)
+
+                array[stn] = [temp > values, wind > values, etc. ]
+
+
+
+                array[datum][station][temp]
+                $constructuredData['10010']['temp'] = Array met values
+
+                foreach($arrayData as $v {
+                    $constructuredData.push($k)
+                }
+            }
+             
+        
+        
+        
+        
+        
+        ?>
 
 
 
