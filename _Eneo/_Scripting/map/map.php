@@ -16,6 +16,18 @@
 </style>
 </head>
 <body>
+<?php 
+include $_SERVER['DOCUMENT_ROOT'] . "_init/functionlibary.php";
+
+$jsonCameroon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100');
+$jsonChad = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=647000');
+$jsonCAR = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=646500');
+$jsonCongo = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=644000');
+$jsonCongo2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=644500');
+$jsonGabon = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645000');
+$jsonGabon2 = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=645010');
+
+?>
 <style>
 .mapboxgl-popup {
 max-width: 400px;
@@ -28,8 +40,8 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
-center: [12, 6.7],
-zoom: 5.3
+center: [12, 6.2],
+zoom: 4.8
 });
 
 var size = 200;
@@ -111,8 +123,9 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
-'description':
-'<strong>Weather station</strong><p>Cameroon</p>',
+'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>'";
+                        echo "'" . '<p>' . calculator($jsonCameroon)[2] . '</p>' . "',"; ?>
+//'description': '<strong>Weather station</strong><p>Cameroon</p>',
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -126,6 +139,7 @@ map.addSource('places', {
 'description':
 '<strong>Weather station</strong><p>Chad</p>',
 'icon': 'communications-tower'
+
 },
 'geometry': {
 'type': 'Point',
@@ -160,12 +174,12 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description':
-'<strong>Weather station</strong><p>Central African Republic</p>',
+'<strong>Weather station</strong><p>Republic of the Congo</p>',
 'icon': 'communications-tower'
 },
 'geometry': {
 'type': 'Point',
-'coordinates': [15.25, 4.25]
+'coordinates': [15.25, -4.25]
 }
 },
 {
@@ -202,21 +216,10 @@ map.addLayer({
 'source': 'places',
 'layout': {
 'icon-image': '{icon}-15',
-'icon-allow-overlap': true
+'icon-allow-overlap': true,
+'icon-size': 2
 }
 });
- 
-// Add a layer showing the places.
-map.addLayer({
-'id': 'places',
-'type': 'symbol',
-'source': 'places',
-'layout': {
-'icon-image': '{icon}-15',
-'icon-allow-overlap': true
-}
-});
-
 
  
 // When a click event occurs on a feature in the places layer, open a popup at the
