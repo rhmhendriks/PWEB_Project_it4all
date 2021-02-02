@@ -657,13 +657,14 @@
                                 
                                 
                                 
-                                elseif ($OnWhat == "UserMemberships"){ //*
-                                    $table = 'UserMemberships'; // We specificeren de exacte tabelnaam
-                                    $idColumn = 'ApplyID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
+                                elseif ($OnWhat == "AUTH2FAlinks"){ //*
+                                    $table = 'AUTH2FAlinks'; // We specificeren de exacte tabelnaam
+                                    $idColumn = 'sessionID'; // We specifieren het herkenbare ID-kolom (de primaire sleutel)
+                                    $columns = '`sessionID`, `user`, `2FAapp`, `2FAmail`, `Pincode`, `PinAttempts`, `SecurityQuestionA`, `SecurityQuestionB`, `Token`, `GenerationDate`, `OTP`'; // De kolommem specificeren ten behoeve van het uit te voeren statement uit mysqldo_add
+
                                     switch($ToDo){ //**
                                         case "Add":
-                                            $columns = '`ApplyID`, `Name`, `PhoneNumber`, `EMailAddress`, `Question`'; // De kolommem specificeren ten behoeve van het uit te voeren statement uit mysqldo_add
-                                            $content = "NULL, '$var1', '$var2', '$var3', '$var4'"; // De toe te voegen waarden worden aangegeven ten behoeve van het uit te voeren statement in mysqldo_add
+                                            $content = "NULL, '$var1', '$var2', '$var3', '$var4', '$var5', '$var6', '$var7', '$var8', '$var9', '$var10', '$var11'"; // De toe te voegen waarden worden aangegeven ten behoeve van het uit te voeren statement in mysqldo_add
                                             $AddArray = MySqlDo_Add($table, $columns, $content); // Hier wordt de array gecreeerd door de functie mysql_add opghaald. Tevens wordt hiermee geprobeerd om de gegevens aan de database toe te voegen.
                                             $ActionLog = $AddArray['debug']; // Nu wordt de debug informatie afkomstig uit de funtie mysqldo_add weggeschreven naar de actionlog
                                             $AddedID = $AddArray['ID']; // Het ID van het toegevoegde record word gespecificeerd
@@ -678,7 +679,6 @@
                                             break; 
                                         case "Overview":
                                             // we gaan de kolomnamen maken
-                                            $columns = ["ApplyID", "Name", "PhoneNumber", "EMailAddress", "Question"];
                                             $ResultOverview = MySqlDo_Overview($table, $columns, $idColumn);
                                             $ActionLog = $ResultOverview['debug'];
                                             $AddedID = $ResultOverview['table'];
