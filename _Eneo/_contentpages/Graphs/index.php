@@ -36,20 +36,23 @@
 
             //$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010-870160');
             // gemaakt door Luc, zit een kleine kanttekening bij deze functie, maar die haal ik er morgen uit.
+            // 1ste []= country code. 2de []= 0 = temp, 1 = wind, 2 = date. 3de []= particular value
             function calculator($json) {
                 $array = json_decode($json, true);
+                echo $array[1][1];
                 $i = 0;
                 $list = array();
                 $countryCode = 0;
                 $listTemp = array();
                 $listDate = array();
+                $listWind = array();
                 foreach($array as $key => $value) {
                     foreach($value as $key2 => $value2) {
                         if ($key2 == "stn") {
                             if ($value2 != $countryCode && $i != 0) {
                                 $countryCode = $value2;
                                 
-                                array_push($list, array($listTemp, $listDate));
+                                array_push($list, array($listTemp, $listWind, $listDate));
                             } 
                         }
                         elseif ($key2 == "Temperatuur") {
@@ -60,10 +63,14 @@
                             $i += 1;
                             array_push($listDate, $value2);
                         }
+                        elseif ($key2 == "Windsnelheid") {
+                            $i += 1;
+                            array_push($listWind, $value2);
+                        }
                     }
                 }
                 return $list;
-            }
+}
 
             //echo calculator($json)[1][0][0];
 
