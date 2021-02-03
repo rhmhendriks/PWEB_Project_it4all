@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- 
-    Author: Luc Willemse
--->
 <head>
 <style>
 table, th, td {
@@ -14,6 +11,13 @@ table, th, td {
 <body>
 
 <?php 
+/**
+ * The map file creates the windspeed tables
+ * source: mapbox.com
+ * 
+ * @author Luc Willemse
+ * @version 2.0
+ */
 $today = date('Y-m-d');
 $onemonthago = date('Y-m-d', strtotime("-1 months", strtotime($today)));
 $json = file_get_contents("https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=$onemonthago&til=$today&filetype=JSON&type=W&stations=644000");
