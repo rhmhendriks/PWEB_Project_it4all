@@ -232,7 +232,7 @@ nav ul li ul li a:hover {
     flex-direction: column;
     border: 2px solid #98c013;
 }
-#general_form input[type="text"], #general_form input[type="date"] {
+#general_form input[type="text"], #general_form input[type="date"], #general_form input[type="password"], #general_form input[type="email"] {
     border-radius: 5px;
     padding: 6px 12px;
     outline: none;
@@ -279,11 +279,53 @@ nav ul li ul li a:hover {
 
 
 /*                      \\\\\ general table styling /////           */
-
+#generaltablediv {
+    overflow-x: scroll;
+}
+#generaltablediv table {
+    border-collapse: collapse;
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-right: auto;
+    margin-left: auto;
+} /* The table */
+.generaltable a img {
+    padding: 3px;
+    margin: 9px;
+    border: none;
+    width: 24px;
+    height: 24px;
+} /* the icons for deleting or editing */
+.generaltable th {
+    background-color: #0d69a5;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+} /* The table head color css */
+.generaltable th, table td {
+    padding: 12px 15px;
+    text-align: left;
+} /* The padding */
+.generaltable tbody tr {
+    border-bottom: 1px solid #dddddd;
+} /* The border-bottom */
+.generaltable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} /* The background color */
+.generaltable tbody tr:last-of-type {
+    border-bottom: 5px solid #0d69a5;
+} /* The last row color */
 /*                      \\\\\ general table styling /////           */
 
 /*                      \\\\\ general graph styling /////           */
-
+#generalgraph {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 /*                      \\\\\ general graph styling /////           */
 
 
@@ -336,7 +378,6 @@ nav ul li ul li a:hover {
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
-    color: blue;
 }
 #tablelist a:hover {
     background-color: #0d69a5;
