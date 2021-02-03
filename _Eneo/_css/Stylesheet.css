@@ -18,12 +18,15 @@ body {
     flex-direction: column;
 }
 
+
 /*                      \\\\\ Header styling /////                  */
+
 header {
     background-color: #0d69a5;
     height: 80px;
     flex-shrink: 0;
 }
+
 header h1 {
     margin: auto;
     text-align: center;
@@ -31,6 +34,7 @@ header h1 {
     font-family: Arial, Helvetica, sans-serif;
     padding: 14px 0px 0px 0px;
 }
+
 header h1 a {
     text-decoration: none;
     margin: auto;
@@ -39,22 +43,29 @@ header h1 a {
     font-family: Arial, Helvetica, sans-serif;
     padding: 14px 0px 0px 0px;
 }
+
 header h1 a:before {
     content: 'e';
     color: white;
     font-size: 50px;
 }
+
 header h1 a:after {
     content: 'neo';
     color: #98c013;
     font-size: 50px;
 }
+
 header h1 a:hover {
     cursor: pointer;
 }
+
+
 /*                  \\\\\ Header styling /////                       */
 
+
 /*                  \\\\\ Navigation styling //////                  */
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -64,29 +75,36 @@ nav {
     background-color: #0d69a5;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .links {
     float: left;
 }
+
 .login {
     float: right;
 }
+
 .login .admincolor {
     color: red;
 }
+
 .login li {
     list-style: none;
     float: right;
     position: relative;
 }
+
 .links li {
     float: left;
     list-style: none;
     position: relative;
 }
+
 nav ul li a:hover {
     color: #0d69a5;
     background-color: #98c013;
 }
+
 nav ul li a {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
@@ -95,6 +113,7 @@ nav ul li a {
     padding: 15px 12px;
     text-decoration: none;
 }
+
 nav ul li ul {
     display: none;
     position: absolute;
@@ -102,23 +121,29 @@ nav ul li ul {
     padding: 7px;
     border-radius: 0px 0px 5px 5px;
 }
+
 nav ul li:hover ul {
     display: block;
 }
+
 .links li ul li {
     width: 175px;
     border-radius: 5px;
 }
+
 .login li ul li {
     width: 75px;
     border-radius: 5px;
 }
+
 nav ul li ul li a {
     padding: 8px 14px;
 }
+
 nav ul li ul li a:hover {
     background-color: #98c013;
-} 
+}
+
 .burger div {
     width: 25px;
     height: 3px;
@@ -126,23 +151,32 @@ nav ul li ul li a:hover {
     margin: 5px;
     transition: all 0.3s ease;
 }
+
 .burger {
     display: none;
     position: absolute;
     left: 10px;
 }
+
+
 /*                      \\\\\ Navigation styling /////              */
 
+
 /*                      \\\\\ Content styling /////                 */
+
 #content {
     flex: 1 0 auto;
     display: block;
     background-color: #eaf8ba;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
 /*                      \\\\\ Content styling /////                 */
 
+
 /*                      \\\\\ homepage styling /////                */
+
 #homenotification {
     float: left;
     display: flex;
@@ -151,6 +185,7 @@ nav ul li ul li a:hover {
     width: 20%;
     text-align: center;
 }
+
 #homenotification h1 {
     margin: auto;
     width: 90%;
@@ -161,6 +196,7 @@ nav ul li ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
+
 #homenotification h2 {
     margin: auto;
     width: 80%;
@@ -170,6 +206,7 @@ nav ul li ul li a:hover {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
+
 #homenotification p {
     margin: auto;
     font-size: 16px;
@@ -178,7 +215,10 @@ nav ul li ul li a:hover {
     width: 75%;
     text-align: center;
 }
+
+
 /*                      \\\\\ map styling /////                     */
+
 #homemap {
     float: left;
     display: flex;
@@ -188,7 +228,10 @@ nav ul li ul li a:hover {
     width: 40%;
     text-align: center;
 }
+
+
 /*                      \\\\\ graph styling /////                   */
+
 #homegraph {
     float: right;
     display: flex;
@@ -198,9 +241,9 @@ nav ul li ul li a:hover {
     width: 40%;
     text-align: center;
 }
-#homegraph input[type="checkbox"] {
-    
-}
+
+#homegraph input[type="checkbox"] {}
+
 #homegraph input[type="submit"] {
     border-radius: 5px;
     padding: 4px 10px;
@@ -211,17 +254,25 @@ nav ul li ul li a:hover {
     margin-top: 10px;
     border: 2px solid #98c013;
 }
+
+
 /*                      \\\\\ homepage styling /////                */
 
+
 /*                      \\\\\ Form required styling /////           */
+
 .redStar {
     color: red;
     margin-left: 2px;
     font-size: 18px;
 }
+
+
 /*                      \\\\\ Form required styling /////           */
 
+
 /*                      \\\\\ general form styling /////            */
+
 #general_form {
     max-width: 650px;
     margin: 10px auto;
@@ -232,11 +283,16 @@ nav ul li ul li a:hover {
     flex-direction: column;
     border: 2px solid #98c013;
 }
-#general_form input[type="text"], #general_form input[type="date"] {
+
+#general_form input[type="text"],
+#general_form input[type="date"],
+#general_form input[type="password"],
+#general_form input[type="email"] {
     border-radius: 5px;
     padding: 6px 12px;
     outline: none;
 }
+
 #general_form input[type="submit"] {
     border-radius: 5px;
     padding: 4px 10px;
@@ -247,53 +303,143 @@ nav ul li ul li a:hover {
     margin-top: 10px;
     border: 2px solid #98c013;
 }
+
 #general_form h1 {
     font-size: 28px;
     text-align: center;
 }
+
 #general_form p {
     display: flex;
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #general_form label {
     font-size: 15px;
     margin-right: 10px;
 }
+
 #general_form input {
     margin-right: 10px;
 }
+
 #inputgeneral {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: auto;
 }
-#inputgeneral label, #inputgeneral input {
+
+#inputgeneral label,
+#inputgeneral input {
     margin-bottom: 5px;
 }
+
 #submitgeneral {
     outline: none;
 }
+
+
 /*                      \\\\\ general form styling /////            */
 
 
 /*                      \\\\\ general table styling /////           */
 
+#generaltablediv {
+    overflow-x: scroll;
+}
+
+#generaltablediv table {
+    border-collapse: collapse;
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* The table */
+
+.generaltable a img {
+    padding: 3px;
+    margin: 9px;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+
+/* the icons for deleting or editing */
+
+.generaltable th {
+    background-color: #0d69a5;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+/* The table head color css */
+
+.generaltable th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+
+/* The padding */
+
+.generaltable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+/* The border-bottom */
+
+.generaltable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+
+/* The background color */
+
+.generaltable tbody tr:last-of-type {
+    border-bottom: 5px solid #0d69a5;
+}
+
+
+/* The last row color */
+
+
 /*                      \\\\\ general table styling /////           */
 
+
 /*                      \\\\\ general graph styling /////           */
+
+#generalgraph {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 
 /*                      \\\\\ general graph styling /////           */
 
 
 /*                      \\\\\ formoverview styling /////            */
+
 .formovertitle {
     text-align: center;
     font-size: 26px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
 #eneoadminlist {
     width: 800px;
     background-color: #fff7e6;
@@ -303,16 +449,19 @@ nav ul li ul li a:hover {
     border: 2px solid #0d69a5;
     border-radius: 5px;
 }
+
 #eneoadminlist h2 {
     text-align: center;
     font-size: 24px;
 }
+
 #formslist {
     display: flex;
     flex-direction: column;
     width: 50%;
     text-align: center;
 }
+
 #formslist a {
     display: block;
     padding: 15px 20px;
@@ -321,59 +470,74 @@ nav ul li ul li a:hover {
     font-size: 20px;
     color: blue;
 }
+
 #formslist a:hover {
     background-color: #0d69a5;
 }
+
 #tablelist {
     display: flex;
     flex-direction: column;
     width: 50%;
     text-align: center;
 }
+
 #tablelist a {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
-    color: blue;
 }
+
 #tablelist a:hover {
     background-color: #0d69a5;
 }
+
+
 /*                      \\\\\ formoverview styling /////            */
 
+
 /*                      \\\\\ Footer styling /////                  */
+
 footer {
     background-color: #666666;
     flex-shrink: 0;
     height: 75px;
     text-align: center;
 }
+
 footer h2 {
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 17px 0px 0px;
 }
+
 footer div {
     color: white;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 footer div a {
     color: white;
     text-decoration: none;
 }
+
 footer div a:hover {
     color: #333333;
 }
+
+
 /*                      \\\\\ Footer styling /////                  */
+
 
 /*                      ////////////////////////////////                
                         /// Screen size smaller than ///
                         /// 1560 pixels.             ///
                         ////////////////////////////////             */
+
 @media screen and (max-width: 1560px) {
     /*                      \\\\\ homepage styling /////                */
     #homenotification {
@@ -398,7 +562,7 @@ footer div a:hover {
         float: left;
         width: 100%;
     }
-/*                      \\\\\ homepage styling /////                */
+    /*                      \\\\\ homepage styling /////                */
 }
 
 
@@ -406,154 +570,158 @@ footer div a:hover {
                         /// Screen size smaller than ///
                         /// 1024 pixels.             ///
                         ////////////////////////////////             */
+
 @media screen and (max-width: 1024px) {
+    /*                      \\\\\ Header Styling /////                   */
+    header {
+        height: 80px;
+    }
+    header h1 {
+        font-size: 38px;
+        padding: 9px 0px 0px 0px;
+    }
+    header h1 a {
+        font-size: 38px;
+        padding: 9px 0px 0px 0px;
+    }
+    header p {
+        font-size: 15px;
+    }
+    /*                      \\\\\ Header styling /////                  */
+    /*                      \\\\\ footer styling /////                  */
+    footer {
+        height: 60px;
+    }
+    footer h2 {
+        font-size: 17px;
+        padding: 10px 0px 0px 0px;
+    }
+    footer div {
+        font-size: 12px;
+    }
+    /*                      \\\\\ footer styling /////                  */
+}
 
-/*                      \\\\\ Header Styling /////                   */
-        header {
-            height: 80px; 
-        }
-        header h1 {
-            font-size: 38px;
-            padding: 9px 0px 0px 0px;
-        }
-        header h1 a {
-            font-size: 38px;
-            padding: 9px 0px 0px 0px;
-        }
-        header p {
-            font-size: 15px;
-        }
-/*                      \\\\\ Header styling /////                  */
 
-/*                      \\\\\ footer styling /////                  */
-        footer{
-            height: 60px;
-        }
-        footer h2 {
-            font-size: 17px;
-            padding: 10px 0px 0px 0px;
-        }
-        footer div {
-            font-size: 12px;
-        }
-/*                      \\\\\ footer styling /////                  */
-
-
-}       /*        Ending } of @media screen 1024 px                 */
+/*        Ending } of @media screen 1024 px                 */
 
 
 /*                      ////////////////////////////////                
                         /// Screen size smaller than ///
                         /// 850 pixels               ///
                         ////////////////////////////////            */
+
 @media screen and (max-width: 850px) {
+    /*                      \\\\\ Navigation styling /////              */
+    .liFade:hover ul {
+        left: 105px;
+        top: 0;
+    }
+    .links {
+        position: absolute;
+        left: 0px;
+        background-color: #98c013;
+        top: 128px;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+    .liFade {
+        opacity: 0;
+    }
+    .login {
+        position: absolute;
+        right: 20px;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    /*      overview style         */
+    #eneoadminlist {
+        flex-direction: column;
+        width: 70%
+    }
+    #formslist {
+        width: 100%;
+    }
+    #tablelist {
+        width: 100%;
+    }
+    /*      overview style         */
+}
 
-/*                      \\\\\ Navigation styling /////              */
-            .liFade:hover ul {
-                left: 105px;
-                top: 0;
-            }
-            .links {
-                position: absolute;
-                left: 0px;
-                background-color: #98c013;
-                top: 128px;
-                display: flex;
-                flex-direction: column;
-                transform: translateX(-100%);
-                transition: transform 0.5s ease-in;
-            }
-            .liFade {
-                opacity: 0;
-            }            
-            .login {
-                position: absolute;
-                right: 20px;
-            }
-            .burger {
-                display: block;
-                cursor: pointer;
-            }
 
-            /*      overview style         */
-            #eneoadminlist {
-                flex-direction: column;
-                width: 70%
-            }
-            #formslist {
-                width: 100%;
-            }
-            #tablelist {
-                width: 100%;
-            }
-            /*      overview style         */
-
-
-}       /*        Ending } of @media screen 768 px                  */
+/*        Ending } of @media screen 768 px                  */
 
 
 /*                      ////////////////////////////////                
                         /// Screen size smaller than ///
                         /// 725 pixels               ///
                         ////////////////////////////////            */
+
 @media screen and (max-width: 725px) {
-
-/*                      \\\\\ homepage styling /////                */
-                #homenotification h1 {
-                    font-size: 23px;
-                }
-                #homenotification h2 {
-                    font-size: 17px;
-                }
-                #homenotification p {
-                    font-size: 14px;
-                    width: 85%;
-                }
-/*                      \\\\\ homepage styling /////                */
-
-/*                      \\\\\ general form style /////              */
-                #general_form h1 {
-                    font-size: 28px;
-                }
-                #inputgeneral {
-                    width: 90%;
-                }
-                #general_form input[type="submit"] {
-                    margin-left: 5%;
-                }
-/*                      \\\\\ general form style /////              */
-
-/*                      \\\\\ Footer styling /////                  */
-                footer h2 {
-                    font-size: 15px;
-                }
-                footer div {
-                    font-size: 10px;
-                }
-/*                      \\\\\ Footer styling /////                  */
-
+    /*                      \\\\\ homepage styling /////                */
+    #homenotification h1 {
+        font-size: 23px;
+    }
+    #homenotification h2 {
+        font-size: 17px;
+    }
+    #homenotification p {
+        font-size: 14px;
+        width: 85%;
+    }
+    /*                      \\\\\ homepage styling /////                */
+    /*                      \\\\\ general form style /////              */
+    #general_form h1 {
+        font-size: 28px;
+    }
+    #inputgeneral {
+        width: 90%;
+    }
+    #general_form input[type="submit"] {
+        margin-left: 5%;
+    }
+    /*                      \\\\\ general form style /////              */
+    /*                      \\\\\ Footer styling /////                  */
+    footer h2 {
+        font-size: 15px;
+    }
+    footer div {
+        font-size: 10px;
+    }
+    /*                      \\\\\ Footer styling /////                  */
 }
 
 
 /*                      \\\\\ Burger animation styling /////        */
+
 .nav-active {
     transform: translateX(0%);
 }
-@keyframes navLinkFade{
-    from{
+
+@keyframes navLinkFade {
+    from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
+
 .toggleBurger .line1 {
-    transform: rotate(-45deg) translate(-5px,6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
+
 .toggleBurger .line2 {
     opacity: 0;
 }
+
 .toggleBurger .line3 {
-    transform: rotate(45deg) translate(-5px,-6px);
+    transform: rotate(45deg) translate(-5px, -6px);
 }
+
+
 /*                      \\\\\ Burger animation styling /////        */

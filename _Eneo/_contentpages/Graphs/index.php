@@ -3,7 +3,7 @@
     /**
      * The index file displays the graph.
      * 
-     * @author Jurre de Vries and Ronald H.M. Hendriks
+     * @author Jurre de Vries, Ronald H.M. Hendriks and Luc Willemse
      * @version 2.0
      */
     ?>
