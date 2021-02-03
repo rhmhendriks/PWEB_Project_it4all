@@ -76,7 +76,7 @@ echo calculator($json)[1][1];
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [12, 6.2],
-        zoom: 4.8
+        zoom: 4
     });
 
     var size = 200;
