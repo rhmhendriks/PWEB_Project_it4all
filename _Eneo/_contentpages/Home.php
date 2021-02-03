@@ -5,7 +5,7 @@
 
 <?php
 echo '<div id="homemap">';
-include "_Scripting/map/map.php";
+require "../_Scripting/map/map.php";
 echo '</div>';
 
 echo '<div id="homegraph">';
