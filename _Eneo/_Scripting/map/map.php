@@ -58,7 +58,7 @@ echo calculator($json)[1][1];
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
 </style>
-<div id="map" class=></div>
+<div id="map"></div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibHVjd2lsbGVtc2UiLCJhIjoiY2traWJkMjBlMWxpejJ1bW5pMXNtOWVxbCJ9.uR4yEcfjqlXE9w4HV1UAHg';
     var map = new mapboxgl.Map({
