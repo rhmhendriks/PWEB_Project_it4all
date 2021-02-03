@@ -182,7 +182,7 @@
 
 
     if ($authstatus){
-        if (!$secondFAenforce == 1 && !$secondFAactivated == 1){
+        /*if //(!$secondFAenforce == 1 && !$secondFAactivated == 1){
             $redirectlocation = "../../../index.php";
         } else if ($secondFAenforce == 1 && $secondFAactivated == 0){
             $message .= "Vanaf nu gebruiken we 2 voudige verificatie op deze website! Deze moet je eerst activeren, uit veiligheidsoverwegingen moet je daarom het account opnieuw activeren. We hebben zojuist een mail gestuurd met de verdere instructies.";
@@ -222,11 +222,12 @@
                         
                         require "../Authentication_mails/MAIL_Verification.php";
         }
-        $redirectlocation = "../../Forms/2FAchoice.php";
+        $redirectlocation = "https://eneo.rhmhendriks.nl";
     } else {
 
-        $redirectlocation = "../../index.php?page=auth&auth=login"; 
-    }
-    immediate_redirect_to($redirectlocation);
+        $redirectlocation = "https://eneo.rhmhendriks.nl"; 
+    }*/
+    immediate_redirect_to("https://eneo.rhmhendriks.nl");
     } // afsluiting als er op inloggen is gedrukt.
+}
 ?>

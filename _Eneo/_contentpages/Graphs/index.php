@@ -24,16 +24,20 @@
 
         <div id="inputgeneral" >
             <form id="graphstationpicker">
-            <label for="Cameroon (DOUALA OBS.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Cameroon" name="CB_Cameroon"  value="CB_Cameroon" >
+            <label for="Cameroon (DOUALA OBS.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Cameroon" name="CB_Cameroon"  value="CB_Cameroon" checked>
             <label for="Central African Republic (BANGUI) ">Verifieren via QR-code</label><input type="checkbox" id="CB_car" name="CB_car"  value="CB_car" >
             <label for="Chad (NDJAMENA) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Chad" name="CB_Chad"  value="CB_Chad" >
             <label for="Congo (DPOINTE-NOIRE.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_congo" name="CB_congo"  value="CB_congo" >
             <label for="Congo (BRAZZAVILLE/MAYA-M) ">Verifieren via QR-code</label><input type="checkbox" id="CB_congo2" name="CB_congo2"  value="CB_congo2" >
             <label for="Gabon (LIBREVILLE) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Gabon" name="CB_Gabon"  value="CB_Gabon" >
             <label for="Gabon (DOUALA OBS.) ">Verifieren via QR-code</label><input type="checkbox" id="CB_Gabon2" name="CB_Gabon2"  value="CB_Gabon2" >
-                
+            <input type="radio" id="mailVerification" name="VerificationMethod" value="mailVerification">
+            <label for="temp">Temprature</label><br>
+            <input type="radio" id="temp" name="datatype" value="temp">
+            <label for="wind">WindSpeed</label><br>
+            <input type="radio" id="wind" name="datatype" value="wind">
             <div id="submitgeneral">
-                <input type="submit" class= "btn" value="Pincode Opslaan" name="savePin" id="savePin">
+                <input type="submit" class= "btn" value="Update" name="update" id="update">
             </div>
             </form>
         </div>
@@ -41,8 +45,8 @@
 
 
         <?php 
-
-            //$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010-870160');
+            $json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010-870160');
+            // 1=Cameroon - Chad - Central African Republic - Congo - Congo - Gabon - Gabon
             // gemaakt door Luc, zit een kleine kanttekening bij deze functie, maar die haal ik er morgen uit.
             // 1ste []= country code. 2de []= 0 = temp, 1 = wind, 2 = date. 3de []= particular value
             function calculator($json) {
@@ -80,7 +84,6 @@
                 return $list;
 }
 
-            //echo calculator($json)[1][0][0];
 
         
             function getXandY($type){
@@ -121,34 +124,79 @@
 
                 $stnArrays = array();
 
-
-
-                
-                // lijstje met datums
-                // lijstje met stationnummetd
-                // lijstje waarden per station
-
-
-
-                array_sum($a)/count($a)
-
-                array[stn] = [temp > values, wind > values, etc. ]
-
-
-
-                array[datum][station][temp]
-                $constructuredData['10010']['temp'] = Array met values
-
-                foreach($arrayData as $v {
-                    $constructuredData.push($k)
-                }
             }
              
         
         
         
+        $labString = "[1,2,3,4,5,6,7,8,9,10]";
+            $arrayValues = "";
+
+            $labelsArray = calculator($json)[1][2];
+            $valueSTNOneArray = calculator($json)[1][2];
+
+            if (isset($_POST['update'])){
+                $stationsToUse = '';
+                if ($_POST['CB_Cameroon'] == 1){
+                    $stationsToUse .= 1;
+                } else if ($_POST['CB_car'] == 1){
+                    $stationsToUse .= 3;
+                } else if ($_POST['CB_Chad'] == 1){
+                    $stationsToUse .= 2;
+                } else if ($_POST['CB_congo'] == 1){
+                    $stationsToUse .= 4;
+                } else if ($_POST['CB_congo2'] == 1){
+                    $stationsToUse .= 5;
+                } else if ($_POST['CB_Gabon'] == 1){
+                    $stationsToUse .= 6;
+                } else if ($_POST['CB_Gabon2'] == 1){
+                    $stationsToUse .= 7;
+                }
+
+                $datatype=0;
+                if ($_POST['datatype'] == temp){
+                    $datatype = 1;
+                } else {
+                    $datatype = 0;
+                }
+
+                if (strlen($stationsToUse) < 0 || strlen($stationsToUse) > 0 ){
+                    $_SESSION['graphMessage'] = "Select at least one and max 3 stations to show!";
+                } else {
+                    // labels
+                    $labelsArray = calculator($json)[1][2];
+
+                    $labString = "[";
+                    foreach($labelsArray as $lab){
+                        $labString .= $lab . ", ";
+                    }
+
+                    $labString = trim($labString); // LABELS
+                    $labString .= "]"; // LABELS
+                    $arrayValues = array();
+
+                    $arrayValues[0] = "nothing";
+
+                    for ($i=1; $i<str.length()+1; $i++){
+                        $arrayValues[$i] = calculator($json)[$i][$datatype];
+                    }
+                }
+            }
+
+                function arrayToString($array){
+                    $str = "[";
+                    foreach ($array as $a){
+                        $str .= $a . ", ";
+                    }
+
+                    $str = trim($str);
+                    $str .= "]";
+
+                    return $str;
+                }
+            
         
-        
+            
         ?>
 
 
@@ -161,10 +209,10 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["1", "2", "3", "4", "5", "6"], // X-As
+                    labels: <?php echo $labString;?>, // X-As
                     datasets: [{
-                            label: 'Weather Data',
-                            data: <?php echo $data1; ?>[5, 10, 13, 12, 8, 2],  // Y-As
+                            label: 'Station 1',
+                            data: <?php if ($arrayValues != ""){ echo $arrayValues[0]; } else {echo "[1,2,3,4,5,6,8,9,10]";} ?>,  // Y-As
                             backgroundColor: [
                                 'rgba(157, 219, 250, 0.4)',
                             ],
@@ -173,8 +221,8 @@
                             ],
                             borderWidth: 1
                         },{
-                            label: 'None',
-                            data: [],  // Y-As
+                            label: 'Station 2',
+                            data: <?php if ($arrayValues != ""){ echo $arrayValues[0]; } else {echo "[1,2,3,4,5,6,8,9,10]";} ?>,  // Y-As
                             backgroundColor: [
                                 'rgba(250, 172, 207, 0.4)',
                             ],
@@ -183,8 +231,8 @@
                             ],
                             borderWidth: 1
                         },{
-                            label: 'None',
-                            data: [],  // Y-As
+                            label: 'Station 3',
+                            data: <?php if ($arrayValues != ""){ echo $arrayValues[0]; } else {echo "[1,2,3,4,5,6,8,9,10]";} ?>,  // Y-As
                             backgroundColor: [
                                 'rgba(57, 92, 50, 0.2)',
                             ],
