@@ -1,4 +1,7 @@
 <?php
+/**
+     * Author: Ronald H.M. Hendriks
+     */
     $debug = "";
 
     // check if the page is requested trough autsys

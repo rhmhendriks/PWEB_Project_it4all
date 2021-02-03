@@ -15,11 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eneo index</title>
     <link rel="stylesheet" href="_css/Stylesheet.css" type="text/css">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-    </script>
 </head>
 
 <body>
@@ -41,11 +36,11 @@
                 include "$page.php";
             } else if (isset($_GET['heatmap'])) {
                 include "_Scripting/map/mapFrame.php";
-            } else if (isset($_GET['graph'])) {
-                include "_contentpages/Graphs/index.php";
             } else {
                 require "_contentpages/Home.php";
             }
+
+            include "_Scripting/translatepopup.php";
         ?>
     </div>
 

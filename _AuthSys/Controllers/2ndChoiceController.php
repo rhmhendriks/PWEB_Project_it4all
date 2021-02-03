@@ -1,4 +1,8 @@
 <?php
+/**
+* Author: Ronald H.M. Hendriks
+*/
+
      if (isset($_POST['madeChoice'])){
           // User made a choice 
           // check the choice 

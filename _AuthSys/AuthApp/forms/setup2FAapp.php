@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php 
+    /**
+     * Author: Ronald H.M. Hendriks
+     */
+    session_start() ?>
     <div id="OTPappCheckForm">
         <form method="post" action="appSetupController.php" class="authenticationforms-container">
         <h1> Identiteit Verifiëren </h1>

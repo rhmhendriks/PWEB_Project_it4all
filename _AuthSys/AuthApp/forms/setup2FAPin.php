@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php 
+    /**
+     * Author: Ronald H.M. Hendriks
+     */
+session_start() ?>
     <div id="OTPappCheckForm">
         <form method="post" action="setupPin.php" class="authenticationforms-container">
         <br><br>

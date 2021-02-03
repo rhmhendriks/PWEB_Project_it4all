@@ -1,7 +1,7 @@
 <?php session_start() 
 /**
- * TODO: Display OTP when available
- */?>
+* Author: Ronald H.M. Hendriks
+*/?>
     <div id="pinForm">
         <form method="post" action="validationFormController.php" class="authenticationforms-container">
         <h1> Uw persoonlijke pincode </h1>

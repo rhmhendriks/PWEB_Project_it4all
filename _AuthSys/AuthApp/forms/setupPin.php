@@ -1,4 +1,7 @@
 <?php
+     /**
+     * Author: Ronald H.M. Hendriks
+     */
     require "../../_init/initialize.php";
     session_start();
 

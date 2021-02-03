@@ -36,14 +36,12 @@
                     <li class="liFade"><a href="#">Temperature</a>
                         <ul>
                             <li><a href="index.php?heatmap=y">Heatmap</a></li>
-                            <li><a href="index.php?graph=y">Graph</a></li>
-                            <li><a href="index.php?">Table</a></li>
+                            <li><a href="index.php?">Graph</a></li>
                         </ul> 
                     </li>
                     <li class="liFade"><a href="#">Wind speed</a>
                         <ul>
-                            <li><a href="index.php?graph=y">Graph</a></li>
-                            <li><a href="index.php?">Table</a></li>
+                            <li><a href="index.php?">Graph</a></li>
                         </ul> 
                     </li>
                     <li class="liFade"><a href="">Download data</a>
@@ -61,6 +59,7 @@
                         </ul>
                     </li>
                     <li class="liFade"><a href="https://it4all.rhmhendriks.nl/index.php">IT4ALL</a></li>
+                    <li><a id="translate" href="#">Translate</a></li>
                 </ul>
 
                 <ul class="login">

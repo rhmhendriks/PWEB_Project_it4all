@@ -1,4 +1,7 @@
 <?php
+/**
+ * Author: Ronald H.M. Hendriks
+ */
     require "../../_init/initialize.php";
     // We gaan de variabelen initialiseren die we gaan gebruiken
         $message = "";

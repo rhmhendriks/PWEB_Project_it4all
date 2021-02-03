@@ -1,5 +1,6 @@
 <?php session_start() ?>
     <!----------------------------------------------------
+    Author: Ronald Hendriks
     ----------------------------------------------------->
     <div id="loginform">
         <form method="post" action="../_AuthSys/Controllers/SignIn_Controller.php" class="authenticationforms-container">
