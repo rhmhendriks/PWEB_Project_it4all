@@ -34,9 +34,13 @@
             if (isset($_GET['page'])){
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
+            } else if (isset($_GET['heatmap'])) {
+                include "_Scripting/map/mapFrame.php";
             } else {
                 require "_contentpages/Home.php";
             }
+
+            include "_Scripting/translatepopup.php";
         ?>
     </div>
 
