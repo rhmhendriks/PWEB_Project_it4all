@@ -11,12 +11,11 @@
 
     <?php
         echo '<div id="homemap">';
-        echo 'hier moeten de filters';
+        include "_Scripting/map/map.php";
         echo '</div>';
 
         echo '<div id="homegraph">';
-        echo 'hier moet de graph of tabel';
-        echo '</div>'
+        echo '</div>';
     ?>
 
 </body>
