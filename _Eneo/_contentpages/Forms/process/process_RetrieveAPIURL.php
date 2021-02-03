@@ -1,5 +1,10 @@
 <?php
-/// AUTHOR: JURRE DE VRIES ///
+/**
+ * The process_RetrieveAPIURL file processes the retrieveapiurl form.
+ * 
+ * @author Jurre de Vries
+ * @version 2.0
+ */
 
 $token = bin2hex(random_bytes(50));
     $valid_til = date("Y/m/d");

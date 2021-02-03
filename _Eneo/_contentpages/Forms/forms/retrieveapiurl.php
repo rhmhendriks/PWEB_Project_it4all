@@ -1,4 +1,12 @@
-<?php /* IsAdmin should be IsEneo or IsEneoAdmin */
+<?php
+/**
+ * The retrieveapiurl file displays the form which checks if you can use the API.
+ * 
+ * @author Ronald H.M. Hendriks
+ * @version 2.0
+ */
+
+/* IsAdmin should be IsEneo or IsEneoAdmin */
 //if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
   //  header("location:index.php?page=auth&auth=AdminNoAccess");
 //} else {

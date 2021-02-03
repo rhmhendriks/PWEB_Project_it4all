@@ -207,14 +207,12 @@
                         $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
                         
                         require "../Authentication_mails/MAIL_Verification.php";
-                }
-            } else if($secondFAactivated == 1){
-                $redirectlocation = "../../index.php?page=auth&auth=2FAchoice";
-            }
+        }
         $redirectlocation = "../../Forms/2FAchoice.php";
     } else {
 
         $redirectlocation = "../../index.php?page=auth&auth=login"; 
     }
-    immediate_redirect_to($redirectlocation);} // afsluiting als er op inloggen is gedrukt.
+    immediate_redirect_to($redirectlocation);
+    } // afsluiting als er op inloggen is gedrukt.
 ?>

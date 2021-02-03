@@ -1,5 +1,12 @@
 <?php
-    // we maken de connectie voor het hele menu met de database
+    /**
+     * The index file displays the graph.
+     * 
+     * @author Jurre de Vries and Ronald H.M. Hendriks
+     * @version 2.0
+     */
+            
+    // We create the connection for the whole menu with the database
         $ConnectionArray = MySqlDo_Connector('Connect');
         if (!$ConnectionArray['result']){
             echo '<h1> Geen Database Connectie </h1><br><br>';

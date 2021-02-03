@@ -1,4 +1,11 @@
 <?php
+/**
+ * The FormOverview file displays the available forms of the Eneo website.
+ * 
+ * @author Rienan Poortvliet
+ * @version 2.0
+ */
+
  if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
     header("location:index.php?page=auth&auth=AdminNoAccess");
 } else {

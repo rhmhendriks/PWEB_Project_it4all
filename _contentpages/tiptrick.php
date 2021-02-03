@@ -17,7 +17,7 @@
 	  ##### This file is created on 14/10/2019 at 14:00 PM
 	  ##### This file is created by Jurre de Vries
 		
-	  // Last updated on 11/11/2019 at 9:33 AM
+	  // Last updated on 03/02/2020 at 9:58 PM
 	  // Last edited by Jurre de Vries
 	
 		$message = "";
@@ -29,25 +29,25 @@
 
 	
 	// Create a connection
-		$Connector = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connector['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connector['connection']; // De verbinding doorgeven aan $DBconnect
+		$Connector = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
+		if ($Connector['result']){ // If there is a connection to the database
+			$DBconnect = $Connector['connection']; // Give the connection to $DBconnect
 			$Debug .= $Connection['debug'];
 			$Debug .= "<br>";
 
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($StatementGet); // De tips en tricks ophalen
+			// Execute statement
+			$statementRun = $DBconnect->query($StatementGet); // Get the tip trick
 
 			
-			if($statementRun->num_rows > 0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if($statementRun->num_rows > 0) {  // If the rows are found
+			// Use the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$PageID = $row['PageID'];
 					$PageTitle = $row['PageTitle'];
 					$Date = $row['Date'];
 					$AuthorID = $row['AuthorID'];
-					// Auteurnaam ophalen
+					// Get the author name
 					$StatementGetAuthor = "SELECT FirstName, LastName FROM Authors WHERE AuthorID = $AuthorID";
 					$statementRunAuthor = $DBconnect->query($StatementGetAuthor); // De auteurnaam ophalen
 					while ($rowa = $statementRunAuthor->fetch_assoc()){

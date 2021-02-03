@@ -1,4 +1,12 @@
-<?php /* IsAdmin should be IsEneo or IsEneoAdmin */
+<?php
+/**
+ * The ipwhitelist file displays the ip-whitelist form.
+ * 
+ * @author Rienan Poortvliet
+ * @version 2.0
+ */
+
+/* IsAdmin should be IsEneo or IsEneoAdmin */
 //if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){ 
     //header("location:index.php?page=auth&auth=AdminNoAccess");
 //} else {

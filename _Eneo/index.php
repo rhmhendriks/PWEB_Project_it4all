@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+/**
+ * The index file displays the index file of Eneo.
+ * 
+ * @author Rienan Poortvliet
+ * @version 2.0
+ */
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,16 +35,8 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                require "_Scripting/map/mapHead.php";
-                echo '<div id="homemap">';
-                echo '<div id="map"></div>';
-                echo '</div>';
-
-                echo '<div id="homegraph">';
-                echo '</div>';
-                require "_Scripting/map/script.php";
+                include "_contentpages/Graphs/index.php";
             }
-                
         ?>
     </div>
 

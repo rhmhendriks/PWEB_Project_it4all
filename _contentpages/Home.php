@@ -7,7 +7,7 @@
 
 	<?php
 	/**
-	 * The home file displays the homepage of the website.
+	 * The Home file displays the homepage of the website.
 	 * 
 	 * @author Rienan Poortvliet
 	 * @version 2.0
