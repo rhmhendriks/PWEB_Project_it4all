@@ -1,4 +1,14 @@
 <?php
+/**
+ * Auteur: Ronald HM Hendriks
+ * Datum: 03-02-2020
+ * 
+ * Beschrijving: Landingspage uitloggen
+ * Update: Spelfouten opgelost
+ * door: Ronald HM Hendriks
+ * op: 03-02-2021 09:22
+ * 
+ */
     session_destroy();
     if (isset($_GET['breach'])){
         echo '<h1>Verdachte Activiteit detecteerd!<br></h1>';

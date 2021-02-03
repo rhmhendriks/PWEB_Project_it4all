@@ -1,4 +1,6 @@
 <?php session_start() ?>
+    <!----------------------------------------------------
+    ----------------------------------------------------->
     <div id="loginform">
         <form method="post" action="../_AuthSys/Controllers/SignIn_Controller.php" class="authenticationforms-container">
         <h1> Inloggen </h1>

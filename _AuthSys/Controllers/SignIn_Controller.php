@@ -36,7 +36,7 @@
                         } else { // aflsuiting gebruiker bestaat niet
                             // De gebuiker bestaat 
                                 // We gaan alle gegevens van de gebruiker ophalen
-                                    $statementGetUDATA = "SELECT Customers.*, Users.EMail, Users.IsAdmin, Users.Password, Users.Number_Login_Attempts, Users.Verified, Users.Token, Users.PrivacyAcknoledge, Users.AccentColor FROM Users JOIN Customers ON Users.CustomerID=Customers.ClientNumber WHERE Users.EMail='$Email'";
+                                    $statementGetUDATA = "SELECT Customers.*, Users.EMail, Users.IsAdmin, Users.Password, Users.Number_Login_Attempts, Users.Verified, Users.Token, Users.PrivacyAcknoledge, Users.AccentColor, Users.2FA_Enforced, Users.2FA_Activated, Users.Webshop_Access FROM Users JOIN Customers ON Users.CustomerID=Customers.ClientNumber WHERE Users.EMail='$Email'";
                                     $statementRunnedGetUDATA = $DBconnect->query($statementGetUDATA);
                                         while ($rij = $statementRunnedGetUDATA->fetch_assoc()) {
                                             $CustomerID = $rij['ClientNumber'];
@@ -56,6 +56,10 @@
                                             $Verified = $rij['Verified']; 
                                             $token = $rij['Token'];
                                             $PrivacyAcknoledged = $rij['PrivacyAcknoledge'];
+                                            $secondFAenforce = $rij['2FA_Enforced'];
+                                            $secondFAactivated = $rij['2FA_Activated'];
+                                            $webshopAccess = $rij['Webshop_Access'];
+
                                         } // wanneer er geen rijen meer zijn
                                         
                                     // WE gaan checken of het account van de gebruiker is geactiveerd
@@ -147,7 +151,15 @@
                                                                     $_SESSION['IBAN'] = $IBAN;
                                                                     $_SESSION['Email'] = $EmailGet;
                                                                     $_SESSION['IsAdmin'] = $IsAdmin;
-                                                                    $_SESSION['loggedin'] = true;
+                                                                    if ($secondFAactivated == 1){
+                                                                        $_SESSION['loggedin'] = false;
+                                                                    } else {
+                                                                        $_SESSION['loggedin'] = true;
+                                                                    }
+                                                                    
+                                                                    $secondFAenforce = $rij['2FA_Enforced'];
+                                                                    $secondFAactivated = $rij['2FA_Activated'];
+                                                                    $webshopAccess = $rij['Webshop_Access'];
 
                                                                     $authstatus = true;
                                                                     $message .= "Je bent nu ingelogd!";
@@ -170,8 +182,33 @@
 
 
     if ($authstatus){
-
-        $redirectlocation = "../../index.php";
+        if (!$secondFAenforce == 1 && !$secondFAactivated == 1){
+            $redirectlocation = "../../../index.php";
+        } else if ($secondFAenforce == 1 && $secondFAactivated == 0){
+            $message .= "Vanaf nu gebruiken we 2 voudige verificatie op deze website! Deze moet je eerst activeren, uit veiligheidsoverwegingen moet je daarom het account opnieuw activeren. We hebben zojuist een mail gestuurd met de verdere instructies.";
+            
+            $token = bin2hex(random_bytes(50)); // Een uniek token genereren ten behoeve van mail verificatie
+            $ActivationCode = mt_rand(10000000, 99999999);
+            $HashedActivationCode = password_hash($ActivationCode, PASSWORD_DEFAULT, $options);
+            
+            $AddUser = MySqlDo('Add', 'User', "$Email", "$ClientNumber", "$HashedActivationCode", 0, 0, 0, "$token", "$PrivacyStatement", '#FFFFFF');
+            
+            // We gaan controleren of het statement successvol is uitgevoerd
+                if ($AddUser['result']){
+                    // Het statement is succesvol uitgevoerd
+                    $Debug .= $AddUser['debug'];
+                    // Nu gaan we de verificatiemail versturen
+                        // We gaan de mail voorbereiden
+                        $to         =       $_SESSION['Email'];
+                        $subject    =       'IT4ALL - Activeer uw account!';
+                        $headers    =       "From: rhmhendriks@rhmhendriks.nl\r\n";
+                        $headers    .=      "Reply-To: rhmhendriks@rhmhendriks.nl\r\n";
+                        $headers    .=      "MIME-Version: 1.0\r\n";
+                        $headers    .=      "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                        
+                        require "../Authentication_mails/MAIL_Verification.php";
+        }
+        $redirectlocation = "../../Forms/2FAchoice.php";
     } else {
 
         $redirectlocation = "../../index.php?page=auth&auth=login"; 

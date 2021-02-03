@@ -142,7 +142,7 @@
      * 
      * @return An array with the statement, the data found and debug information. 
      */
-    function retrieveData($fromDate=null, $tilDate=null, $types, $stations = null ){
+    function retrieveData($fromDate, $tilDate, $types, $stations = null ){
         
         //echo "RETDAT FROM $fromDate AND TIL $tilDate <br>";
         // create connection

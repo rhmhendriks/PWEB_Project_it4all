@@ -1,4 +1,5 @@
 <?php
+#Rienen
  if (!$_SESSION['loggedin'] == 1){
     header("location:index.php?page=auth&auth=UserNoAccess");
 } else {

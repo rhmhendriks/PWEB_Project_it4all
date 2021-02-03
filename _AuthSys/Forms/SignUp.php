@@ -1,13 +1,19 @@
-<!-- 	Geschreven door: Luc Willemse
-		Gaat over: formulier, toevoegen klant.
-		Laatste update: 21:02 18-01-2020 door Ronald Hendriks
+<!----------------------------------------------------------------
+	Auteur: Ronald HM Hendriks
+	Datum: 3 januari 2021
+	Beschrijving: Formulier om klantgegevens te verwerken, 
+				  account word na activatie via mail 
+				  aangemaakt. 
 
-		Wijzigingen: Verwijzing in POSt actie aangepast aan de nieuwe structuur.
+	Laatste update: 21:02 18-01-2021 door Ronald HM Hendriks
+	Wijzigingen: Verwijzing na succesvol registreren. 
+------------------------------------------------------------------>
 
--->
+
 <div id="SignUp_form">
 	<form method="post" action="../_AuthSys/Controllers/SignUp_Controller.php">
-		<h1> Registreren als klant </h1>
+		<h1> Registreren bij IT4All </h1>
+		<p>Door middel van het onderstaande formulier kunt u zich registreren als klant bij IT4ALL. Uw gegegens worden opgeslagen in een beveiligde database, voor meer informatie over uw privacy kunt u terecht bij ons  <a href="https://it4all.rhmhendriks.nl/index.php?inc=y&page=statements&statement=privacy_statement">Privacy Beleid</a> </p>
 		<?php 
 		session_start();
 		if (isset($_SESSION['message_su'])){
