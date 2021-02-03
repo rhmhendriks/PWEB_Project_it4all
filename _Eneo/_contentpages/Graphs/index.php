@@ -39,7 +39,6 @@
             // 1ste []= country code. 2de []= 0 = temp, 1 = wind, 2 = date. 3de []= particular value
             function calculator($json) {
                 $array = json_decode($json, true);
-                echo $array[1][1];
                 $i = 0;
                 $list = array();
                 $countryCode = 0;
