@@ -35,11 +35,7 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-<<<<<<< HEAD
                 require "_contentpages/Home.php";
-=======
-                include "_contentpages/Graphs/index.php";
->>>>>>> aaf2234ba9b1711f2edbd2dcd568a444dfb14d00
             }
         ?>
     </div>
