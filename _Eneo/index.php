@@ -26,7 +26,14 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                include "_contentpages/Home.php";
+                require "_Scripting/map/mapHead.php";
+                echo '<div id="homemap">';
+                echo '<div id="map"></div>';
+                echo '</div>';
+
+                echo '<div id="homegraph">';
+                echo '</div>';
+                require "_Scripting/map/script.php";
             }
                 
         ?>
