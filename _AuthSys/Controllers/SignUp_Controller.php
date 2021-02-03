@@ -1,4 +1,19 @@
 <?php
+/**
+ * Auteur: Ronald HM Hendriks
+ * Datum: **-***2019
+ * 
+ * Beschrijving: Onderstaand PHP script verwerkt de gegevens
+ *               van het registratie formulier. 
+ * 
+ * Laatste update: Refactored for service support. 
+ * Op: 03-02-2021 08:55
+ * Door: Ronald HM Hendriks
+ */
+
+
+
+
 require "../../_init/initialize.php";
     // Setting dome variables to use for the script itself
         $Debug = "";
@@ -121,5 +136,5 @@ require "../../_init/initialize.php";
                                      }
         $_SESSION['message_su'] = $Message;
         $_SESSION['Debug_su'] = $Debug;
-        header('location: ../../index.phpinc=y&page=auth&auth=SignUp');
+        header('location: ../../index.php?inc=y&page=auth&auth=SignUp');
 ?>

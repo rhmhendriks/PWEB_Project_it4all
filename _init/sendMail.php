@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * ! DEZE FUNCTIE WORD NIET MEER GEBRUIKT. 
+ */
 function sendMail($subject, $reciever, $body, $debug){
 
     // SMTP server configuration

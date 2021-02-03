@@ -1,4 +1,6 @@
 <?php
+#RONALD
+
 // Sessie starten
 session_start();
 

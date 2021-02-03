@@ -1,4 +1,12 @@
 <?php
+/**
+ * Auteur: Ronald HM Hendriks
+ * Beschrijving: Voorlopig script voor afbeeldingen. 
+ * 
+ * Laatste update: 03-02-2021 09:38
+ * Updates, Comments and try to get it working
+ * Door: Ronald HM Hendriks
+ */
 // Nu gaan we kijken naar de fotos en/of video's
                 $UploadDir = "imagesfoler/$imagecategory/";
                 $AllowedFileTypes = array("jpg", "png", "jpeg", "gif", "mp4", "avi");

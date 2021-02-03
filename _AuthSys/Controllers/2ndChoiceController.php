@@ -37,13 +37,12 @@
                          if($_POST['VerificationMethod'] == "mailVerification"){
                               // The token has been added
                               // go to mail verification
-                              immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=index&authenticate=y&token=$token");
+                              immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=2FAmailController&token=$token");
                          } else {
                               // The token has been added
                               // now we can redirect the user to the app verification. 
                               immediate_redirect_to($_SERVER['DOCUMENT_ROOT'] . "/index.php?inc=y&page=auth&auth=2FAapp&2FAapp=index&authenticate=y&token=$token");
                          }
-                         
 
                     }
                 }

@@ -1,9 +1,8 @@
 <!-- 	Geschreven door: Rienan Poortvliet
 		Gaat over: Activatieformulier (voormalig registratieformulier)
-		Laatste update: 07:44, 13-11-2019 door Rienan Poortvliet
+		Laatste update: 03-02-2021 09:07 
 
-		Wijzigingen: Formulier is nu het activatieformulier, NewCustomer.php is het registratieformulier
-                     hier is voor gekozen in verband met gebruikersgemak voor de eindgebruiker.  
+		Wijzigingen: Aantal namen gewijzigd. 
 -->
 <div id="Activate_form">
 	<?php session_start(); require $_SERVER['DOCUMENT_ROOT'] . "/_AuthSys/Controllers/Activation_Initializer.php"; ?>

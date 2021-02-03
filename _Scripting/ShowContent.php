@@ -15,7 +15,7 @@
             //--------------------------------------------------------------//
             ## Script created on 02/10/2019                                 ##
             ## Created by Ronald HM Hendriks                                ##
-            // last updated 12/10/2019 10:11 PM by Ronald HM Hendriks       //
+            // last updated 03/02/2021 09:37 AM by Ronald HM Hendriks       //
             //////////////////////////////////////////////////////////////////
                  if(isset($_GET['GenPage'])){
                      $GenPage = $_GET['GenPage'];
@@ -26,9 +26,9 @@
                  } elseif (isset($_GET['Auth'])) {
                      $Auth = $_GET['Auth'];
                      include $Auth.php;
-                 } elseif (isset($_GET['Article']){
+                 } elseif (isset($_GET['Article'])){
                      $ArticleID = $_GET['Article'];
-                     ShowArticle({$ArticleID});
+                     ShowArticle($ArticleID);
                  } elseif (isset($_Get['ArticleCategory'])){
                      $ArticleCategory = $_GET['ArticleCategory'];
                         if ($ArticleCategory == 0){
