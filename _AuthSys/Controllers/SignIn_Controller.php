@@ -190,9 +190,23 @@
             $token = bin2hex(random_bytes(50)); // Een uniek token genereren ten behoeve van mail verificatie
             $ActivationCode = mt_rand(10000000, 99999999);
             $HashedActivationCode = password_hash($ActivationCode, PASSWORD_DEFAULT, $options);
-            
-            $AddUser = MySqlDo('Add', 'User', "$Email", "$ClientNumber", "$HashedActivationCode", 0, 0, 0, "$token", "$PrivacyStatement", '#FFFFFF');
-            
+
+            $Connectionarray = MySqlDo_Connector('Connect');
+
+                if ($Connectionarray['result']){
+                    // connection succesfull
+                    $DBconnect = $Connectionarray['connection']; // extract connection
+                    $debug .= $Connectionarray['debug'];
+
+                    $email = $_SESSION['Email'];
+
+                    $stmGetOTP = "UPDATE Users SET Password = $HashedActivationCode, Token = '$token' WHERE 'EMail' = $email;";
+                    $runned = $DBconnect->query($stmGetOTP);
+
+                    if($DBconnect->affected_rows <= 0){
+
+                    }
+             
             // We gaan controleren of het statement successvol is uitgevoerd
                 if ($AddUser['result']){
                     // Het statement is succesvol uitgevoerd

@@ -284,7 +284,12 @@
         //echo "<br>" . $filepath;
         //echo $json;
         file_put_contents($filepath, $json);
-        immediate_redirect_to($filepath);
+        //immediate_redirect_to($filepath);
+        $file_url = 'http://www.myremoteserver.com/file.exe';
+        header('Content-Type: application/octet-stream');
+        header("Content-Transfer-Encoding: Binary"); 
+        header("Content-disposition: attachment; filename=\"" . basename($$filepath) . "\""); 
+        readfile($$filepath); 
     }
 
     /**
