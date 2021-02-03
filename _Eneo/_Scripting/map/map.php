@@ -18,13 +18,13 @@
 <body>
 <?php 
 
-$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=T&stations=649100-647000-646500-644000-644500-645000-645010-870160');
-$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=W&stations=649100-647000-646500-644000-644500-645000-645010-870160');
-//echo $json;
+$json = file_get_contents('https://it4all.rhmhendriks.nl/_API/index.php?token=JUR324HVJH2RGJH34J5J2VJHB43HJEJH23H42HGR3&from=02-01-2021&til=02-02-2021&filetype=JSON&type=WT&stations=649100-647000-646500-644000-644500-645000-645010-870160');
+
 function calculator($json) {
     $array = json_decode($json, true);
     $i = 0;
     $latestTemp = 0;
+    $latestWind = 0;
     $list = array();
     $countryCode = 0;
     foreach($array as $key => $value) {
@@ -32,7 +32,8 @@ function calculator($json) {
             if ($key2 == "stn") {
                 if ($value2 != $countryCode && $i != 0) {
                     $countryCode = $value2;
-                    array_push($list, array($latestTemp));
+                    $latestWind = $latestWind / 3.6;
+                    array_push($list, array($latestTemp, round($latestWind, 1)));
                     $i = 0;
                 } 
             }
@@ -40,11 +41,15 @@ function calculator($json) {
                 $i += 1;
                 $latestTemp = $value2;
             }
+            elseif ($key2 == "Windsnelheid") {
+                $i += 1;
+                $latestWind = $value2;
+            }
         }
     }
     return $list;
 } 
-echo calculator($json)[1][0];
+echo calculator($json)[1][1];
 ?>
 <style>
 .mapboxgl-popup {
@@ -142,7 +147,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[1][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[1][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[1][1] . ' m/s</p>' . "',"; ?>
 //'description': '<strong>Weather station</strong><p>Cameroon</p>',
 'icon': 'communications-tower'
 },
@@ -155,7 +161,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[2][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[2][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[2][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 
 },
@@ -168,7 +175,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[3][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[3][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[3][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -180,7 +188,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[4][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[4][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[4][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -192,7 +201,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[5][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[5][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[5][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -204,7 +214,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[6][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[6][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[6][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
@@ -216,7 +227,8 @@ map.addSource('places', {
 'type': 'Feature',
 'properties': {
 'description' : <?php   echo "'<strong>Weather station</strong><p>Cameroon</p>";
-                        echo '<p>Current temperature: ' . calculator($json)[7][0] . ' °C</p>' . "',"; ?>
+                        echo '<p>Current temperature: ' . calculator($json)[7][0] . ' °C</p>';
+                        echo '<p>Current windspeed: ' . calculator($json)[7][1] . ' m/s</p>' . "',"; ?>
 'icon': 'communications-tower'
 },
 'geometry': {
