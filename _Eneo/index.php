@@ -39,6 +39,8 @@
             } else {
                 require "_contentpages/Home.php";
             }
+
+            include "_Scripting/translatepopup.php";
         ?>
     </div>
 
