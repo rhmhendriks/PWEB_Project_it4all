@@ -6,7 +6,6 @@
  * @version 2.0
  */
 ?>
-<body>
     <div id="homenotification">
         <h1>Welcome on eneo's weather website</h1>
         <h2>Announcements </h2>
