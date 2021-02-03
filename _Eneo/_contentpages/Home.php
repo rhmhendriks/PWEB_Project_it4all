@@ -7,7 +7,7 @@
  */
 ?>
     <div id="homenotification">
-        <h1>Welcome on eneo's weather website</h1>
+        <h1>Welcome to eneo's weather website</h1>
         <h2>Announcements </h2>
         <p>The data on the map and graphs is updated every two hours.</p>
     </div>
@@ -16,13 +16,8 @@
 
 <div id="homemap">
     <iframe src="https://it4all.rhmhendriks.nl/_Eneo/_Scripting/map/map.php" frameborder="0" cellspacing="0" style="border-style: none; width: 95%; height: 650px; margin-right: auto; margin-left: auto; margin-top: 12px;"></iframe> 
-    <?php
-        include "tables/table.php";
-    ?>
-</div>'
+</div>
 
 <div id="homegraph">
-    <?php 
-        include "tables/tableWindspeed.php";
-    ?>
+    <p>This is where the table is shown</p>
 </div>
