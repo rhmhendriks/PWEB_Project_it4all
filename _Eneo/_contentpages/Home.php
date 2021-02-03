@@ -6,7 +6,7 @@
 
 
 <div id="homemap">
-<iframe src="google.nl"></iframe> 
+<iframe src="https://it4all.rhmhendriks.nl/_Eneo/_Scripting/map/map.php"></iframe> 
 </div>'
 
 <div id="homegraph">'</div>'
