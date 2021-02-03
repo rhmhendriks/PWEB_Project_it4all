@@ -26,7 +26,19 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                include "_contentpages/Home.php";
+                //include "_contentpages/Home.php";
+                echo '
+                <div id="homenotification">
+                    <h1>Welcome to the Eneo website</h1>
+                    <h2>announcements </h2>
+                </div>
+                    ';
+                echo '<div id="homemap">';
+                include "_Scripting/map/map.php";
+                echo '</div>';
+
+                echo '<div id="homegraph">';
+                echo '</div>';
             }
         ?>
     </div>
