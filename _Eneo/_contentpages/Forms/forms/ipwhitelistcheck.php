@@ -1,4 +1,12 @@
-<?php /* IsAdmin should be IsEneo or IsEneoAdmin */
+<?php
+/**
+ * The ipwhitelistcheck file displays the ip-whitelist check form, which checks if an user has a valid IP address.
+ * 
+ * @author Rienan Poortvliet
+ * @version 2.0
+ */
+
+/* IsAdmin should be IsEneo or IsEneoAdmin */
 //if (!$_SESSION['loggedin'] == 1|| !$_SESSION['IsAdmin'] == 1){
   //  header("location:index.php?page=auth&auth=AdminNoAccess");
 //} else {

@@ -13,7 +13,7 @@
 	  ##### This file is created on 14/10/2019 at 14:00 PM
 	  ##### This file is created by Jurre de Vries
 		
-	  // Last updated on 11/10/2019 at 10:33 AM
+	  // Last updated on 03/02/2020 at 9:50 PM
 	  // Last edited by Jurre de Vries
 	
 		$message = "";
@@ -26,19 +26,19 @@
 		$StatementGet = "SELECT * FROM TipsandTricks WHERE PageID = $ID";
 	
 	// Create a connection
-		$Connector = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connection['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connector['Connection']; // De verbinding doorgeven aan $DBconnect
+		$Connector = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
+		if ($Connection['result']){ // If there is a connection to the database
+			$DBconnect = $Connector['Connection']; // Give the connection to $DBconnect
 			$Debug .= $Connection['debug'];
-			$Debug .= "<br>"
+			$Debug .= "<br>";
 
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($statement); // De tips en tricks ophalen
+			// Execute statement
+			$statementRun = $DBconnect->query($statement); // Get the tip trick
 			
-			if(mysql_num_rows($result) >0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if(mysql_num_rows($result) >0) {  // If the rows are found
+			// Use the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$PageID = $row["PageID"];
 					$PageTitle = $row['PageTitle'];
 					$Date = $row['Date'];

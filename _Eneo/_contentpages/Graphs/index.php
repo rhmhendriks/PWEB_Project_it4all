@@ -1,4 +1,12 @@
 <html>
+    <?php
+    /**
+     * The index file displays the graph.
+     * 
+     * @author Jurre de Vries and Ronald H.M. Hendriks
+     * @version 2.0
+     */
+    ?>
     <head>
         <title>Learn Make Graphic with PHP</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
@@ -39,6 +47,7 @@
             // 1ste []= country code. 2de []= 0 = temp, 1 = wind, 2 = date. 3de []= particular value
             function calculator($json) {
                 $array = json_decode($json, true);
+                echo $array[1][1];
                 $i = 0;
                 $list = array();
                 $countryCode = 0;

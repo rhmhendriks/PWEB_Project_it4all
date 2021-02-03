@@ -1,7 +1,18 @@
-<!--
-    autheur: Luc Willemse
-    source: mapbox.com
- -->
+<!DOCTYPE html>
+<html>
+<head>
+<?php
+/**
+ * The map file creates the weather map.
+ * source: mapbox.com
+ * 
+ * @author Luc Willemse
+ * @version 2.0
+ */
+?>
+<meta charset="utf-8" />
+<title>Weather map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet" />
 <style>
@@ -58,7 +69,7 @@ echo calculator($json)[1][1];
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
 </style>
-<div id="map"></div>
+<div id="map" class=></div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibHVjd2lsbGVtc2UiLCJhIjoiY2traWJkMjBlMWxpejJ1bW5pMXNtOWVxbCJ9.uR4yEcfjqlXE9w4HV1UAHg';
     var map = new mapboxgl.Map({

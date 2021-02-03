@@ -13,8 +13,8 @@
 	  ##### This file is created on 14/10/2019 at 14:00 PM
 	  ##### This file is created by Jurre de Vries
 		
-	  // Last updated on 01/11/2019 at 1:44 PM
-	  // Last edited by Ronald Hendriks
+	  // Last updated on 03/02/2020 at 9:48 PM
+	  // Last edited by Jurre de Vries
 	  
 		$message = "";
 		$Debug = "";
@@ -28,19 +28,19 @@
 		$StatementGet = "SELECT * FROM Articles WHERE ArticleID = $ID";
 	
 	// Create a connection
-		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connection['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect
+		$Connection = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
+		if ($Connection['result']){ // If there is a connection to the database
+			$DBconnect = $Connection['connection']; // Give the connection to $DBconnect
 			$Debug .= $Connection['debug'];
 			$Debug .= "<br>";
 
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($StatementGet); // Het artikel ophalen
+			// Execute statement
+			$statementRun = $DBconnect->query($StatementGet); // Get the article
 			
-			if($statementRun->num_rows >0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if($statementRun->num_rows >0) {  // If the rows are found
+			// Use the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$ArticleID = $row["ArticleID"];
 					$ArticleTitle = $row['ArticleTitle'];
 					$ArticleDescription = $row['ArticleDescription'];

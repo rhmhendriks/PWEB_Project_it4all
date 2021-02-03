@@ -18,8 +18,8 @@
 	  ##### This file is created on 05/11/2019 at 12:12 PM
 	  ##### This file is created by Jurre de Vries
 		
-	  // Last updated on 01/11/2019 at 1:44 PM
-	  // Last edited by Ronald Hendriks
+	  /// Last updated on 03/02/2020 at 9:55 PM
+	  // Last edited by Jurre de Vries
 	  
 	  $message = "";
 	  $Debug = "";
@@ -35,25 +35,25 @@
 		
 		
 	// Create a connection
-		$Connection = MySqlDo_Connector('Connect'); // Connectie maken en de result array gebruiken als $Connection
-		if ($Connection['result']){ // Als er een verbinding is met de database
-			$DBconnect = $Connection['connection']; // De verbinding doorgeven aan $DBconnect
+		$Connection = MySqlDo_Connector('Connect'); // Create connection and use the result array as $Connection
+		if ($Connection['result']){ // If there is a connection to the database
+			$DBconnect = $Connection['connection']; // Give the connection to $DBconnect
 			$Debug .= $Connection['debug'];
 			$Debug .= "<br>";
 			
-			// Statement uitvoeren
-			$statementRun = $DBconnect->query($StatementGet); // De artikelgroep ophalen
+			// Execute statement
+			$statementRun = $DBconnect->query($StatementGet); // Get the article group
 			
-			if($statementRun->num_rows > 0) {  // Als er rijen zijn gevonden
-			// gegevens gebruiken
-				while ($row = $statementRun->fetch_assoc()){ // wanneer er nog ongebruikte data staat in de uitkomt van het statement
-					// We schrijven de waarden weg naar variabelen
+			if($statementRun->num_rows > 0) {  // If the rows are found
+			// Use the data
+				while ($row = $statementRun->fetch_assoc()){ // When unused data is found in the statement
+					// We write the values to variables
 					$PageID = $row["PageID"];
 					$PageTitle = $row['PageTitle'];
 					$Date = $row['Date'];
 					$AuthorID = $row['AuthorID'];
 
-					// Auteurnaam ophalen
+					// Get the author name
 					$StatementGetAuthor = "SELECT FirstName, LastName FROM Authors WHERE AuthorID = $AuthorID";
 					$statementRunAuthor = $DBconnect->query($StatementGetAuthor); // De auteurnaam ophalen
 					while ($rowa = $statementRunAuthor->fetch_assoc()){
@@ -65,7 +65,7 @@
 					$Content = $row['Content'];
 
 
-					// Content inkorten
+					// Shorten the content
 					if (strlen($Content) > 850){
 						$Content = substr($Content, 0, 850) . "...";
 					}
