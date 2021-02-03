@@ -533,6 +533,61 @@ nav ul li ul li a:hover {
 /*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
 
 
+/*                      \\\\\ general 2fa forms /////                   */
+#general2fa_form {
+    max-width: 650px;
+    margin: 10px auto;
+    background-color: #fff7e6;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffaa00;
+}
+#general2fa_form input[type="text"], #general2fa_form input[type="date"], #general2fa_form input[type="password"], #general2fa_form input[type="email"] {
+    border-radius: 5px;
+    padding: 6px 12px;
+    outline: none;
+}
+#general2fa_form input[type="submit"] {
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 2px solid #ffaa00;
+}
+#general2fa_form h1 {
+    font-size: 28px;
+    text-align: center;
+}
+#general2fa_form p {
+    display: flex;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#general2fa_form label {
+    font-size: 15px;
+    margin-right: 10px;
+}
+#general2fa_form input {
+    margin-right: 10px;
+}
+#inputgeneral2fa {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+#inputgeneral2fa label, #inputgeneral2fa input {
+    margin-bottom: 5px;
+}
+#submitgeneral2fa {
+    outline: none;
+}
+/*                      \\\\\ general 2fa forms /////                   */
 
 
 /* temporaryform opmaak */
@@ -2034,7 +2089,7 @@ footer div a:hover {
 
 /*                      ////////////////////////////////                
                         /// Bij een scherm kleiner dan//
-                        /// 768pixels wordt deze css ///
+                        /// 850 pixels wordt deze css///
                         /// toegepast.               ///
                         ////////////////////////////////                */
 @media screen and (max-width: 850px) {
@@ -2095,7 +2150,7 @@ footer div a:hover {
 
 /*                      ////////////////////////////////                
                         /// Bij een scherm kleiner dan//
-                        /// 768pixels wordt deze css ///
+                        /// 725 pixels wordt deze css///
                         /// toegepast.               ///
                         ////////////////////////////////                */
 @media screen and (max-width: 725px) {
@@ -2184,6 +2239,18 @@ footer div a:hover {
                     margin-left: 0px;
                 }
 /*                      \\\\\ Tips & Tricks list opmaak \\\\\           */
+
+/*                      \\\\\ general form style /////              */
+                #general2fa_form h1 {
+                    font-size: 28px;
+                }
+                #inputgeneral2fa {
+                    width: 90%;
+                }
+                #general2fa_form input[type="submit"] {
+                    margin-left: 5%;
+                }
+/*                      \\\\\ general form style /////              */
 
 /* Admin_form opmaak */
                 #admin_form h1 {

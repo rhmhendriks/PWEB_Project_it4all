@@ -26,7 +26,7 @@
                 $page = CheckValue($_GET['page']);
                 include "$page.php";
             } else {
-                include "_contentpages/Home.php";
+                include "_contentpages/Graphs/index.php";
             }
         ?>
     </div>
