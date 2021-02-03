@@ -75,8 +75,8 @@ echo calculator($json)[1][1];
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [12, 6.2],
-        zoom: 4
+        center: [12, 3.7],
+        zoom: 4.65
     });
 
     var size = 200;

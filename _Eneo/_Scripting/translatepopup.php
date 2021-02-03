@@ -99,6 +99,9 @@
             #translate_wrapper {
                 margin-left: 37%;
             }
+            .popup {
+                padding-top: 250px;
+            }
         }
 
         @media screen and (max-width: 725px){
